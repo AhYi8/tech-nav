@@ -1,0 +1,409 @@
+/* ==========================================================================
+   1. Global Styles & Fonts
+   ========================================================================== */
+body {
+  font-family: "Noto Sans SC", sans-serif;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.tech-font {
+  font-family: "Exo 2", sans-serif;
+}
+
+/* ==========================================================================
+   2. Animated Background
+   ========================================================================== */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+}
+
+@keyframes move-stars {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+.stars,
+.stars2,
+.stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200%; /* Use 200% for better looping */
+  display: block;
+  background: transparent;
+  background-repeat: repeat;
+  animation: move-stars 200s linear infinite;
+}
+
+.stars {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEwMHB4IiBoZWlnaHQ9IjEwMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTkyLjUsNjEuNWMwLDAsMCwwLDBsLTIsMC4xYy0wLjUsMC0xLTAuNS0xLTF2LTJjMC0wLjUsMC41LTEsMS0xaDIsMVY2MS41eiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik04My4yLDQyLjRjMCwwLDAsMCwwbDAsMEM4My4yLDQyLjQsODMuMiw0Mi40LDgzLjIsNDIuNHoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNNzkuNCwyNC43YzAsMCwwLDAsMGwwLDBDNzkuNCwyNC43LDc5LjQsMjQuNyw3OS45LDI0Ljd6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTgwLjYsNDEuNWMwLDAsMCwwLDBsMCwwQzgwLjYsNDEuNSw4MC42LDQxLjUsODAuNiw0MS41eiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0yNC4zLDQxYzAsMCwwLDAsMGwtMC4yLTAuMmMwLDAsMCwwLDBMMjQuMyw0MXoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMzEuOCwzOS43YzAsMCwwLDAsMEwzMS44LDM5LjdMMzEuOCwzOS45eiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0zNy4xLDQwLjljMCwwLDAsMCwwbDAsMEMzNy4xLDQwLjksMzcuMSw0MC45LDM3LjIsNDAuOXoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNNzMuNCwzMS45YzAsMCwwLDAsMEw3My40LDMxLjlMNzMuNCwzMS45eiIvPjwvc3ZnPg==");
+}
+.stars2 {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEwMHB4IiBoZWlnaHQ9IjEwMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTc2LjksMjEuNGMwLDAsMCwwLDBsMCwwQzc2LjksMjEuNCw3Ni45LDIxLjQsNzYuOSwyMS40eiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik04NS4yLDU5LjljMCwwLDAsMCwwbDAsMEM4NS4yLDU5LjksODUuMiw1OS45LDg1LjIsNTkuOXoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNNzAuMywzOS45YzAsMCwwLDAsMEw3MC4zLDM5LjlMNzAuMywzOS45eiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik00Ni43LDIwLjlDNDYuNywyMC45LDQ2LjcsMjAuOSw0Ni43LDIwLjlsMCwwQzQ2LjdsMjAuOSw0Ni43LDIwLjksNDYuNywyMC45eiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0yMS44LDIxLjljMCwwLDAsMCwwbDAsMEMyMS44LDIxLjksMjEuOCwyMS45LDIxLjgsMjEuOXoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMzEuNyw0OS4xYzAsMCwwLDAsMEwzMS43LDQ5LjFMMzEuNyw0OS4xeiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0zNy44LDI1LjdjMCwwLDAsMCwwbDAsMEMzNy44LDI1LjcsMzcuOCwyNS43LDM3LjgsMjUuN3oiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNNTEuOCwxMy43YzAsMCwwLDAsMEw1MS44LDEzLjdMNTIuMiwxMy45YzAsMCwwLDAsMEw1MS44LDEzLjd6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTI3LjEsMTQuNGMwLDAsMCwwLDBsMCwwQzI3LjEsMTQuNCwyNy4xLDE0LjQsMjcuMSwxNC40eiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0zNy41LDMuNGMwLDAsMCwwLDBsMCwwQzM3LjUsMy40LDM3LjUsMy40LDM3LjUsMy40eiIvPjwvc3ZnPg==");
+  animation-duration: 150s;
+}
+.stars3 {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEwMHB4IiBoZWlnaHQ9IjEwMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTQ5LjIsMTcuMWMwLDAsMCwwLDBsMCwwQzQ5LjIsMTcuMSw0OS4yLDE3LjEsNDkuMiwxNy4xeiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0zMy44LDguNGMwLDAsMCwwLDBsMCwwQzMzLjgsOC40LDMzLjgsOC44LDMzLjgsOC40eiIvPjxwYXRoIGZpbGw=IiNGRkYiIGQ9Ik04NS4xLDguN2MwLDAsMCwwLDBsMCwwQzg1LjEsOC43LDg1LjEsOC43LDg1LjEsOC43eiIvPjxwYXRoIGZpbGw=IiNGRkYiIGQ9Ik04Ny44LDE0LjljMCwwLDAsMCwwbDAsMEM4Ny44LDE0LjksODcuOCwxNC45LDg3LjgsMTQuOXoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNNzkuOSwzOS45YzAsMCwwLDAsMEw3OS45LDM5LjlMNzkuOSwzOS45eiIvPjwvc3ZnPg==");
+  animation-duration: 100s;
+}
+
+/* ==========================================================================
+   3. Animations
+   ========================================================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-anim {
+  animation: fadeInUp 0.8s ease-out backwards;
+}
+.main-container-anim {
+  animation: fadeInUp 0.8s 0.2s ease-out backwards;
+}
+
+/* ==========================================================================
+   4. Containers & Layout
+   ========================================================================== */
+.main-container {
+  position: relative;
+  border-radius: 1rem;
+  background-color: #161b2299; /* Use a consistent semi-transparent background */
+  backdrop-filter: blur(5px);
+}
+
+.main-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px; /* Border width */
+  background: linear-gradient(135deg, #a97eff, #58a6ff, #00c3ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: exclude;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   5. Form Elements (Inputs, Textareas)
+   ========================================================================== */
+.dark-input,
+.dark-textarea,
+select.dark-input {
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  resize: vertical;
+}
+.dark-input:focus,
+.dark-textarea:focus,
+select.dark-input:focus {
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.25);
+  outline: none;
+}
+
+/* ==========================================================================
+   6. Scrollbar Styles
+   ========================================================================== */
+/* For textareas specifically */
+textarea::-webkit-scrollbar {
+  width: 12px;
+}
+textarea::-webkit-scrollbar-track {
+  background: #0d1117;
+  border-radius: 10px;
+}
+textarea::-webkit-scrollbar-thumb {
+  background-color: #30363d;
+  border-radius: 10px;
+  border: 3px solid #0d1117;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #58a6ff;
+}
+.result-box {
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  border-radius: 0.5rem;
+  min-height: 100px;
+  height: 250px;
+  resize: vertical;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: "Consolas", "Monaco", monospace;
+  line-height: 1.6;
+}
+
+.result-box mark {
+  background-color: rgba(88, 166, 255, 0.4);
+  color: #f0f6fc;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+textarea::-webkit-resizer,
+.result-box::-webkit-resizer {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M8%204L4%208%22%20stroke%3D%22%2358a6ff%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M10%206L6%2010%22%20stroke%3D%22%2358a6ff%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  border: 2px solid transparent;
+}
+/* MODIFIED: Combined scrollbar-corner styles */
+textarea::-webkit-scrollbar-corner,
+.result-box::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+/* Global scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(139, 148, 158, 0.2);
+  border-radius: 10px;
+  border: 2px solid #0d1117;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #58a6ff;
+}
+
+/* ==========================================================================
+   7. Buttons
+   ========================================================================== */
+.btn-sci-fi {
+  position: relative;
+  padding: 10px 24px;
+  border: 2px solid #30363d;
+  background-color: transparent;
+  color: #c9d1d9;
+  font-weight: 700;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  transform: skew(-15deg);
+}
+.btn-sci-fi > span {
+  display: inline-block;
+  transform: skew(15deg);
+  transition: color 0.3s ease;
+}
+.btn-sci-fi::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--glow-color, rgba(0, 191, 255, 0.5)),
+    transparent
+  );
+  transition: left 0.5s ease;
+  transform: skew(-15deg) translateX(50%);
+}
+.btn-sci-fi:not(:disabled):hover {
+  color: white;
+  border-color: var(--glow-color, rgba(0, 191, 255, 0.8));
+  box-shadow: 0 0 15px var(--glow-color, rgba(0, 191, 255, 0.5));
+}
+.btn-sci-fi:not(:disabled):hover > span {
+  color: white;
+}
+.btn-sci-fi:not(:disabled):hover::before {
+  left: 150%;
+}
+.btn-sci-fi:disabled {
+  border-color: #4b5563;
+  color: #4b5563;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.btn-sci-fi.cyan {
+  --glow-color: #0891b2;
+}
+.btn-sci-fi.green {
+  --glow-color: #16a34a;
+}
+.btn-sci-fi.red {
+  --glow-color: #ef4444;
+}
+
+/* ==========================================================================
+   8. Notifications
+   ========================================================================== */
+#notification-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.notification {
+  background-color: #161b22cc;
+  backdrop-filter: blur(5px);
+  color: #f87171; /* red-400 */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ef4444; /* red-500 */
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideIn 0.5s forwards;
+}
+.notification.success {
+  color: #4ade80; /* green-400 */
+  border-color: #22c55e; /* green-500 */
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+}
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* ==========================================================================
+   9. Switch Component
+   ========================================================================== */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #30363d;
+  transition: 0.4s;
+  border-radius: 22px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #c9d1d9;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #2563eb;
+  box-shadow: 0 0 5px #2563eb;
+}
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+#thinking-process-output::-webkit-scrollbar {
+        width: 12px;
+}
+
+#thinking-process-output::-webkit-scrollbar-track {
+  background: #0d1117;
+  border-radius: 10px;
+}
+
+#thinking-process-output::-webkit-scrollbar-thumb {
+  background-color: #30363d;
+  border-radius: 10px;
+  border: 3px solid #0d1117;
+}
+
+#thinking-process-output::-webkit-scrollbar-thumb:hover {
+  background-color: #58a6ff;
+}
+
+#thinking-process-output::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.btn-ai-style {
+  position: relative;
+  background: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+}
+.btn-ai-style:not(:disabled):hover {
+  color: white;
+  border-color: #58a6ff;
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.5);
+}
+.btn-ai-style:disabled {
+  cursor: not-allowed;
+  color: #4b5563;
+  background-color: #161b22;
+}

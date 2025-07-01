@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Nav-Tools - 导航网站</title>
+    <meta
+      name="description"
+      content="精选优质网站导航，为您提供便捷的网站收藏和访问服务"
+      id="page-description"
+    />
+    <meta
+      name="keywords"
+      content="导航网站,网站收藏,工具导航,开发工具,设计资源,学习平台"
+      id="page-keywords"
+    />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+
+    <script src="./vendor/js/tailwind.js"></script>
+    <script src="./vendor/js/lucide.js"></script>
+    <link href="./vendor/css/google-fonts.css" rel="stylesheet" />
+    <link href="./css/common.css" rel="stylesheet" />
+
+    <script src="./vendor/js/Sortable.min.js"></script>
+
+    <style>
+      :root {
+        --bg-color: #0d1117;
+        --sidebar-bg-color: #161b22;
+        --card-bg-color: rgba(22, 27, 34, 0.85);
+        --border-color: rgba(139, 148, 158, 0.2);
+        --text-color: #c9d1d9;
+        --text-secondary-color: #8b949e;
+        --accent-color: #58a6ff;
+        --accent-glow: 0 0 15px rgba(88, 166, 255, 0.5),
+          0 0 5px rgba(88, 166, 255, 0.8);
+        --sidebar-width: 260px;
+      }
+
+      html,
+      body {
+        scroll-behavior: smooth;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      body {
+        font-family: "Noto Sans SC", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        background-image: radial-gradient(
+          circle at 1px 1px,
+          rgba(139, 148, 158, 0.1) 1px,
+          transparent 0
+        );
+        background-size: 30px 30px;
+      }
+
+      .font-exo {
+        font-family: "Exo 2", sans-serif;
+      }
+
+      .nav-card {
+        background-color: var(--card-bg-color);
+        border: 1px solid var(--border-color);
+        border-radius: 0.75rem;
+        transition: box-shadow 0.25s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(8px);
+        cursor: grab;
+        user-select: none;
+      }
+      .nav-card:active {
+        cursor: grabbing;
+      }
+
+      /* --- SortableJS 拖拽样式 --- */
+      /* 占位符的样式 */
+      .drag-ghost-class {
+        opacity: 0.4;
+        background-color: rgba(88, 166, 255, 0.1);
+        border: 2px dashed rgba(88, 166, 255, 0.4);
+      }
+      /* 被拖拽项的样式 */
+      .card-is-dragging {
+        opacity: 0.9 !important;
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+      /* --- 结束拖拽样式 --- */
+
+      .nav-card:hover {
+        border-color: rgba(88, 166, 255, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), var(--accent-glow);
+        transform: translateY(-5px) scale(1.02);
+      }
+
+      .nav-card:hover .nav-card-logo {
+        filter: drop-shadow(0 0 5px var(--accent-color));
+      }
+
+      .search-input {
+        background-color: var(--card-bg-color);
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        transition: all 0.3s ease;
+      }
+      .search-input:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: var(--accent-glow);
+      }
+      .nav-card-logo {
+        transition: all 0.3s ease;
+      }
+      .category-title {
+        color: var(--text-color);
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-color);
+        text-shadow: 0 0 8px rgba(88, 166, 255, 0.3);
+      }
+      .sidebar {
+        background-color: var(--sidebar-bg-color);
+        border-right: 1px solid var(--border-color);
+        transition: transform 0.3s ease-in-out;
+      }
+      .sidebar-link {
+        transition: all 0.2s ease;
+        color: var(--text-secondary-color);
+        font-size: 1rem;
+        font-weight: 500;
+        font-family: "Exo 2", sans-serif;
+      }
+      .sidebar-link:hover,
+      .sidebar-link.active {
+        color: var(--text-color);
+        background-color: rgba(88, 166, 255, 0.1);
+        transform: translateX(5px);
+      }
+      .sidebar-link.active {
+        border-left-color: var(--accent-color);
+      }
+      .sidebar-link i {
+        width: 18px;
+        height: 18px;
+      }
+      #home-page-container {
+        height: 100vh;
+        overflow-y: auto;
+      }
+      .favorite-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        z-index: 10;
+        color: var(--text-secondary-color);
+        padding: 0.25rem;
+        border-radius: 99px;
+        transition: all 0.2s ease-in-out;
+      }
+      .favorite-btn:hover {
+        color: #facc15;
+        background-color: rgba(250, 204, 21, 0.1);
+      }
+      .favorite-btn.favorited svg {
+        fill: #facc15;
+        color: #facc15;
+      }
+      .favorite-btn svg {
+        transition: all 0.2s ease;
+      }
+      .modal-overlay {
+        transition: opacity 0.3s ease-in-out;
+      }
+      .modal-container {
+        transition: all 0.3s ease-in-out;
+      }
+      .modal-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .modal-hidden .modal-container {
+        transform: translateY(1rem) scale(0.98);
+      }
+      .segmented-control {
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 0.5rem;
+        padding: 0.25rem;
+        border: 1px solid var(--border-color);
+      }
+      .segmented-control input[type="radio"] {
+        display: none;
+      }
+      .segmented-control label {
+        flex: 1;
+        text-align: center;
+        padding: 0.625rem 0.5rem;
+        border-radius: 0.375rem;
+        color: var(--text-secondary-color);
+        font-weight: 500;
+        font-size: 0.875rem;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      .segmented-control label:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: var(--text-color);
+      }
+      .segmented-control input[type="radio"]:checked + label {
+        background-color: var(--accent-color);
+        color: var(--bg-color);
+        box-shadow: var(--accent-glow);
+        transform: scale(1.02);
+      }
+      .nav-card-logo img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+
+      /* 导航卡片描述样式 - 限制两行显示 */
+      .nav-card-desc {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.4;
+        max-height: calc(1.4em * 2);
+      }
+
+      /* Tooltip 样式 */
+      .nav-card-desc:hover {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen text-sm md:text-base">
+    <div class="flex">
+      <aside
+        id="sidebar"
+        class="sidebar fixed top-0 left-0 h-full w-[var(--sidebar-width)] z-40 transform -translate-x-full md:translate-x-0 flex-shrink-0"
+      >
+        <div class="flex flex-col h-full">
+          <header class="p-6 border-b border-b-[var(--border-color)]">
+            <a
+              href="#"
+              id="logo-link"
+              class="font-exo text-2xl font-bold tracking-wider"
+              ><span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300"
+                id="sidebar-title"
+                >Nav-Tools</span
+              ></a
+            >
+            <p
+              class="text-xs text-gray-500 mt-1 truncate"
+              id="sidebar-description"
+              title="精选网站导航"
+            >
+              精选网站导航
+            </p>
+          </header>
+          <nav id="sidebarNav" class="flex-grow p-4 overflow-y-auto"></nav>
+          <footer
+            class="p-4 text-xs border-t border-t-[var(--border-color)] flex justify-between items-center"
+          >
+            <p class="text-gray-500" id="copyright-text">
+              Powered by @AhYi8 ✨ &copy; 2024
+            </p>
+            <button
+              id="settings-btn"
+              class="text-gray-500 hover:text-accent-color transition-colors"
+              title="设置"
+            >
+              <i data-lucide="settings" class="w-4 h-4"></i>
+            </button>
+          </footer>
+        </div>
+      </aside>
+      <main
+        id="mainContent"
+        class="w-full transition-all duration-300 md:ml-[var(--sidebar-width)]"
+      >
+        <div id="home-page-container">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="md:hidden mb-6 flex items-center justify-between">
+              <h1 class="font-exo text-2xl font-bold">Nav-Tools</h1>
+              <button id="menu-toggle" class="p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+              </button>
+            </div>
+            <div class="mb-8 md:mb-12 relative">
+              <div
+                class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+              >
+                <i data-lucide="search" class="w-5 h-5 text-gray-500"></i>
+              </div>
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="搜索网站，例如：GitHub, Google, Figma..."
+                class="search-input w-full p-4 pl-12 rounded-full text-base"
+              />
+            </div>
+            <div id="navContainer"></div>
+            <div id="noResults" class="hidden text-center py-16"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black/50 z-30 hidden md:hidden"
+    ></div>
+    <div
+      id="settings-modal"
+      class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm modal-hidden"
+    >
+      <div
+        class="modal-container bg-[var(--sidebar-bg-color)] w-full max-w-lg rounded-xl shadow-xl border border-[var(--border-color)]"
+      >
+        <header
+          class="p-5 border-b border-[var(--border-color)] flex justify-between items-center"
+        >
+          <h2 class="text-lg font-bold flex items-center gap-2">
+            <i data-lucide="settings-2" class="w-5 h-5 text-accent-color"></i
+            ><span>系统设置</span>
+          </h2>
+          <button
+            id="settings-close-btn"
+            class="text-gray-500 hover:text-white transition-colors p-1 rounded-full"
+          >
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </header>
+        <main class="p-5 md:p-6">
+          <div class="space-y-6">
+            <div class="flex items-center justify-between">
+              <label class="font-semibold text-gray-200">网站卡片列数</label>
+              <div
+                id="columns-setting-group"
+                class="segmented-control flex-shrink-0 w-36"
+              >
+                <input
+                  type="radio"
+                  name="columns"
+                  value="2"
+                  id="cols-2"
+                /><label for="cols-2">2</label
+                ><input
+                  type="radio"
+                  name="columns"
+                  value="3"
+                  id="cols-3"
+                /><label for="cols-3">3</label
+                ><input
+                  type="radio"
+                  name="columns"
+                  value="4"
+                  id="cols-4"
+                /><label for="cols-4">4</label
+                ><input
+                  type="radio"
+                  name="columns"
+                  value="5"
+                  id="cols-5"
+                /><label for="cols-5">5</label>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="./config/nav-config.js"></script>
+    <script>
+      // --- 全局变量和页面加载总入口 ---
+      let favorites = [];
+      let allNavMap = new Map();
+
+      document.addEventListener("DOMContentLoaded", () => {
+        try {
+          if (typeof navData === "undefined" || !navData) {
+            console.error("错误：`navData` 未定义。");
+            return;
+          }
+          applySiteConfig();
+          initializeNavMap();
+          loadFavorites();
+          loadNavOrder();
+          renderContent();
+          initFunctionalJS();
+        } catch (error) {
+          console.error("页面初始化时发生严重错误:", error);
+        }
+      });
+
+      // 应用网站配置
+      function applySiteConfig() {
+        if (typeof siteConfig !== "undefined") {
+          // 更新页面标题和meta信息
+          const titleEl = document.getElementById("page-title");
+          const descEl = document.getElementById("page-description");
+          const keywordsEl = document.getElementById("page-keywords");
+          const sidebarTitleEl = document.getElementById("sidebar-title");
+          const sidebarDescEl = document.getElementById("sidebar-description");
+          const copyrightEl = document.getElementById("copyright-text");
+
+          if (titleEl) titleEl.textContent = siteConfig.title;
+          if (descEl) descEl.setAttribute("content", siteConfig.description);
+          if (keywordsEl)
+            keywordsEl.setAttribute("content", siteConfig.keywords);
+          if (sidebarTitleEl)
+            sidebarTitleEl.textContent = siteConfig.sidebarHeader.title;
+          if (sidebarDescEl) {
+            sidebarDescEl.textContent = siteConfig.sidebarHeader.description;
+            sidebarDescEl.setAttribute(
+              "title",
+              siteConfig.sidebarHeader.description
+            );
+          }
+          if (copyrightEl) copyrightEl.textContent = siteConfig.copyright;
+        }
+      }
+
+      function initFunctionalJS() {
+        initSearch();
+        initSidebar();
+        initScrollSpy();
+        initNavigation();
+        initSettingsModal();
+        initDragSort();
+      }
+
+      // --- 拖拽排序核心逻辑 (SortableJS 最终版) ---
+      function initDragSort() {
+        const grids = document.querySelectorAll("#navContainer .grid");
+
+        grids.forEach((grid) => {
+          const section = grid.closest(".category-section");
+
+          // 收藏类目特殊处理：只能本类目内排序，不允许跨类目拖拽
+          if (section && section.id === "category-favorites") {
+            new Sortable(grid, {
+              group: {
+                name: "favorites-only",
+                put: false, // 禁止拖入收藏区
+                pull: false, // 允许从收藏区拖出（但你也可以设为 false 禁止）
+              },
+              animation: 400,
+              ghostClass: "drag-ghost-class",
+              dragClass: "card-is-dragging",
+              onEnd: function (evt) {
+                // 收藏排序变化时不持久化顺序（如需保存可另外处理）
+                // renderFavoritesSection(); // 重新渲染收藏区
+                lucide.createIcons();
+              },
+            });
+          } else {
+            // 其他类目允许互相拖拽
+            new Sortable(grid, {
+              group: "shared-navs",
+              animation: 400,
+              ghostClass: "drag-ghost-class",
+              dragClass: "card-is-dragging",
+              onEnd: function (evt) {
+                updateAndSaveOrder(); // 持久化普通类目的顺序
+              },
+            });
+          }
+        });
+      }
+
+      // --- 数据处理与持久化 ---
+      function initializeNavMap() {
+        for (const c in navData)
+          navData[c].forEach((o) => {
+            allNavMap.set(o.title, { ...o, category: c });
+          });
+      }
+
+      function updateAndSaveOrder() {
+        const categorySections = document.querySelectorAll(
+          "#navContainer .category-section:not(#category-favorites)"
+        );
+        const newNavData = {};
+        // 先用所有可能的分类初始化 newNavData，以防某个分类变空
+        Object.keys(navData).forEach((cat) => (newNavData[cat] = []));
+
+        categorySections.forEach((section) => {
+          const categoryName = section.dataset.categoryName;
+          const cards = section.querySelectorAll(".nav-card");
+          cards.forEach((card) => {
+            const navTitle = card.dataset.navId;
+            const nav = allNavMap.get(navTitle);
+            if (nav) {
+              nav.category = categoryName; // 更新导航的分类属性
+              newNavData[categoryName].push(nav);
+            }
+          });
+        });
+        navData = newNavData;
+        saveNavOrder();
+      }
+
+      function loadNavOrder() {
+        try {
+          const c = JSON.parse(localStorage.getItem("nav-tools-order")) || {},
+            o = new Set(allNavMap.keys());
+          for (const e in c)
+            navData[e] &&
+              (navData[e] = c[e]
+                .map((c) => (o.delete(c), allNavMap.get(c)))
+                .filter(Boolean));
+          o.forEach((c) => {
+            const o = allNavMap.get(c),
+              e = o.category;
+            o &&
+              navData[e] &&
+              !navData[e].some((c) => c.title === o.title) &&
+              navData[e].push(o);
+          });
+        } catch (c) {
+          console.error("加载导航顺序失败, 可能由于本地存储数据格式错误:", c);
+        }
+      }
+
+      function saveNavOrder() {
+        const c = {};
+        for (const o in navData)
+          navData[o] && (c[o] = navData[o].map((c) => c.title));
+        localStorage.setItem("nav-tools-order", JSON.stringify(c));
+      }
+
+      // --- 渲染及其他功能 ---
+      function renderContent() {
+        const c = document.getElementById("navContainer"),
+          o = document.getElementById("sidebarNav");
+        (c.innerHTML = ""), (o.innerHTML = "");
+        const e = document.createElement("a");
+        (e.href = "#category-favorites"),
+          (e.id = "favorites-link"),
+          (e.className =
+            "sidebar-link flex items-center py-2 px-4 rounded-md mb-1 font-medium border-l-2 border-l-transparent"),
+          (e.innerHTML =
+            '<i data-lucide="star" class="mr-3 flex-shrink-0"></i> 收藏'),
+          o.appendChild(e);
+        const t = document.createElement("hr");
+        (t.className = "border-t border-t-[var(--border-color)] my-2"),
+          (t.id = "favorites-divider"),
+          o.appendChild(t),
+          renderFavoritesSection();
+        for (const d in navData) {
+          const n = document.createElement("a");
+          (n.href = `#category-${d}`),
+            (n.className =
+              "sidebar-link flex items-center py-2 px-4 rounded-md mb-1 font-medium border-l-2 border-l-transparent");
+
+          // 添加类目图标
+          const iconName =
+            typeof categoryIcons !== "undefined" && categoryIcons[d]
+              ? categoryIcons[d]
+              : "folder";
+          n.innerHTML = `<i data-lucide="${iconName}" class="mr-3 flex-shrink-0"></i> ${d}`;
+
+          o.appendChild(n);
+          const l = document.createElement("section");
+          (l.id = `category-${d}`),
+            (l.dataset.categoryName = d),
+            (l.className = "category-section pt-8 mb-12");
+          const a = document.createElement("h2");
+          (a.className = "category-title font-exo text-3xl font-bold mb-8"),
+            (a.textContent = d),
+            l.appendChild(a);
+          const r = document.createElement("div");
+          (r.className = getGridClassString()),
+            navData[d] &&
+              navData[d].forEach((c) => {
+                r.appendChild(createNavCard(c));
+              }),
+            l.appendChild(r),
+            c.appendChild(l);
+        }
+        lucide.createIcons();
+      }
+
+      function createNavCard(c) {
+        const o = document.createElement("div");
+        (o.className = "nav-card group flex space-x-4 py-6 px-2"),
+          (o.dataset.name = c.title.toLowerCase()),
+          (o.dataset.navId = c.title),
+          (o.dataset.keywords = (c.keywords + " " + c.title).toLowerCase()),
+          o.addEventListener("click", (o) => {
+            if (o.target.closest(".favorite-btn")) return;
+            window.open(c.url, "_blank");
+          });
+
+        const e = document.createElement("button");
+        (e.className = "favorite-btn"),
+          favorites.includes(c.title) && e.classList.add("favorited"),
+          (e.innerHTML = '<i data-lucide="star" class="w-4 h-4"></i>'),
+          e.addEventListener("click", (o) => toggleFavorite(o, c.title)),
+          o.appendChild(e);
+
+        const t = document.createElement("div");
+        t.className =
+          "self-center flex-shrink-0 pl-2 pointer-events-none nav-card-logo";
+
+        if (c.logoUrl) {
+          t.innerHTML = `<img src="${c.logoUrl}" alt="${c.title} logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" /><i data-lucide="globe" class="w-10 h-10" style="display:none; color: var(--accent-color);"></i>`;
+        } else {
+          // 如果没有提供 logoUrl，尝试自动获取网站 favicon
+          const domain = new URL(c.url).hostname;
+          t.innerHTML = `<img src="https://www.google.com/s2/favicons?domain=${domain}&sz=64" alt="${c.title} logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" /><i data-lucide="globe" class="w-10 h-10" style="display:none; color: var(--accent-color);"></i>`;
+        }
+        o.appendChild(t);
+
+        const d = document.createElement("div");
+        (d.className = "text-left self-start pointer-events-none"),
+          (d.innerHTML = `<h3 class="font-bold text-lg text-gray-100">${c.title}</h3><p class="text-sm text-gray-400 line-clamp-2 nav-card-desc" title="${c.desc}">${c.desc}</p>`),
+          o.appendChild(d);
+        return o;
+      }
+
+      function getColumnCount() {
+        let c = 4;
+        "undefined" != typeof styleConfig &&
+          styleConfig.nav_card_columns &&
+          (c = styleConfig.nav_card_columns);
+        let o = localStorage.getItem("nav-tools-columns");
+        return o && (c = parseInt(o, 10)), c;
+      }
+
+      function getGridClassString() {
+        let c = getColumnCount(),
+          o = {
+            5: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5",
+            4: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
+            3: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
+            2: "grid-cols-1 sm:grid-cols-2",
+            1: "grid-cols-1",
+          };
+        return `grid ${o[c] || o[4]} gap-6`;
+      }
+
+      function initSettingsModal() {
+        let c = document.getElementById("settings-btn"),
+          o = document.getElementById("settings-modal"),
+          e = document.getElementById("settings-close-btn"),
+          t = document.getElementById("columns-setting-group"),
+          d = () => {
+            let c = getColumnCount(),
+              e = document.querySelector(`input[name="columns"][value="${c}"]`);
+            e && (e.checked = !0),
+              o.classList.remove("modal-hidden"),
+              lucide.createIcons();
+          },
+          n = () => o.classList.add("modal-hidden");
+        c.addEventListener("click", d),
+          e.addEventListener("click", n),
+          o.addEventListener("click", (c) => {
+            c.target === o && n();
+          }),
+          t.addEventListener("change", (c) => {
+            c.target.name === "columns" &&
+              (localStorage.setItem("nav-tools-columns", c.target.value),
+              renderContent());
+          });
+      }
+
+      function loadFavorites() {
+        favorites =
+          JSON.parse(localStorage.getItem("nav-tools-favorites")) || [];
+      }
+
+      function saveFavorites() {
+        localStorage.setItem("nav-tools-favorites", JSON.stringify(favorites));
+      }
+
+      function toggleFavorite(c, o) {
+        c.stopPropagation();
+        let e = favorites.indexOf(o);
+        e > -1 ? favorites.splice(e, 1) : favorites.push(o),
+          saveFavorites(),
+          document
+            .querySelectorAll(
+              `.nav-card[data-nav-id="${o.replace(/"/g, '\\"')}"]`
+            )
+            .forEach((c) => {
+              c.querySelector(".favorite-btn").classList.toggle(
+                "favorited",
+                favorites.includes(o)
+              );
+            }),
+          renderFavoritesSection(),
+          lucide.createIcons();
+      }
+
+      function renderFavoritesSection() {
+        let c = document.getElementById("navContainer"),
+          o = document.getElementById("category-favorites"),
+          e = document.getElementById("favorites-link"),
+          t = document.getElementById("favorites-divider"),
+          d = favorites.length > 0;
+        e && (e.style.display = d ? "flex" : "none"),
+          t && (t.style.display = d ? "block" : "none");
+        let n = () => {
+          o.classList.add("favorite-section-leave"),
+            setTimeout(() => {
+              o.remove();
+            }, 400);
+        };
+        if (d) {
+          let e = favorites.map((c) => allNavMap.get(c)).filter(Boolean);
+          if (o) o.innerHTML = "";
+          else {
+            (o = document.createElement("section")),
+              (o.id = "category-favorites"),
+              (o.className =
+                "category-section pt-8 mb-12 favorite-section-enter"),
+              c.prepend(o);
+          }
+          let t = document.createElement("h2");
+          (t.className =
+            "category-title font-exo text-3xl font-bold mb-8 flex items-center"),
+            (t.innerHTML =
+              '<i data-lucide="star" class="w-7 h-7 mr-3 text-yellow-400 fill-current"></i> 收藏'),
+            o.appendChild(t);
+          let d = document.createElement("div");
+          (d.className = getGridClassString()),
+            e.forEach((c) => {
+              let o = createNavCard(c);
+              d.appendChild(o);
+            }),
+            o.appendChild(d);
+        } else o && n();
+      }
+
+      function resetToAllNavView() {
+        document.querySelectorAll(".nav-card").forEach((c) => {
+          c.style.display = "flex";
+        }),
+          document.querySelectorAll(".category-section").forEach((c) => {
+            c.style.display = "block";
+          });
+        let c = document.getElementById("category-favorites");
+        c && 0 === favorites.length
+          ? (c.style.display = "none")
+          : c && (c.style.display = "block"),
+          (document.getElementById("noResults").style.display = "none");
+      }
+
+      function initNavigation() {
+        let c = document.getElementById("logo-link"),
+          o = document.getElementById("sidebarNav");
+        c.addEventListener("click", (c) => {
+          c.preventDefault(),
+            resetToAllNavView(),
+            (document.getElementById("searchInput").value = ""),
+            document
+              .getElementById("home-page-container")
+              .scrollTo({ top: 0, behavior: "smooth" });
+        }),
+          o.addEventListener("click", (c) => {
+            let o = c.target.closest("a");
+            if (!o) return;
+            c.preventDefault(),
+              resetToAllNavView(),
+              setTimeout(() => {
+                let c = o.getAttribute("href"),
+                  e = document.querySelector(c);
+                if (e) {
+                  let c = document.getElementById("home-page-container");
+                  c.scrollTo({ top: e.offsetTop - 20, behavior: "smooth" });
+                }
+              }, 50),
+              window.innerWidth < 768 && toggleSidebar(!1);
+          });
+      }
+
+      function initSearch() {
+        let c = document.getElementById("searchInput");
+        c.addEventListener("input", (c) => {
+          let o = c.target.value.toLowerCase().trim();
+          let e = 0;
+          allNavMap.forEach((c, t) => {
+            let d = document.querySelector(
+              `.nav-card[data-nav-id="${t.replace(/"/g, '\\"')}"]`
+            );
+            if (!d) return;
+            let n = d.dataset.keywords,
+              l = n.includes(o);
+            (d.style.display = l ? "flex" : "none"), l && e++;
+          }),
+            document.querySelectorAll(".category-section").forEach((c) => {
+              let o = c.querySelectorAll('.nav-card[style*="display: flex"]');
+              c.style.display = o.length > 0 ? "block" : "none";
+            });
+          let t = document.getElementById("noResults");
+          o && 0 === e
+            ? ((t.style.display = "block"),
+              (t.innerHTML =
+                '<i data-lucide="search-x" class="mx-auto h-16 w-16 text-gray-600"></i> <h3 class="mt-4 text-xl font-semibold">未找到匹配的网站</h3> <p class="mt-2 text-gray-400">请尝试使用其他关键词进行搜索。</p>'),
+              lucide.createIcons())
+            : (t.style.display = "none"),
+            o || resetToAllNavView();
+        });
+      }
+
+      function initSidebar() {
+        let c = document.getElementById("menu-toggle"),
+          o = document.getElementById("overlay");
+        c.addEventListener("click", () => toggleSidebar()),
+          o.addEventListener("click", () => toggleSidebar(!1));
+      }
+
+      function toggleSidebar(c) {
+        let o = document.getElementById("sidebar"),
+          e = document.getElementById("overlay"),
+          t = void 0 !== c ? c : o.classList.contains("-translate-x-full");
+        t
+          ? (o.classList.remove("-translate-x-full"),
+            e.classList.remove("hidden"))
+          : (o.classList.add("-translate-x-full"), e.classList.add("hidden"));
+      }
+
+      function initScrollSpy() {
+        let c = document.querySelectorAll(".category-section"),
+          o = document.querySelectorAll(".sidebar-link");
+        if (!c.length) return;
+        let e = document.getElementById("home-page-container"),
+          t = new IntersectionObserver(
+            (t) => {
+              e.classList.contains("hidden") ||
+                t.forEach((e) => {
+                  if (e.isIntersecting) {
+                    let t = document.querySelector(
+                      `.sidebar-link[href="#${e.target.id}"]`
+                    );
+                    t &&
+                      (o.forEach((c) => c.classList.remove("active")),
+                      t.classList.add("active"));
+                  }
+                });
+            },
+            { root: e, rootMargin: "-40% 0px -60% 0px" }
+          );
+        c.forEach((c) => t.observe(c));
+      }
+    </script>
+  </body>
+</html>
