@@ -1,13 +1,13 @@
 // 首页配置
 const siteConfig = {
-  title: 'Nav-Tools - 导航网站',
+  title: 'Tech-Nav - 导航网站',
   description: '精选优质网站导航，为您提供便捷的网站收藏和访问服务',
   keywords: '导航网站,网站收藏,工具导航,开发工具,设计资源,学习平台',
   sidebarHeader: {
-    title: 'Nav-Tools',
+    title: 'Tech-Nav',
     description: '精选网站导航'
   },
-  copyright: 'Powered by @AhYi8 ✨ © 2024'
+  copyright: 'Powered by @AhYi8 ✨ © 2025'
 };
 
 // 类目图标配置（使用 Lucide 图标）
