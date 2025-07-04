@@ -15,7 +15,39 @@
 - `css/common.css`：本项目使用的一些公共 css 样式
 - `vendor`：第三方库目录，存放了本项目使用的一些第三方库，如 `fontawesome`、`lucide.js` 等
 
-# 3. 启动项目
+# 3. 新增导航卡片
+
+1. 新增类目
+
+```js
+// 类目图标配置（使用 Lucide 图标）
+const categoryIcons = {
+  // ...
+  "类目名称": "类目标签"
+};
+```
+
+1. 在 `tools-config.js` 文件中新增一个工具配置项，格式如下：
+
+```js
+let navData = {
+  // ...
+  "类目名称": [
+    {
+      title: '网站名称',
+      desc: '网站的描述信息',
+      url: 'https://www.website.com',
+      logoUrl: 'https://www.website.com/favicon.ico',
+      keywords: '网站的搜索关键词'
+    }
+  ]
+};
+```
+
+2. 在 `tools` 目录下新增一个 html 文件，文件名与 `tools-config.js` 中配置的 `url` 字段一致
+3. 在新增的 html 文件中引入 `css/common.css` 文件，即可使用本项目的一些公共 css 样式
+
+# 4. 启动项目
 
 1. 克隆项目到本地
 2. 双击打开 `index.html` 文件，即可启动项目
