@@ -394,6 +394,7 @@
           loadNavOrder();
           renderContent();
           initFunctionalJS();
+          renderContent();
         } catch (error) {
           console.error("页面初始化时发生严重错误:", error);
         }
@@ -586,6 +587,7 @@
             c.appendChild(l);
         }
         lucide.createIcons();
+        initDragSort();
       }
 
       function createNavCard(c) {
