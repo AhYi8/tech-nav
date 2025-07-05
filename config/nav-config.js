@@ -16,7 +16,8 @@ const categoryIcons = {
   '开发工具': 'code',
   '设计资源': 'palette',
   '学习平台': 'graduation-cap',
-  '社交媒体': 'users'
+  '社交媒体': 'users',
+  'AI 集合': 'bot'
 };
 
 let navData = {
@@ -140,6 +141,50 @@ let navData = {
       url: 'https://www.reddit.com',
       logoUrl: 'https://www.reddit.com/favicon.ico',
       keywords: 'reddit 社区 讨论 论坛'
+    }
+  ],
+  'AI 集合': [
+    {
+      title: 'Gemini',
+      desc: 'Google推出的基于AI的聊天模型',
+      url: 'https://gemini.google.com',
+      logoUrl: 'https://www.gstatic.com/lamda/images/gemini_favicon_f069958c85030456e93de685481c559f160ea06b.png',
+      keywords: 'openai 人工智能 模型 服务'
+    },
+    {
+      title: 'ChatGPT',
+      desc: '基于OpenAI GPT模型的聊天机器人',
+      url: 'https://chat.openai.com',
+      logoUrl: 'https://chat.openai.com/favicon.ico',
+      keywords: 'openai 人工智能 模型 服务'
+    },
+    {
+      title: 'Google AI Studio',
+      desc: 'Google推出的AI开发者平台',
+      url: 'https://aistudio.google.com',
+      logoUrl: 'https://www.gstatic.com/aistudio/ai_studio_favicon_32x32.png',
+      keywords: 'google ai studio 开发者 平台'
+    },
+    {
+      title: '硅基流动',
+      desc: 'SiliconCloud 硅基流动云服务，高效、模型丰富、性价比高的大模型服务平台。',
+      url: 'https://cloud.siliconflow.cn',
+      logoUrl: 'https://cloud.siliconflow.cn/favicon.ico',
+      keywords: 'midjourney 图像 生成 ai 工具'
+    },
+    {
+      title: '火山方舟',
+      desc: '火山方舟是火山引擎推出的一站式AI研发平台，提供了丰富的AI模型和工具，帮助开发者快速构建AI应用。',
+      url: 'https://console.volcengine.com',
+      logoUrl: 'https://res.volccdn.com/obj/volc-console-fe/images/favicon.52bcaa41.png',
+      keywords: '火山方舟 火山引擎 AI 模型 工具'
+    },
+    {
+      title: 'Grok',
+      desc: 'Grok 是由马斯克创办的AI研究公司，致力于开发安全、有益的通用人工智能技术。',
+      url: 'https://x.ai',
+      logoUrl: 'https://x.ai/favicon.ico',
+      keywords: 'grok xAi'
     }
   ]
 };
