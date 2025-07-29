@@ -17,7 +17,8 @@ const categoryIcons = {
   '设计资源': 'palette',
   '学习平台': 'graduation-cap',
   '社交媒体': 'users',
-  'AI 集合': 'bot'
+  'AI 集合': 'bot',
+  '代理机场': 'globe'
 };
 
 let navData = {
@@ -42,6 +43,13 @@ let navData = {
       url: 'https://www.baidu.com',
       logoUrl: 'https://www.baidu.com/favicon.ico',
       keywords: 'baidu 百度 搜索 中文'
+    },
+    {
+      title: 'DuckDuckGo',
+      desc: '一家让你能够无缝掌控在线个人信息的互联网隐私公司，而无需做出任何取舍。',
+      url: 'https://duckduckgo.com',
+      logoUrl: 'https://duckduckgo.com/favicon.ico',
+      keywords: 'duck duckgo duckduckgo'
     }
   ],
   '开发工具': [
@@ -79,14 +87,14 @@ let navData = {
       title: 'Figma',
       desc: '协作式界面设计工具，团队设计的首选',
       url: 'https://www.figma.com',
-      logoUrl: 'https://www.figma.com/favicon.ico',
+      logoUrl: 'https://static.figma.com/app/icon/1/favicon.svg',
       keywords: 'figma 设计 ui ux 协作'
     },
     {
       title: 'Dribbble',
       desc: '设计师作品展示和灵感分享平台',
       url: 'https://dribbble.com',
-      logoUrl: 'https://dribbble.com/favicon.ico',
+      logoUrl: 'https://cdn.dribbble.com/assets/favicon-452601365a822699d1d5db718ddf7499d036e8c2f7da69e85160a4d2f83534bd.ico',
       keywords: 'dribbble 设计 作品 灵感'
     },
     {
@@ -109,7 +117,7 @@ let navData = {
       title: 'freeCodeCamp',
       desc: '免费编程学习平台，从零开始学编程',
       url: 'https://www.freecodecamp.org',
-      logoUrl: 'https://www.freecodecamp.org/favicon.ico',
+      logoUrl: 'https://www.freecodecamp.org/favicon-32x32.png',
       keywords: 'freecodecamp 编程 学习 免费'
     },
     {
@@ -141,6 +149,13 @@ let navData = {
       url: 'https://www.reddit.com',
       logoUrl: 'https://www.reddit.com/favicon.ico',
       keywords: 'reddit 社区 讨论 论坛'
+    },
+    {
+      title: 'Telegram Web',
+      desc: 'Telegram 网页版，实时消息传递和社交媒体',
+      url: 'https://web.telegram.org',
+      logoUrl: 'https://web.telegram.org/k/assets/img/logo_padded.svg',
+      keywords: 'telegram 社交媒体 实时消息'
     }
   ],
   'AI 集合': [
@@ -185,6 +200,22 @@ let navData = {
       url: 'https://x.ai',
       logoUrl: 'https://x.ai/favicon.ico',
       keywords: 'grok xAi'
+    }
+  ],
+  '代理机场': [
+    {
+      title: '一分机场',
+      desc: '优点：价格低、流量多，有不限时流量。缺点：部分节点不稳定。',
+      url: 'https://xn--4gqx1hgtfdmt.com/#/register?code=IxqdhHOg',
+      logoUrl: 'https://xn--4gqx1hgtfdmt.com/favicon.ico',
+      keywords: '机场 代理 节点 魔法'
+    },
+    {
+      title: '性价比机场',
+      desc: '优点：价格低、节点稳定。缺点：流量少，每月流量重置。',
+      url: 'https://xn--6nq44r2uh9rhj7f.net/#/register?code=vPoik0NF',
+      logoUrl: '../assert/ico/性价比机场.ico',
+      keywords: '机场 代理 节点 魔法'
     }
   ]
 };
