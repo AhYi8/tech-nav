@@ -37,6 +37,54 @@
         --sidebar-width: 230px;
       }
 
+      /* 通知系统样式 */
+      #notification-container {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .notification {
+        background-color: #161b22cc;
+        backdrop-filter: blur(5px);
+        color: #f87171; /* red-400 */
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid #ef4444; /* red-500 */
+        box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateX(100%);
+        animation: slideIn 0.5s forwards;
+        max-width: 300px;
+        word-wrap: break-word;
+      }
+      .notification.success {
+        color: #4ade80; /* green-400 */
+        border-color: #22c55e; /* green-500 */
+        box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+      }
+      @keyframes slideIn {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes slideOut {
+        from {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+      }
+
       html,
       body {
         scroll-behavior: smooth;
@@ -316,6 +364,9 @@
       id="overlay"
       class="fixed inset-0 bg-black/50 z-30 hidden md:hidden"
     ></div>
+    
+    <!-- 消息通知容器 -->
+    <div id="notification-container"></div>
     <div
       id="settings-modal"
       class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm modal-hidden"
@@ -337,8 +388,9 @@
             <i data-lucide="x" class="w-5 h-5"></i>
           </button>
         </header>
-        <main class="p-5 md:p-6">
+        <main class="p-5 md:p-6 max-h-[70vh] overflow-y-auto">
           <div class="space-y-6">
+            <!-- 网站卡片列数设置 -->
             <div class="flex items-center justify-between">
               <label class="font-semibold text-gray-200">网站卡片列数</label>
               <div
@@ -371,6 +423,185 @@
                 /><label for="cols-5">5</label>
               </div>
             </div>
+
+            <!-- 分隔线 -->
+            <hr class="border-t border-[var(--border-color)]" />
+
+            <!-- 添加自定义类目 -->
+            <div class="space-y-4">
+              <h3 class="font-semibold text-gray-200 flex items-center gap-2">
+                <i data-lucide="folder-plus" class="w-4 h-4"></i>
+                添加自定义类目
+              </h3>
+              <div class="space-y-3">
+                <div>
+                  <label class="block text-sm text-gray-300 mb-1">类目名称</label>
+                  <input
+                    type="text"
+                    id="category-name-input"
+                    placeholder="请输入类目名称"
+                    class="w-full p-2 rounded-md bg-[var(--card-bg-color)] border border-[var(--border-color)] text-[var(--text-color)] text-sm focus:border-[var(--accent-color)] focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm text-gray-300 mb-1">类目图标</label>
+                  <div class="flex gap-2">
+                    <input
+                      type="text"
+                      id="category-icon-input"
+                      placeholder="请输入图标名称 (如: folder, search, code)"
+                      class="flex-1 p-2 rounded-md bg-[var(--card-bg-color)] border border-[var(--border-color)] text-[var(--text-color)] text-sm focus:border-[var(--accent-color)] focus:outline-none"
+                      value="folder"
+                    />
+                    <button
+                       type="button"
+                       id="icon-search-btn"
+                       class="px-3 py-2 bg-[var(--card-bg-color)] border border-[var(--border-color)] text-[var(--text-color)] hover:bg-[var(--accent-color)] hover:text-white rounded-md transition-colors flex items-center gap-1 text-sm focus:border-[var(--accent-color)] focus:outline-none"
+                       title="查看可用图标"
+                     >
+                       <i data-lucide="search" class="w-4 h-4"></i>
+                     </button>
+                  </div>
+                  <p class="text-xs text-gray-400 mt-1">点击搜索按钮查看所有可用的Lucide图标</p>
+                </div>
+                <button
+                  id="add-category-btn"
+                  class="w-full p-2 bg-[var(--accent-color)] text-white rounded-md hover:bg-blue-600 transition-colors text-sm font-medium"
+                >
+                  添加类目
+                </button>
+              </div>
+            </div>
+
+            <!-- 分隔线 -->
+            <hr class="border-t border-[var(--border-color)]" />
+
+            <!-- 添加自定义导航卡片 -->
+            <div class="space-y-4">
+              <h3 class="font-semibold text-gray-200 flex items-center gap-2">
+                <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                添加自定义导航
+              </h3>
+              <div class="space-y-3">
+                <div>
+                  <label class="block text-sm text-gray-300 mb-1">网站标题</label>
+                  <input
+                    type="text"
+                    id="nav-title-input"
+                    placeholder="请输入网站标题"
+                    class="w-full p-2 rounded-md bg-[var(--card-bg-color)] border border-[var(--border-color)] text-[var(--text-color)] text-sm focus:border-[var(--accent-color)] focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm text-gray-300 mb-1">网站描述</label>
+                  <textarea
+                    id="nav-desc-input"
+                    placeholder="请输入网站描述"
+                    rows="2"
+                    class="w-full p-2 rounded-md bg-[var(--card-bg-color)] border border-[var(--border-color)] text-[var(--text-color)] text-sm focus:border-[var(--accent-color)] focus:outline-none resize-none"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm text-gray-300 mb-1">网站链接</label>
+                  <input
+                    type="url"
+                    id="nav-url-input"
+                    placeholder="https://example.com"
+                    class="w-full p-2 rounded-md bg-[var(--card-bg-color)] border border-[var(--border-color)] text-[var(--text-color)] text-sm focus:border-[var(--accent-color)] focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm text-gray-300 mb-1">Logo链接 (可选)</label>
+                  <input
+                    type="url"
+                    id="nav-logo-input"
+                    placeholder="https://example.com/logo.png"
+                    class="w-full p-2 rounded-md bg-[var(--card-bg-color)] border border-[var(--border-color)] text-[var(--text-color)] text-sm focus:border-[var(--accent-color)] focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm text-gray-300 mb-1">关键词</label>
+                  <input
+                    type="text"
+                    id="nav-keywords-input"
+                    placeholder="用空格分隔多个关键词"
+                    class="w-full p-2 rounded-md bg-[var(--card-bg-color)] border border-[var(--border-color)] text-[var(--text-color)] text-sm focus:border-[var(--accent-color)] focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm text-gray-300 mb-1">选择类目</label>
+                  <select
+                    id="nav-category-select"
+                    class="w-full p-2 rounded-md bg-[var(--card-bg-color)] border border-[var(--border-color)] text-[var(--text-color)] text-sm focus:border-[var(--accent-color)] focus:outline-none"
+                  >
+                    <!-- 动态填充类目选项 -->
+                  </select>
+                </div>
+                <button
+                  id="add-nav-btn"
+                  class="w-full p-2 bg-[var(--accent-color)] text-white rounded-md hover:bg-blue-600 transition-colors text-sm font-medium"
+                >
+                  添加导航
+                </button>
+              </div>
+            </div>
+
+            <!-- 分隔线 -->
+            <hr class="border-t border-[var(--border-color)]" />
+
+            <!-- 管理自定义内容 -->
+            <div class="space-y-4">
+              <h3 class="font-semibold text-gray-200 flex items-center gap-2">
+                <i data-lucide="settings" class="w-4 h-4"></i>
+                管理自定义内容
+              </h3>
+              <div class="space-y-3">
+                <div>
+                  <label class="block text-sm text-gray-300 mb-2">删除类目</label>
+                  <div class="flex gap-2">
+                    <select
+                      id="delete-category-select"
+                      class="flex-1 p-2 rounded-md bg-[var(--card-bg-color)] border border-[var(--border-color)] text-[var(--text-color)] text-sm focus:border-[var(--accent-color)] focus:outline-none"
+                    >
+                      <!-- 动态填充类目选项 -->
+                    </select>
+                    <button
+                      id="delete-category-btn"
+                      class="px-3 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors text-sm font-medium"
+                    >
+                      删除
+                    </button>
+                  </div>
+                  <p class="text-xs text-gray-400 mt-1">只能删除自定义类目，且类目下不能有导航卡片</p>
+                </div>
+                <div>
+                  <label class="block text-sm text-gray-300 mb-2">删除导航卡片</label>
+                  <div class="space-y-2">
+                    <select
+                      id="delete-nav-category-select"
+                      class="w-full p-2 rounded-md bg-[var(--card-bg-color)] border border-[var(--border-color)] text-[var(--text-color)] text-sm focus:border-[var(--accent-color)] focus:outline-none"
+                    >
+                      <!-- 动态填充类目选项 -->
+                    </select>
+                    <div class="flex gap-2">
+                      <select
+                        id="delete-nav-select"
+                        class="flex-1 p-2 rounded-md bg-[var(--card-bg-color)] border border-[var(--border-color)] text-[var(--text-color)] text-sm focus:border-[var(--accent-color)] focus:outline-none"
+                      >
+                        <option value="">请先选择类目</option>
+                      </select>
+                      <button
+                        id="delete-nav-btn"
+                        class="px-3 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors text-sm font-medium"
+                      >
+                        删除
+                      </button>
+                    </div>
+                  </div>
+                  <p class="text-xs text-gray-400 mt-1">只能删除自定义添加的导航卡片</p>
+                </div>
+              </div>
+            </div>
           </div>
         </main>
       </div>
@@ -381,6 +612,29 @@
       // --- 全局变量和页面加载总入口 ---
       let favorites = [];
       let allNavMap = new Map();
+      let customNavData = {}; // 存储自定义添加的导航数据
+      let customCategories = new Set(); // 存储自定义添加的类目
+
+      // --- 通知系统 ---
+      function showNotification(message, type = "error") {
+        const notificationContainer = document.getElementById("notification-container");
+        const notification = document.createElement("div");
+        notification.className = `notification ${type}`;
+        notification.textContent = message;
+        notificationContainer.appendChild(notification);
+        
+        notification.addEventListener("click", () => {
+          notification.style.animation = "slideOut 0.5s forwards";
+          setTimeout(() => notification.remove(), 500);
+        });
+        
+        setTimeout(() => {
+          if (notification.parentElement) {
+            notification.style.animation = "slideOut 0.5s forwards";
+            setTimeout(() => notification.remove(), 500);
+          }
+        }, 3000);
+      }
 
       document.addEventListener("DOMContentLoaded", () => {
         try {
@@ -389,11 +643,13 @@
             return;
           }
           applySiteConfig();
+          loadCustomData(); // 加载自定义数据
           initializeNavMap();
           loadFavorites();
           loadNavOrder();
           renderContent();
           initFunctionalJS();
+          renderContent();
         } catch (error) {
           console.error("页面初始化时发生严重错误:", error);
         }
@@ -434,6 +690,10 @@
         initNavigation();
         initSettingsModal();
         initDragSort();
+        
+        // 初始化删除下拉菜单
+        populateDeleteCategorySelect();
+        populateDeleteNavCategorySelect();
       }
 
       // --- 拖拽排序核心逻辑 (SortableJS 最终版) ---
@@ -586,6 +846,7 @@
             c.appendChild(l);
         }
         lucide.createIcons();
+        initDragSort();
       }
 
       function createNavCard(c) {
@@ -657,6 +918,7 @@
               e = document.querySelector(`input[name="columns"][value="${c}"]`);
             e && (e.checked = !0),
               o.classList.remove("modal-hidden"),
+              populateCategorySelect(),
               lucide.createIcons();
           },
           n = () => o.classList.add("modal-hidden");
@@ -670,6 +932,331 @@
               (localStorage.setItem("nav-tools-columns", c.target.value),
               renderContent());
           });
+        
+        // 添加自定义类目事件监听
+        document.getElementById("add-category-btn").addEventListener("click", addCustomCategory);
+        
+        // 添加自定义导航事件监听
+        document.getElementById("add-nav-btn").addEventListener("click", addCustomNav);
+        
+        // 添加图标查询按钮事件监听
+        document.getElementById("icon-search-btn").addEventListener("click", () => {
+          window.open("https://lucide.dev/icons", "_blank");
+        });
+        
+        // 添加删除类目事件监听
+        document.getElementById("delete-category-btn").addEventListener("click", deleteCustomCategory);
+        
+        // 添加删除导航事件监听
+        document.getElementById("delete-nav-btn").addEventListener("click", deleteCustomNav);
+        
+        // 添加删除导航类目选择变化事件监听
+        document.getElementById("delete-nav-category-select").addEventListener("change", populateDeleteNavSelect);
+      }
+      
+      function populateCategorySelect() {
+        const select = document.getElementById("nav-category-select");
+        select.innerHTML = "";
+        
+        Object.keys(navData).forEach(category => {
+          const option = document.createElement("option");
+          option.value = category;
+          option.textContent = category;
+          select.appendChild(option);
+        });
+      }
+      
+      function addCustomCategory() {
+        const nameInput = document.getElementById("category-name-input");
+        const iconInput = document.getElementById("category-icon-input");
+        
+        const categoryName = nameInput.value.trim();
+        const categoryIcon = iconInput.value.trim() || "folder";
+        
+        if (!categoryName) {
+          showNotification("请输入类目名称", "error");
+          return;
+        }
+        
+        if (navData[categoryName]) {
+          showNotification("该类目已存在", "error");
+          return;
+        }
+        
+        // 添加新类目
+        navData[categoryName] = [];
+        categoryIcons[categoryName] = categoryIcon;
+        customCategories.add(categoryName);
+        
+        // 保存到本地存储
+        saveCustomData();
+        
+        // 重新渲染页面
+        renderContent();
+        
+        // 清空输入框
+        nameInput.value = "";
+        iconInput.value = "folder";
+        
+        // 更新类目选择下拉菜单
+        populateCategorySelect();
+        populateDeleteCategorySelect();
+        populateDeleteNavCategorySelect();
+        
+        showNotification("类目添加成功！", "success");
+      }
+      
+      function addCustomNav() {
+        const titleInput = document.getElementById("nav-title-input");
+        const descInput = document.getElementById("nav-desc-input");
+        const urlInput = document.getElementById("nav-url-input");
+        const logoInput = document.getElementById("nav-logo-input");
+        const keywordsInput = document.getElementById("nav-keywords-input");
+        const categorySelect = document.getElementById("nav-category-select");
+        
+        const title = titleInput.value.trim();
+        const desc = descInput.value.trim();
+        const url = urlInput.value.trim();
+        const logoUrl = logoInput.value.trim();
+        const keywords = keywordsInput.value.trim();
+        const category = categorySelect.value;
+        
+        if (!title || !desc || !url || !category) {
+          showNotification("请填写所有必填字段（标题、描述、链接、类目）", "error");
+          return;
+        }
+        
+        // 验证URL格式
+        try {
+          new URL(url);
+        } catch {
+          showNotification("请输入有效的网站链接", "error");
+          return;
+        }
+        
+        // 创建新的导航项
+        const newNav = {
+          title,
+          desc,
+          url,
+          logoUrl: logoUrl || `${new URL(url).origin}/favicon.ico`,
+          keywords: keywords || `${title} ${desc}`.toLowerCase(),
+          isCustom: true // 标记为自定义添加
+        };
+        
+        // 添加到对应类目
+        if (!navData[category]) {
+          navData[category] = [];
+        }
+        navData[category].push(newNav);
+        
+        // 记录自定义导航数据
+        if (!customNavData[category]) {
+          customNavData[category] = [];
+        }
+        customNavData[category].push(newNav);
+        
+        // 保存到本地存储
+        saveCustomData();
+        
+        // 重新渲染页面
+        renderContent();
+        
+        // 清空输入框
+        titleInput.value = "";
+        descInput.value = "";
+        urlInput.value = "";
+        logoInput.value = "";
+        keywordsInput.value = "";
+        categorySelect.selectedIndex = 0;
+        
+        // 更新删除导航的下拉菜单
+        populateDeleteNavCategorySelect();
+        populateDeleteNavSelect();
+        
+        showNotification("导航添加成功！", "success");
+      }
+      
+      // --- 删除功能相关函数 ---
+      function populateDeleteCategorySelect() {
+        const select = document.getElementById("delete-category-select");
+        select.innerHTML = "<option value=\"\">请选择要删除的类目</option>";
+        
+        customCategories.forEach(category => {
+          const option = document.createElement("option");
+          option.value = category;
+          option.textContent = category;
+          select.appendChild(option);
+        });
+      }
+      
+      function populateDeleteNavCategorySelect() {
+        const select = document.getElementById("delete-nav-category-select");
+        select.innerHTML = "<option value=\"\">请选择类目</option>";
+        
+        Object.keys(customNavData).forEach(category => {
+          if (customNavData[category] && customNavData[category].length > 0) {
+            const option = document.createElement("option");
+            option.value = category;
+            option.textContent = category;
+            select.appendChild(option);
+          }
+        });
+      }
+      
+      function populateDeleteNavSelect() {
+        const categorySelect = document.getElementById("delete-nav-category-select");
+        const navSelect = document.getElementById("delete-nav-select");
+        const selectedCategory = categorySelect.value;
+        
+        navSelect.innerHTML = "<option value=\"\">请选择要删除的导航</option>";
+        
+        if (selectedCategory && customNavData[selectedCategory]) {
+          customNavData[selectedCategory].forEach((nav, index) => {
+            const option = document.createElement("option");
+            option.value = index;
+            option.textContent = nav.title;
+            navSelect.appendChild(option);
+          });
+        }
+      }
+      
+      function deleteCustomCategory() {
+        const select = document.getElementById("delete-category-select");
+        const categoryName = select.value;
+        
+        if (!categoryName) {
+          showNotification("请选择要删除的类目", "error");
+          return;
+        }
+        
+        // 检查类目下是否有导航卡片
+        if (navData[categoryName] && navData[categoryName].length > 0) {
+          showNotification("该类目下还有导航卡片，无法删除", "error");
+          return;
+        }
+        
+        // 确认删除
+        if (!confirm(`确定要删除类目 "${categoryName}" 吗？`)) {
+          return;
+        }
+        
+        // 删除类目
+        delete navData[categoryName];
+        delete categoryIcons[categoryName];
+        customCategories.delete(categoryName);
+        
+        // 保存到本地存储
+        saveCustomData();
+        
+        // 重新渲染页面
+        renderContent();
+        
+        // 更新下拉菜单
+        populateCategorySelect();
+        populateDeleteCategorySelect();
+        populateDeleteNavCategorySelect();
+        
+        showNotification("类目删除成功！", "success");
+      }
+      
+      function deleteCustomNav() {
+        const categorySelect = document.getElementById("delete-nav-category-select");
+        const navSelect = document.getElementById("delete-nav-select");
+        const selectedCategory = categorySelect.value;
+        const selectedNavIndex = navSelect.value;
+        
+        if (!selectedCategory || selectedNavIndex === "") {
+          showNotification("请选择要删除的导航卡片", "error");
+          return;
+        }
+        
+        const navToDelete = customNavData[selectedCategory][selectedNavIndex];
+        
+        // 确认删除
+        if (!confirm(`确定要删除导航 "${navToDelete.title}" 吗？`)) {
+          return;
+        }
+        
+        // 从customNavData中删除
+        customNavData[selectedCategory].splice(selectedNavIndex, 1);
+        if (customNavData[selectedCategory].length === 0) {
+          delete customNavData[selectedCategory];
+        }
+        
+        // 从navData中删除
+        const navIndex = navData[selectedCategory].findIndex(nav => 
+          nav.title === navToDelete.title && nav.url === navToDelete.url
+        );
+        if (navIndex !== -1) {
+          navData[selectedCategory].splice(navIndex, 1);
+        }
+        
+        // 保存到本地存储
+        saveCustomData();
+        
+        // 重新渲染页面
+        renderContent();
+        
+        // 更新下拉菜单
+        populateDeleteNavCategorySelect();
+        populateDeleteNavSelect();
+        
+        showNotification("导航删除成功！", "success");
+      }
+      
+      function saveCustomData() {
+        localStorage.setItem("custom-nav-data", JSON.stringify(navData));
+        localStorage.setItem("custom-category-icons", JSON.stringify(categoryIcons));
+        localStorage.setItem("custom-nav-records", JSON.stringify(customNavData));
+        localStorage.setItem("custom-categories", JSON.stringify([...customCategories]));
+      }
+      
+      function loadCustomData() {
+        const savedNavData = localStorage.getItem("custom-nav-data");
+        const savedCategoryIcons = localStorage.getItem("custom-category-icons");
+        const savedCustomNavRecords = localStorage.getItem("custom-nav-records");
+        const savedCustomCategories = localStorage.getItem("custom-categories");
+        
+        if (savedNavData) {
+          try {
+            const loadedNavData = JSON.parse(savedNavData);
+            // 合并自定义数据和默认数据
+            Object.keys(loadedNavData).forEach(category => {
+              navData[category] = loadedNavData[category];
+            });
+          } catch (e) {
+            console.error("加载自定义导航数据失败:", e);
+          }
+        }
+        
+        if (savedCategoryIcons) {
+          try {
+            const loadedCategoryIcons = JSON.parse(savedCategoryIcons);
+            Object.keys(loadedCategoryIcons).forEach(category => {
+              categoryIcons[category] = loadedCategoryIcons[category];
+            });
+          } catch (e) {
+            console.error("加载自定义类目图标失败:", e);
+          }
+        }
+        
+        if (savedCustomNavRecords) {
+          try {
+            customNavData = JSON.parse(savedCustomNavRecords);
+          } catch (e) {
+            console.error("加载自定义导航记录失败:", e);
+          }
+        }
+        
+        if (savedCustomCategories) {
+          try {
+            const loadedCustomCategories = JSON.parse(savedCustomCategories);
+            customCategories = new Set(loadedCustomCategories);
+          } catch (e) {
+            console.error("加载自定义类目记录失败:", e);
+          }
+        }
       }
 
       function loadFavorites() {
