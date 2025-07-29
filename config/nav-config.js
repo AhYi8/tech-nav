@@ -64,7 +64,7 @@ let navData = {
       title: 'Stack Overflow',
       desc: '程序员问答社区，解决编程问题的最佳平台',
       url: 'https://stackoverflow.com',
-      logoUrl: 'https://stackoverflow.com/favicon.ico',
+      logoUrl: 'https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico',
       keywords: 'stackoverflow 问答 编程 开发'
     },
     {
@@ -80,6 +80,13 @@ let navData = {
       url: 'https://codepen.io',
       logoUrl: 'https://codepen.io/favicon.ico',
       keywords: 'codepen 在线编辑器 前端 demo'
+    },
+    {
+      title: 'Tech-Tools 工具箱',
+      desc: '暗黑科技风格在线工具箱',
+      url: 'https://nav.21zys.com',
+      logoUrl: 'https://nav.21zys.com/favicon.ico',
+      keywords: '工具箱 tools 工具'
     }
   ],
   '设计资源': [
@@ -216,6 +223,13 @@ let navData = {
       url: 'https://xn--6nq44r2uh9rhj7f.net/#/register?code=vPoik0NF',
       logoUrl: '../assert/ico/性价比机场.ico',
       keywords: '机场 代理 节点 魔法'
+    },
+    {
+      title: 'Clash Verge',
+      desc: 'Clash Verge 是一个基于 Clash 内核的 GUI 客户端，提供了丰富的功能和优化的性能。',
+      url: 'https://github.com/clash-verge-rev/clash-verge-rev.git',
+      logoUrl: '../assert/ico/clash-verge-rev.png',
+      keywords: 'clash verge 代理 节点 魔法'
     }
   ]
 };
