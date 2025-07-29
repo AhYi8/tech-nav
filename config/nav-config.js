@@ -84,8 +84,8 @@ let navData = {
     {
       title: 'Tech-Tools 工具箱',
       desc: '暗黑科技风格在线工具箱',
-      url: 'https://nav.21zys.com',
-      logoUrl: 'https://nav.21zys.com/favicon.ico',
+      url: 'https://tools.21zys.com',
+      logoUrl: 'https://tools.21zys.com/favicon.ico',
       keywords: '工具箱 tools 工具'
     }
   ],
