@@ -12,7 +12,8 @@ const siteConfig = {
   styleConfig: {
     showLogo: true,           // 是否显示网站LOGO，默认显示
     showSubCategoryIcons: true, // 是否显示二级导航图标，默认显示
-    nav_card_columns: 4       // 导航卡片列数，默认4列
+    nav_card_columns: 4,      // 导航卡片列数，默认4列
+    stickySearchBox: true     // 是否启用搜索框吸顶，默认启用
   }
 };
 

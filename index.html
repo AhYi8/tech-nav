@@ -396,6 +396,27 @@
       .toggle-switch input:checked + .toggle-slider:before {
         transform: translateX(20px);
       }
+      
+      /* 搜索框吸顶样式 */
+      .search-container {
+        transition: all 0.3s ease;
+      }
+      
+      .search-container.sticky {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background-color: var(--bg-color);
+        backdrop-filter: blur(10px);
+        /* border-bottom: 1px solid var(--border-color); */
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 0;
+      }
+      
+      .search-container.sticky .search-input {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
     </style>
   </head>
   <body class="min-h-screen text-sm md:text-base">
@@ -453,7 +474,7 @@
                 <i data-lucide="menu" class="w-6 h-6"></i>
               </button>
             </div>
-            <div class="mb-8 md:mb-12 relative">
+            <div id="search-container" class="search-container mb-8 md:mb-12 relative">
               <div
                 class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
               >
@@ -554,6 +575,15 @@
               </label>
             </div>
 
+            <!-- 搜索框吸顶设置 -->
+            <div class="flex items-center justify-between">
+              <label class="font-semibold text-gray-200">搜索框吸顶</label>
+              <label class="toggle-switch">
+                <input type="checkbox" id="sticky-search-box-toggle">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
           </div>
         </main>
       </div>
@@ -598,6 +628,7 @@
           loadNavOrder();
           renderContent();
           initFunctionalJS();
+          applyStickySearchBoxSetting();
           renderContent();
         } catch (error) {
           console.error("页面初始化时发生严重错误:", error);
@@ -1083,6 +1114,32 @@
         return true; // 默认显示
       }
 
+      function getStickySearchBoxSetting() {
+        // 优先从localStorage读取，如果没有则从配置文件读取默认值
+        let stored = localStorage.getItem("nav-tools-sticky-search-box");
+        if (stored !== null) {
+          return stored === "true";
+        }
+        // 从配置文件读取默认值
+        if (typeof siteConfig !== "undefined" && siteConfig.styleConfig && siteConfig.styleConfig.stickySearchBox !== undefined) {
+          return siteConfig.styleConfig.stickySearchBox;
+        }
+        return true; // 默认启用
+      }
+
+      function applyStickySearchBoxSetting() {
+        const searchContainer = document.getElementById("search-container");
+        const stickyEnabled = getStickySearchBoxSetting();
+        
+        if (searchContainer) {
+          if (stickyEnabled) {
+            searchContainer.classList.add("sticky");
+          } else {
+            searchContainer.classList.remove("sticky");
+          }
+        }
+      }
+
       function getGridClassString() {
         let c = getColumnCount(),
           o = {
@@ -1102,6 +1159,7 @@
           t = document.getElementById("columns-setting-group"),
           l = document.getElementById("show-logo-toggle"),
           s = document.getElementById("show-subcategory-icons-toggle"),
+          r = document.getElementById("sticky-search-box-toggle"),
           d = () => {
             let c = getColumnCount(),
               e = document.querySelector(`input[name="columns"][value="${c}"]`);
@@ -1114,6 +1172,10 @@
             // 设置二级导航图标显示开关状态
             let n = getShowSubCategoryIconsSetting();
             s && (s.checked = n);
+            
+            // 设置搜索框吸顶开关状态
+            let a = getStickySearchBoxSetting();
+            r && (r.checked = a);
             
             o.classList.remove("modal-hidden"),
               lucide.createIcons();
@@ -1142,6 +1204,13 @@
           let showSubCategoryIcons = c.target.checked;
           localStorage.setItem("nav-tools-show-subcategory-icons", showSubCategoryIcons);
           renderContent();
+        });
+        
+        // 搜索框吸顶开关事件监听
+        r && r.addEventListener("change", (c) => {
+          let stickySearchBox = c.target.checked;
+          localStorage.setItem("nav-tools-sticky-search-box", stickySearchBox);
+          applyStickySearchBoxSetting();
         });
       }
       
