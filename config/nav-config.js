@@ -21,7 +21,7 @@ const categoryIcons = {
   '设计资源': 'palette',
   '学习平台': 'graduation-cap',
   '社交媒体': 'users',
-  'AI 集合': 'bot',
+  'AI集合': 'bot',
   '代理机场': 'globe'
 };
 
@@ -35,8 +35,8 @@ const subCategoryIcons = {
   
   // AI 集合子分类
   '对话模型': 'message-circle',
-  'AI 平台': 'cpu',
-  '图像生成': 'image',
+  'AI平台': 'cpu',
+  'API平台': 'cpu',
   
   // 设计资源子分类
   '设计工具': 'palette',
@@ -232,7 +232,7 @@ let navData = {
       }
     ]
   },
-  'AI 集合': {
+  'AI集合': {
     '对话模型': [
       {
         title: 'ChatGPT',
@@ -256,7 +256,7 @@ let navData = {
         keywords: 'grok xAi'
       }
     ],
-    'AI 平台': [
+    'AI平台': [
       {
         title: 'Google AI Studio',
         desc: 'Google推出的AI开发者平台',
@@ -277,6 +277,22 @@ let navData = {
         url: 'https://console.volcengine.com',
         logoUrl: 'https://res.volccdn.com/obj/volc-console-fe/images/favicon.52bcaa41.png',
         keywords: '火山方舟 火山引擎 AI 模型 工具'
+      }
+    ],
+    'API平台': [
+      {
+        title: 'OpenAI API',
+        desc: 'OpenAI 提供的 API 接口，用于访问 GPT 模型等 AI 服务。',
+        url: 'https://openai.com/api/',
+        logoUrl: 'https://openai.com/favicon.ico',
+        keywords: 'openai api 人工智能 模型 服务'
+      },
+      {
+        title: 'GPT-GOD',
+        desc: '一个综合API平台，提供了丰富的AI模型和工具，帮助开发者快速构建AI应用。每日签到奖励积分',
+        url: 'https://gptgod.online/#/register?invite_code=5s7iq10ro9h3ex9augmeq3tnw',
+        logoUrl: 'https://gptgod.online/favicon.ico',
+        keywords: 'gpt-god api 人工智能 模型 服务'
       }
     ]
   },
