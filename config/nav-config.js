@@ -8,9 +8,11 @@ const siteConfig = {
     description: '精选网站导航'
   },
   copyright: 'Powered by @AhYi8 ✨ © 2025',
-  // 显示设置
-  display: {
-    showLogo: true  // 是否显示网站LOGO，默认显示
+  // 样式和显示设置
+  styleConfig: {
+    showLogo: true,           // 是否显示网站LOGO，默认显示
+    showSubCategoryIcons: true, // 是否显示二级导航图标，默认显示
+    nav_card_columns: 4       // 导航卡片列数，默认4列
   }
 };
 
@@ -25,41 +27,42 @@ const categoryIcons = {
   '代理机场': 'globe'
 };
 
-// 二级导航配置
+// 二级导航配置（嵌套结构，与navData结构保持一致）
 const subCategoryIcons = {
-  // 开发工具子分类
-  '代码托管': 'git-branch',
-  '在线编辑器': 'code-2',
-  '文档资源': 'book-open',
-  '开发辅助': 'wrench',
-  
-  // AI 集合子分类
-  '对话模型': 'message-circle',
-  'AI平台': 'cpu',
-  'API平台': 'cpu',
-  
-  // 设计资源子分类
-  '设计工具': 'palette',
-  '素材库': 'image',
-  '图标字体': 'type',
-  
-  // 学习平台子分类
-  '编程学习': 'code',
-  '在线课程': 'graduation-cap',
-  '技术文档': 'file-text',
-  
-  // 社交媒体子分类
-  '社交网络': 'users',
-  '即时通讯': 'message-square',
-  '专业社交': 'briefcase',
-  
-  // 搜索引擎子分类
-  '通用搜索': 'search',
-  '专业搜索': 'database',
-  
-  // 代理机场子分类
-  '机场推荐': 'plane',
-  '客户端': 'download'
+  '搜索引擎': {
+    '通用搜索': 'search',
+    '专业搜索': 'database'
+  },
+  '开发工具': {
+    '代码托管': 'git-branch',
+    '在线编辑器': 'code-2',
+    '文档资源': 'book-open',
+    '开发辅助': 'wrench'
+  },
+  '设计资源': {
+    '设计工具': 'palette',
+    '素材库': 'image',
+    '图标字体': 'type'
+  },
+  '学习平台': {
+    '编程学习': 'code',
+    '在线课程': 'graduation-cap',
+    '技术文档': 'file-text'
+  },
+  '社交媒体': {
+    '社交网络': 'users',
+    '即时通讯': 'message-square',
+    '专业社交': 'briefcase'
+  },
+  'AI集合': {
+    '对话模型': 'message-circle',
+    'AI平台': 'cpu',
+    'API平台': 'cpu'
+  },
+  '代理机场': {
+    '机场推荐': 'plane',
+    '客户端': 'download'
+  }
 };
 
 let navData = {
@@ -323,8 +326,4 @@ let navData = {
       }
     ]
   }
-};
-
-const styleConfig = {
-  nav_card_columns: 4
 };

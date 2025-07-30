@@ -544,6 +544,15 @@
               </label>
             </div>
 
+            <!-- 显示二级导航图标设置 -->
+            <div class="flex items-center justify-between">
+              <label class="font-semibold text-gray-200">显示二级导航图标</label>
+              <label class="toggle-switch">
+                <input type="checkbox" id="show-subcategory-icons-toggle">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
           </div>
         </main>
       </div>
@@ -884,9 +893,15 @@
               subLink.href = `#category-${d}-${subCategory}`;
               subLink.className = "sidebar-link secondary-link flex items-center py-1.5 px-3 rounded-md text-sm font-medium border-l-2 border-l-transparent";
               
-              const subIconName = (typeof subCategoryIcons !== "undefined" && subCategoryIcons[d] && subCategoryIcons[d][subCategory]) 
-                ? subCategoryIcons[d][subCategory] : "circle";
-              subLink.innerHTML = `<i data-lucide="${subIconName}" class="mr-2 flex-shrink-0 w-3 h-3"></i> ${subCategory}`;
+              // 根据设置决定是否显示二级导航图标
+              const showSubCategoryIcons = getShowSubCategoryIconsSetting();
+              if (showSubCategoryIcons) {
+                const subIconName = (typeof subCategoryIcons !== "undefined" && subCategoryIcons[d] && subCategoryIcons[d][subCategory]) 
+                  ? subCategoryIcons[d][subCategory] : "circle";
+                subLink.innerHTML = `<i data-lucide="${subIconName}" class="mr-2 flex-shrink-0 w-3 h-3"></i> ${subCategory}`;
+              } else {
+                subLink.innerHTML = `<span class="mr-2 flex-shrink-0 w-3 h-3"></span> ${subCategory}`;
+              }
               
               secondaryNav.appendChild(subLink);
             }
@@ -981,6 +996,11 @@
         lucide.createIcons();
         } finally {
           isRenderingContent = false;
+          // DOM重新渲染后，重新初始化ScrollSpy和拖拽排序功能
+          setTimeout(() => {
+            initScrollSpy();
+            initDragSort();
+          }, 100);
         }
       }
 
@@ -1028,9 +1048,10 @@
 
       function getColumnCount() {
         let c = 4;
-        "undefined" != typeof styleConfig &&
-          styleConfig.nav_card_columns &&
-          (c = styleConfig.nav_card_columns);
+        "undefined" != typeof siteConfig &&
+          siteConfig.styleConfig &&
+          siteConfig.styleConfig.nav_card_columns &&
+          (c = siteConfig.styleConfig.nav_card_columns);
         let o = localStorage.getItem("nav-tools-columns");
         return o && (c = parseInt(o, 10)), c;
       }
@@ -1042,8 +1063,21 @@
           return stored === "true";
         }
         // 从配置文件读取默认值
-        if (typeof siteConfig !== "undefined" && siteConfig.display && siteConfig.display.showLogo !== undefined) {
-          return siteConfig.display.showLogo;
+        if (typeof siteConfig !== "undefined" && siteConfig.styleConfig && siteConfig.styleConfig.showLogo !== undefined) {
+          return siteConfig.styleConfig.showLogo;
+        }
+        return true; // 默认显示
+      }
+
+      function getShowSubCategoryIconsSetting() {
+        // 优先从localStorage读取，如果没有则从配置文件读取默认值
+        let stored = localStorage.getItem("nav-tools-show-subcategory-icons");
+        if (stored !== null) {
+          return stored === "true";
+        }
+        // 从配置文件读取默认值
+        if (typeof siteConfig !== "undefined" && siteConfig.styleConfig && siteConfig.styleConfig.showSubCategoryIcons !== undefined) {
+          return siteConfig.styleConfig.showSubCategoryIcons;
         }
         return true; // 默认显示
       }
@@ -1066,6 +1100,7 @@
           e = document.getElementById("settings-close-btn"),
           t = document.getElementById("columns-setting-group"),
           l = document.getElementById("show-logo-toggle"),
+          s = document.getElementById("show-subcategory-icons-toggle"),
           d = () => {
             let c = getColumnCount(),
               e = document.querySelector(`input[name="columns"][value="${c}"]`);
@@ -1074,6 +1109,10 @@
             // 设置LOGO显示开关状态
             let t = getShowLogoSetting();
             l && (l.checked = t);
+            
+            // 设置二级导航图标显示开关状态
+            let n = getShowSubCategoryIconsSetting();
+            s && (s.checked = n);
             
             o.classList.remove("modal-hidden"),
               lucide.createIcons();
@@ -1094,6 +1133,13 @@
         l && l.addEventListener("change", (c) => {
           let showLogo = c.target.checked;
           localStorage.setItem("nav-tools-show-logo", showLogo);
+          renderContent();
+        });
+        
+        // 二级导航图标显示开关事件监听
+        s && s.addEventListener("change", (c) => {
+          let showSubCategoryIcons = c.target.checked;
+          localStorage.setItem("nav-tools-show-subcategory-icons", showSubCategoryIcons);
           renderContent();
         });
       }
@@ -1255,14 +1301,9 @@
       }
 
       let scrollSpyObserver = null;
-      let scrollSpyInitialized = false;
       
       function initScrollSpy() {
-        // 防止重复初始化
-        if (scrollSpyInitialized) {
-          console.log("ScrollSpy already initialized, skipping");
-          return;
-        }
+        console.log("ScrollSpy: Starting initialization");
         
         // 关闭其他一级导航的辅助函数
         function collapseOtherPrimaryNavs(activeCategoryName) {
@@ -1289,6 +1330,7 @@
         setTimeout(() => {
           // 清理之前的观察器
           if (scrollSpyObserver) {
+            console.log("ScrollSpy: Cleaning up previous observer");
             scrollSpyObserver.disconnect();
             scrollSpyObserver = null;
           }
@@ -1369,7 +1411,6 @@
             scrollSpyObserver.observe(section);
           });
           
-          scrollSpyInitialized = true;
           console.log("ScrollSpy: Initialization completed");
         }, 500); // 延迟500ms初始化
       }
