@@ -139,32 +139,55 @@
       }
 
       /* --- SortableJS 拖拽样式 --- */
-      /* 占位符的样式 */
+      /* 占位符的样式 - 显示拖拽目标位置 */
       .drag-ghost-class {
-        opacity: 0.4;
-        background-color: rgba(88, 166, 255, 0.1);
-        border: 2px dashed rgba(88, 166, 255, 0.4);
+        opacity: 0.5;
+        background-color: rgba(88, 166, 255, 0.15);
+        border: 2px dashed rgba(88, 166, 255, 0.6);
+        transform: scale(0.98);
+        transition: all 0.2s ease;
       }
       
       /* 选中准备拖拽的样式 */
       .card-chosen {
         cursor: grabbing !important;
+        transform: scale(1.01);
+        transition: transform 0.15s ease;
       }
       
       /* 被拖拽项的样式 */
       .card-is-dragging {
-        opacity: 0.9 !important;
-        transform: scale(1.02) rotate(1deg) !important;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+        opacity: 0.85 !important;
+        transform: scale(1.05) rotate(2deg) !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25) !important;
         z-index: 9999 !important;
+        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
       }
       
-      .card-is-dragging .nav-card-tooltip {
+      /* Fallback拖拽样式 - 用于不支持HTML5拖拽的情况 */
+      .drag-fallback {
+        opacity: 0.8 !important;
+        transform: scale(1.03) rotate(1deg) !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+        z-index: 9999 !important;
         pointer-events: none !important;
       }
       
-      .card-is-dragging .favorite-btn {
+      .card-is-dragging .nav-card-tooltip,
+      .drag-fallback .nav-card-tooltip {
+        opacity: 0 !important;
+        visibility: hidden !important;
         pointer-events: none !important;
+      }
+      
+      .card-is-dragging .favorite-btn,
+      .drag-fallback .favorite-btn {
+        pointer-events: none !important;
+      }
+      
+      /* 拖拽状态下的容器样式 */
+      .dragging-active {
+        position: relative;
       }
       
       /* 拖拽状态下禁用所有hover效果和tooltip */
@@ -353,6 +376,7 @@
         max-width: 300px;
         white-space: normal;
         word-wrap: break-word;
+        text-align: justify;
         z-index: 1000;
         opacity: 0;
         visibility: hidden;
@@ -807,7 +831,21 @@
                 pull: false,
               },
               animation: 300,
+              easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+              ghostClass: "drag-ghost-class",
+              dragClass: "card-is-dragging",
+              chosenClass: "card-chosen",
+              fallbackClass: "drag-fallback",
+              fallbackOnBody: true,
+              swapThreshold: 0.65,
+              onStart: function (evt) {
+                evt.from.classList.add('dragging-active');
+                evt.item.classList.add('dragging-item');
+              },
               onEnd: function (evt) {
+                evt.from.classList.remove('dragging-active');
+                evt.item.classList.remove('dragging-item');
+                if (evt.to) evt.to.classList.remove('dragging-active');
                 lucide.createIcons();
               },
             });
@@ -815,7 +853,21 @@
             new Sortable(grid, {
               group: "shared-navs",
               animation: 300,
+              easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+              ghostClass: "drag-ghost-class",
+              dragClass: "card-is-dragging",
+              chosenClass: "card-chosen",
+              fallbackClass: "drag-fallback",
+              fallbackOnBody: true,
+              swapThreshold: 0.65,
+              onStart: function (evt) {
+                evt.from.classList.add('dragging-active');
+                evt.item.classList.add('dragging-item');
+              },
               onEnd: function (evt) {
+                evt.from.classList.remove('dragging-active');
+                evt.item.classList.remove('dragging-item');
+                if (evt.to) evt.to.classList.remove('dragging-active');
                 debouncedSaveOrder();
               },
             });
