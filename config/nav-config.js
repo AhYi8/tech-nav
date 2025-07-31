@@ -258,6 +258,20 @@ let navData = {
         url: 'https://x.ai',
         logoUrl: 'https://x.ai/favicon.ico',
         keywords: 'grok xAi'
+      },
+      {
+        title: 'Qwen',
+        desc: 'Qwen Chat 提供全面的功能，包括聊天机器人、图像和视频理解、图像生成、文档处理、网页搜索集成、工具使用以及工件处理。',
+        url: 'https://chat.qwen.ai',
+        logoUrl: 'https://assets.alicdn.com/g/qwenweb/qwen-webui-fe/0.0.168/static/favicon.png',
+        keywords: 'Qwen 通义千问 阿里'
+      },
+      {
+        title: '通义',
+        desc: '通义是一个通情、达义的国产AI模型，可以帮你解答问题、文档阅读、联网搜索并写作总结，最多支持1000万字的文档速读。通义_你的全能AI助手',
+        url: 'https://www.tongyi.com',
+        logoUrl: 'https://img.alicdn.com/imgextra/i4/O1CN01EfJVFQ1uZPd7W4W6i_!!6000000006051-2-tps-112-112.png',
+        keywords: '通义千问 AI PPT AI搜索 AI写作'
       }
     ],
     'AI平台': [
