@@ -2,7 +2,9 @@
 
 # Tech-Nav - 科技风格导航网站
 
-![Tech-Nav](https://img.shields.io/badge/Tech--Nav-导航网站-blue?style=for-the-badge)![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)![Version](https://img.shields.io/badge/Version-2.0.0-orange?style=for-the-badge)
+![Tech-Nav](https://img.shields.io/badge/Tech--Nav-导航网站-blue?style=for-the-badge)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)![Version](https://img.shields.io/badge/Version-2.0.0-orange?style=for-the-badge)
 
 一款极具炫酷科技风格的导航网站，为您提供便捷的网站收藏和访问服务
 
