@@ -112,15 +112,30 @@
         background-color: var(--card-bg-color);
         border: 1px solid var(--border-color);
         border-radius: 0.75rem;
-        transition: box-shadow 0.25s ease-in-out;
+        transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out, border-color 0.25s ease-in-out;
         position: relative;
-        overflow: hidden;
+        overflow: visible;
         backdrop-filter: blur(8px);
         cursor: grab;
         user-select: none;
+        will-change: transform;
       }
       .nav-card:active {
         cursor: grabbing;
+      }
+      
+      /* 拖拽时禁用hover效果但保留SortableJS动画 */
+      .dragging-active .nav-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        border-color: var(--border-color) !important;
+      }
+      
+      /* 确保拖拽项不受hover影响 */
+      .dragging-item:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        border-color: var(--border-color) !important;
       }
 
       /* --- SortableJS 拖拽样式 --- */
@@ -130,11 +145,51 @@
         background-color: rgba(88, 166, 255, 0.1);
         border: 2px dashed rgba(88, 166, 255, 0.4);
       }
+      
+      /* 选中准备拖拽的样式 */
+      .card-chosen {
+        cursor: grabbing !important;
+      }
+      
       /* 被拖拽项的样式 */
       .card-is-dragging {
         opacity: 0.9 !important;
-        transform: scale(1.05) rotate(2deg);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        transform: scale(1.02) rotate(1deg) !important;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+        z-index: 9999 !important;
+      }
+      
+      .card-is-dragging .nav-card-tooltip {
+        pointer-events: none !important;
+      }
+      
+      .card-is-dragging .favorite-btn {
+        pointer-events: none !important;
+      }
+      
+      /* 拖拽状态下禁用所有hover效果和tooltip */
+      .dragging-active .nav-card:hover {
+        border-color: var(--border-color) !important;
+        box-shadow: none !important;
+        transform: none !important;
+      }
+      
+      .dragging-active .nav-card-tooltip {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+      
+      .dragging-item {
+        user-select: none !important;
+      }
+      
+      .dragging-item .nav-card-tooltip {
+        pointer-events: none !important;
+      }
+      
+      .dragging-item .favorite-btn {
+        pointer-events: none !important;
       }
       /* --- 结束拖拽样式 --- */
 
@@ -282,8 +337,72 @@
       }
 
       /* Tooltip 样式 */
-      .nav-card-desc:hover {
-        position: relative;
+      .nav-card-tooltip {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(22, 27, 34, 0.95);
+        color: var(--text-color);
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), var(--accent-glow);
+        backdrop-filter: blur(10px);
+        font-size: 0.875rem;
+        line-height: 1.4;
+        max-width: 300px;
+        white-space: normal;
+        word-wrap: break-word;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        pointer-events: none;
+      }
+
+      /* Tooltip 显示在上方 */
+      .nav-card-tooltip.tooltip-top {
+        bottom: 100%;
+        margin-bottom: 0.5rem;
+      }
+
+      .nav-card-tooltip.tooltip-top::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: rgba(22, 27, 34, 0.95);
+      }
+
+      /* Tooltip 显示在下方 */
+      .nav-card-tooltip.tooltip-bottom {
+        top: 100%;
+        margin-top: 0.5rem;
+      }
+
+      .nav-card-tooltip.tooltip-bottom::after {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-bottom-color: rgba(22, 27, 34, 0.95);
+      }
+
+      .nav-card:hover .nav-card-tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-card:hover .nav-card-tooltip.tooltip-top {
+        transform: translateX(-50%) translateY(-5px);
+      }
+
+      .nav-card:hover .nav-card-tooltip.tooltip-bottom {
+        transform: translateX(-50%) translateY(5px);
       }
 
       /* 二级导航样式 */
@@ -684,27 +803,20 @@
             new Sortable(grid, {
               group: {
                 name: "favorites-only",
-                put: false, // 禁止拖入收藏区
-                pull: false, // 允许从收藏区拖出（但你也可以设为 false 禁止）
+                put: false,
+                pull: false,
               },
-              animation: 400,
-              ghostClass: "drag-ghost-class",
-              dragClass: "card-is-dragging",
+              animation: 300,
               onEnd: function (evt) {
-                // 收藏排序变化时不持久化顺序（如需保存可另外处理）
-                // renderFavoritesSection(); // 重新渲染收藏区
                 lucide.createIcons();
               },
             });
           } else {
-            // 其他类目允许互相拖拽
             new Sortable(grid, {
               group: "shared-navs",
-              animation: 400,
-              ghostClass: "drag-ghost-class",
-              dragClass: "card-is-dragging",
+              animation: 300,
               onEnd: function (evt) {
-                updateAndSaveOrder(); // 持久化普通类目的顺序
+                debouncedSaveOrder();
               },
             });
           }
@@ -733,6 +845,24 @@
         }
       }
 
+      // 防抖函数
+      function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      }
+      
+      // 使用防抖的保存函数
+      const debouncedSaveOrder = debounce(() => {
+        updateAndSaveOrder();
+      }, 300);
+      
       function updateAndSaveOrder() {
         const categorySections = document.querySelectorAll(
           "#navContainer .category-section:not(#category-favorites)"
@@ -1073,8 +1203,49 @@
 
         const d = document.createElement("div");
         (d.className = "text-left self-start pointer-events-none"),
-          (d.innerHTML = `<h3 class="font-bold text-lg text-gray-100">${c.title}</h3><p class="text-sm text-gray-400 line-clamp-2 nav-card-desc" title="${c.desc}">${c.desc}</p>`),
+          (d.innerHTML = `<h3 class="font-bold text-lg text-gray-100">${c.title}</h3><p class="text-sm text-gray-400 line-clamp-2 nav-card-desc">${c.desc}</p>`),
           o.appendChild(d);
+
+        // 添加 tooltip 元素
+        const tooltip = document.createElement("div");
+        tooltip.className = "nav-card-tooltip tooltip-top"; // 默认显示在上方
+        tooltip.textContent = c.desc;
+        o.appendChild(tooltip);
+
+        // 添加鼠标悬浮事件来动态调整 tooltip 位置
+        o.addEventListener("mouseenter", () => {
+          // 检查是否处于拖拽状态，如果是则不处理tooltip
+          if (document.body.classList.contains('dragging-active') || 
+              o.classList.contains('dragging-item') || 
+              o.classList.contains('card-is-dragging') ||
+              o.classList.contains('card-chosen')) {
+            return;
+          }
+          
+          // 获取卡片和容器的位置信息
+          const cardRect = o.getBoundingClientRect();
+          const container = document.getElementById("home-page-container");
+          const containerRect = container.getBoundingClientRect();
+          
+          // 计算 tooltip 的预估高度（大约 60px）
+          const tooltipHeight = 60;
+          const spaceAbove = cardRect.top - containerRect.top;
+          const spaceBelow = containerRect.bottom - cardRect.bottom;
+          
+          // 判断显示位置：如果上方空间不足且下方空间充足，则显示在下方
+          if (spaceAbove < tooltipHeight && spaceBelow > tooltipHeight) {
+            tooltip.className = "nav-card-tooltip tooltip-bottom";
+          } else {
+            tooltip.className = "nav-card-tooltip tooltip-top";
+          }
+        });
+        
+        // 添加鼠标离开事件，确保拖拽时tooltip不会意外显示
+        o.addEventListener("mouseleave", () => {
+          // 重置tooltip状态
+          tooltip.className = "nav-card-tooltip tooltip-top";
+        });
+
         return o;
       }
 
