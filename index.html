@@ -173,12 +173,7 @@
         pointer-events: none !important;
       }
       
-      .card-is-dragging .nav-card-tooltip,
-      .drag-fallback .nav-card-tooltip {
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-      }
+
       
       .card-is-dragging .favorite-btn,
       .drag-fallback .favorite-btn {
@@ -190,25 +185,15 @@
         position: relative;
       }
       
-      /* 拖拽状态下禁用所有hover效果和tooltip */
+      /* 拖拽状态下禁用所有hover效果 */
       .dragging-active .nav-card:hover {
         border-color: var(--border-color) !important;
         box-shadow: none !important;
         transform: none !important;
       }
       
-      .dragging-active .nav-card-tooltip {
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-      }
-      
       .dragging-item {
         user-select: none !important;
-      }
-      
-      .dragging-item .nav-card-tooltip {
-        pointer-events: none !important;
       }
       
       .dragging-item .favorite-btn {
@@ -359,76 +344,6 @@
         max-height: calc(1.4em * 2);
       }
 
-      /* Tooltip 样式 */
-      .nav-card-tooltip {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: rgba(22, 27, 34, 0.95);
-        color: var(--text-color);
-        padding: 0.75rem 1rem;
-        border-radius: 0.5rem;
-        border: 1px solid var(--border-color);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), var(--accent-glow);
-        backdrop-filter: blur(10px);
-        font-size: 0.875rem;
-        line-height: 1.4;
-        max-width: 300px;
-        white-space: normal;
-        word-wrap: break-word;
-        text-align: justify;
-        z-index: 1000;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        pointer-events: none;
-      }
-
-      /* Tooltip 显示在上方 */
-      .nav-card-tooltip.tooltip-top {
-        bottom: 100%;
-        margin-bottom: 0.5rem;
-      }
-
-      .nav-card-tooltip.tooltip-top::after {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        border: 6px solid transparent;
-        border-top-color: rgba(22, 27, 34, 0.95);
-      }
-
-      /* Tooltip 显示在下方 */
-      .nav-card-tooltip.tooltip-bottom {
-        top: 100%;
-        margin-top: 0.5rem;
-      }
-
-      .nav-card-tooltip.tooltip-bottom::after {
-        content: '';
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        border: 6px solid transparent;
-        border-bottom-color: rgba(22, 27, 34, 0.95);
-      }
-
-      .nav-card:hover .nav-card-tooltip {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .nav-card:hover .nav-card-tooltip.tooltip-top {
-        transform: translateX(-50%) translateY(-5px);
-      }
-
-      .nav-card:hover .nav-card-tooltip.tooltip-bottom {
-        transform: translateX(-50%) translateY(5px);
-      }
-
       /* 二级导航样式 */
       .primary-nav-item {
         margin-bottom: 0.5rem;
@@ -560,6 +475,128 @@
       .search-container.sticky .search-input {
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       }
+      
+      /* 全局tooltip容器 - 避免层叠上下文问题 */
+      #global-tooltip-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10000;
+      }
+      
+      .global-tooltip {
+        position: absolute;
+        background: var(--card-bg-color);
+        color: var(--text-color);
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: "Exo 2", sans-serif;
+        max-width: 280px;
+        min-width: 100px;
+        text-align: justify;
+        text-align-last: center;
+        border: 1px solid var(--border-color);
+        box-shadow: 
+          0 20px 40px rgba(0, 0, 0, 0.3),
+          0 8px 24px rgba(0, 0, 0, 0.2),
+          0 4px 12px rgba(88, 166, 255, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(16px) saturate(1.2);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.85) translateY(8px);
+        transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        pointer-events: none;
+        z-index: 1;
+        word-wrap: break-word;
+        line-height: 1.5;
+        letter-spacing: 0.025em;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      /* 添加微妙的光泽效果 */
+      .global-tooltip::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, 
+          transparent, 
+          rgba(88, 166, 255, 0.1), 
+          transparent);
+        transition: left 0.6s ease;
+        pointer-events: none;
+      }
+      
+      .global-tooltip.show {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1) translateY(0);
+      }
+      
+      /* 显示时触发光泽动画 */
+      .global-tooltip.show::before {
+        left: 100%;
+      }
+      
+      .global-tooltip::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+      }
+      
+      .global-tooltip.tooltip-top::after {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top-color: var(--card-bg-color);
+        border-top-width: 10px;
+        border-left-width: 8px;
+        border-right-width: 8px;
+      }
+      
+      .global-tooltip.tooltip-bottom::after {
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom-color: var(--card-bg-color);
+        border-bottom-width: 10px;
+        border-left-width: 8px;
+        border-right-width: 8px;
+      }
+      
+      .global-tooltip.tooltip-left::after {
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        border-left-color: var(--card-bg-color);
+        border-left-width: 10px;
+        border-top-width: 8px;
+        border-bottom-width: 8px;
+      }
+      
+      .global-tooltip.tooltip-right::after {
+        top: 50%;
+        right: 100%;
+        transform: translateY(-50%);
+        border-right-color: var(--card-bg-color);
+        border-right-width: 10px;
+        border-top-width: 8px;
+        border-bottom-width: 8px;
+      }
     </style>
   </head>
   <body class="min-h-screen text-sm md:text-base">
@@ -643,6 +680,9 @@
     
     <!-- 消息通知容器 -->
     <div id="notification-container"></div>
+    
+    <!-- 全局tooltip容器 - 避免层叠上下文问题 -->
+    <div id="global-tooltip-container"></div>
     <div
       id="settings-modal"
       class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm modal-hidden"
@@ -1218,6 +1258,19 @@
         }
       }
 
+      // 防抖工具函数
+      function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      }
+
       function createNavCard(c) {
         const o = document.createElement("div");
         (o.className = "nav-card group flex space-x-4 py-6 px-2"),
@@ -1258,45 +1311,190 @@
           (d.innerHTML = `<h3 class="font-bold text-lg text-gray-100">${c.title}</h3><p class="text-sm text-gray-400 line-clamp-2 nav-card-desc">${c.desc}</p>`),
           o.appendChild(d);
 
-        // 添加 tooltip 元素
-        const tooltip = document.createElement("div");
-        tooltip.className = "nav-card-tooltip tooltip-top"; // 默认显示在上方
-        tooltip.textContent = c.desc;
-        o.appendChild(tooltip);
+        // 全局tooltip管理器
+        const globalTooltipContainer = document.getElementById('global-tooltip-container');
+        let globalTooltip = null;
+        let positionTimeout = null;
 
-        // 添加鼠标悬浮事件来动态调整 tooltip 位置
-        o.addEventListener("mouseenter", () => {
-          // 检查是否处于拖拽状态，如果是则不处理tooltip
-          if (document.body.classList.contains('dragging-active') || 
-              o.classList.contains('dragging-item') || 
-              o.classList.contains('card-is-dragging') ||
-              o.classList.contains('card-chosen')) {
+        // 获取吸顶搜索框的实际占用高度
+        function getStickySearchBoxHeight() {
+          const searchContainer = document.getElementById('search-container');
+          if (searchContainer && searchContainer.classList.contains('sticky')) {
+            const rect = searchContainer.getBoundingClientRect();
+            return rect.height;
+          }
+          return 0;
+        }
+
+        // 智能tooltip位置计算 - 考虑吸顶搜索框，确保垂直居中
+        function calculateGlobalTooltipPosition(cardElement, tooltipElement) {
+          const cardRect = cardElement.getBoundingClientRect();
+          const tooltipRect = tooltipElement.getBoundingClientRect();
+          const viewportWidth = window.innerWidth;
+          const viewportHeight = window.innerHeight;
+          const stickyHeight = getStickySearchBoxHeight();
+          
+          // 可用空间计算（考虑吸顶搜索框）
+          const availableTop = cardRect.top - stickyHeight;
+          const availableBottom = viewportHeight - cardRect.bottom;
+          const availableLeft = cardRect.left;
+          const availableRight = viewportWidth - cardRect.right;
+          
+          const tooltipWidth = Math.max(tooltipRect.width, 80);
+          const tooltipHeight = Math.max(tooltipRect.height, 40);
+          const margin = 8;
+          
+          let position = 'top';
+          let x = 0;
+          let y = 0;
+          
+          // 优先级：上 > 下 > 左 > 右
+          if (availableTop >= tooltipHeight + margin) {
+            position = 'top';
+            x = cardRect.left + cardRect.width / 2 - tooltipWidth / 2;
+            y = cardRect.top - tooltipHeight - margin;
+          } else if (availableBottom >= tooltipHeight + margin) {
+            position = 'bottom';
+            x = cardRect.left + cardRect.width / 2 - tooltipWidth / 2;
+            y = cardRect.bottom + margin;
+          } else if (availableLeft >= tooltipWidth + margin) {
+            position = 'left';
+            x = cardRect.left - tooltipWidth - margin;
+            // 确保与卡片垂直居中
+            y = cardRect.top + cardRect.height / 2 - tooltipHeight / 2;
+          } else if (availableRight >= tooltipWidth + margin) {
+            position = 'right';
+            x = cardRect.right + margin;
+            // 确保与卡片垂直居中
+            y = cardRect.top + cardRect.height / 2 - tooltipHeight / 2;
+          } else {
+            // 空间不足时选择最大空间方向
+            const maxSpace = Math.max(availableTop, availableBottom, availableLeft, availableRight);
+            if (maxSpace === availableTop) {
+              position = 'top';
+              x = cardRect.left + cardRect.width / 2 - tooltipWidth / 2;
+              y = Math.max(stickyHeight + margin, cardRect.top - tooltipHeight - margin);
+            } else if (maxSpace === availableBottom) {
+              position = 'bottom';
+              x = cardRect.left + cardRect.width / 2 - tooltipWidth / 2;
+              y = Math.min(viewportHeight - tooltipHeight - margin, cardRect.bottom + margin);
+            } else if (maxSpace === availableLeft) {
+              position = 'left';
+              x = Math.max(margin, cardRect.left - tooltipWidth - margin);
+              // 确保与卡片垂直居中，但考虑边界约束
+              y = cardRect.top + cardRect.height / 2 - tooltipHeight / 2;
+            } else {
+              position = 'right';
+              x = Math.min(viewportWidth - tooltipWidth - margin, cardRect.right + margin);
+              // 确保与卡片垂直居中，但考虑边界约束
+              y = cardRect.top + cardRect.height / 2 - tooltipHeight / 2;
+            }
+          }
+          
+          // 边界约束
+          x = Math.max(margin, Math.min(viewportWidth - tooltipWidth - margin, x));
+          
+          // 对于左右位置的tooltip，确保垂直居中但不超出视口边界
+          if (position === 'left' || position === 'right') {
+            // 优先保持垂直居中，但确保不超出边界
+            const centeredY = cardRect.top + cardRect.height / 2 - tooltipHeight / 2;
+            y = Math.max(stickyHeight + margin, Math.min(viewportHeight - tooltipHeight - margin, centeredY));
+          } else {
+            // 上下位置的tooltip正常约束
+            y = Math.max(stickyHeight + margin, Math.min(viewportHeight - tooltipHeight - margin, y));
+          }
+          
+          return { position, x, y };
+        }
+
+        // 显示全局tooltip
+        function showGlobalTooltip() {
+          // 检查是否在拖拽状态
+          if (document.querySelector('.dragging-active, .dragging-item, .card-is-dragging, .card-chosen')) {
             return;
           }
-          
-          // 获取卡片和容器的位置信息
-          const cardRect = o.getBoundingClientRect();
-          const container = document.getElementById("home-page-container");
-          const containerRect = container.getBoundingClientRect();
-          
-          // 计算 tooltip 的预估高度（大约 60px）
-          const tooltipHeight = 60;
-          const spaceAbove = cardRect.top - containerRect.top;
-          const spaceBelow = containerRect.bottom - cardRect.bottom;
-          
-          // 判断显示位置：如果上方空间不足且下方空间充足，则显示在下方
-          if (spaceAbove < tooltipHeight && spaceBelow > tooltipHeight) {
-            tooltip.className = "nav-card-tooltip tooltip-bottom";
-          } else {
-            tooltip.className = "nav-card-tooltip tooltip-top";
+
+          // 创建全局tooltip
+          if (globalTooltip) {
+            globalTooltip.remove();
           }
+          
+          globalTooltip = document.createElement('div');
+          globalTooltip.className = 'global-tooltip';
+          globalTooltip.textContent = c.desc;
+          globalTooltip.style.visibility = 'hidden';
+          globalTooltipContainer.appendChild(globalTooltip);
+
+          // 初始位置计算（可能不准），并为精确校准做准备
+          requestAnimationFrame(() => {
+            // 先进行一次初步定位
+            const initialPos = calculateGlobalTooltipPosition(o, globalTooltip);
+            globalTooltip.className = `global-tooltip tooltip-${initialPos.position}`;
+            globalTooltip.style.left = `${initialPos.x}px`;
+            globalTooltip.style.top = `${initialPos.y}px`;
+
+            // 关键：监听动画结束事件，然后进行最终的位置校准
+            globalTooltip.addEventListener('transitionend', function onTransitionEnd() {
+              // 重新计算最精确的位置
+              const finalPos = calculateGlobalTooltipPosition(o, globalTooltip);
+              globalTooltip.className = `global-tooltip tooltip-${finalPos.position} show`; // 保持show类
+              globalTooltip.style.left = `${finalPos.x}px`;
+              globalTooltip.style.top = `${finalPos.y}px`;
+              globalTooltip.style.visibility = 'visible';
+            }, { once: true }); // { once: true } 确保监听器执行一次后自动移除
+            // 通过添加 'show' 类来触发CSS动画
+            requestAnimationFrame(() => {
+              globalTooltip.classList.add('show');
+            });
+          });
+        }
+
+        // 隐藏全局tooltip
+        function hideGlobalTooltip() {
+          if (globalTooltip) {
+            globalTooltip.classList.remove('show');
+            setTimeout(() => {
+              if (globalTooltip) {
+                globalTooltip.remove();
+                globalTooltip = null;
+              }
+            }, 200);
+          }
+        }
+
+        // 防抖的位置更新函数
+        const debouncedPositionUpdate = debounce(() => {
+          if (globalTooltip && globalTooltip.classList.contains('show')) {
+            const { position, x, y } = calculateGlobalTooltipPosition(o, globalTooltip);
+            globalTooltip.className = `global-tooltip tooltip-${position} show`;
+            globalTooltip.style.left = `${x}px`;
+            globalTooltip.style.top = `${y}px`;
+          }
+        }, 16);
+
+        // 添加鼠标悬停事件
+        o.addEventListener("mouseenter", () => {
+          clearTimeout(positionTimeout);
+          positionTimeout = setTimeout(showGlobalTooltip, 100);
         });
         
-        // 添加鼠标离开事件，确保拖拽时tooltip不会意外显示
+        // 添加鼠标离开事件
         o.addEventListener("mouseleave", () => {
-          // 重置tooltip状态
-          tooltip.className = "nav-card-tooltip tooltip-top";
+          clearTimeout(positionTimeout);
+          hideGlobalTooltip();
         });
+
+        // 监听滚动和窗口大小变化
+        const updateEvents = ['scroll', 'resize'];
+        updateEvents.forEach(event => {
+          window.addEventListener(event, debouncedPositionUpdate, { passive: true });
+        });
+
+        // 监听容器滚动
+        const homeContainer = document.getElementById('home-page-container');
+        if (homeContainer) {
+          homeContainer.addEventListener('scroll', debouncedPositionUpdate, { passive: true });
+        }
 
         return o;
       }
