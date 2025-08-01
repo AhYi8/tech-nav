@@ -22,7 +22,8 @@ const categoryIcons = {
   '搜索引擎': 'search',
   '开发工具': 'code',
   'AI集合': 'bot',
-  '代理机场': 'globe'
+  '代理机场': 'globe',
+  '影视资源': 'video'
 };
 
 // 二级导航配置（嵌套结构，与navData结构保持一致）
@@ -41,6 +42,11 @@ const subCategoryIcons = {
   '代理机场': {
     '机场推荐': 'plane',
     '客户端': 'download'
+  },
+  '影视资源': {
+    '影视推荐': 'list-video',
+    '在线影视': 'play',
+    '影视APP': 'tv-minimal-play'
   }
 };
 
@@ -190,6 +196,35 @@ let navData = {
         url: 'https://github.com/clash-verge-rev/clash-verge-rev.git',
         logoUrl: '../assert/ico/clash-verge-rev.png',
         keywords: 'clash verge 代理 节点 魔法'
+      }
+    ]
+  },
+  '影视资源': {
+    '影视推荐': [
+      {
+        title: '小范AI影单',
+        desc: '小范AI影单，从此告别片荒',
+        url: 'https://ai.yinfans.me',
+        logoUrl: 'https://ai.yinfans.me/wp-content/uploads/2025/05/cropped-image-32x32.jpg',
+        keywords: '小范AI 影单 影视推荐 电影'
+      }
+    ],
+    '在线影视': [
+      {
+        title: 'LIBVIO',
+        desc: 'LIBVIO提供免费观看最新电影热播电视剧，综艺，动漫，高清无广告蓝光1080P画质在线播放，流畅秒播不卡顿！',
+        url: 'https://www.libvio.com',
+        logoUrl: 'https://www.libvio.link/statics/img/favicon.ico',
+        keywords: 'LIBVIO,影视,电影,电视剧'
+      }
+    ],
+    '影视APP': [
+      {
+        title: '荐片影视',
+        desc: 'Netflix、美剧、韩剧、动漫，全网资源永久免费，必备看片神器，专人维护，24小时影片动态，获取一手资源。',
+        url: 'https://www.jianpian.com',
+        logoUrl: 'https://www.jianpian14.com/assets/logo-CRQmaTEU.png',
+        keywords: '荐片影视,Netflix,美剧,韩剧,动漫'
       }
     ]
   }
