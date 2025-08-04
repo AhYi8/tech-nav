@@ -92,6 +92,13 @@ let navData = {
         url: 'https://awesome-selfhosted.net',
         logoUrl: 'https://awesome-selfhosted.net/_static/logo.svg',
         keywords: 'selfhosted 自托管 自部署 开源仓库'
+      },
+      {
+        title: 'RuoYi-Cloud',
+        desc: '🎉 基于Spring Boot、Spring Cloud & Alibaba的分布式微服务架构权限管理系统，同时提供了 Vue3 的版本',
+        url: 'https://ruoyi.vip',
+        logoUrl: 'https://ruoyi.vip/images/ruoyi.png',
+        keywords: 'RuoYi-Cloud SpringBoot SpringCloud 后台管理系统'
       }
     ],
     '开发辅助': [
