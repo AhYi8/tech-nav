@@ -32,6 +32,7 @@ const subCategoryIcons = {
     '通用搜索': 'search'
   },
   '开发工具': {
+    '开源仓库': 'github',
     '开发辅助': 'wrench'
   },
   'AI集合': {
@@ -84,6 +85,15 @@ let navData = {
     ]
   },
   '开发工具': {
+    '开源仓库': [
+      {
+        title: 'awesome-selfhosted',
+        desc: '一系列可在您自己的服务器上托管的自由软件网络服务和网络应用程序。',
+        url: 'https://awesome-selfhosted.net',
+        logoUrl: 'https://awesome-selfhosted.net/_static/logo.svg',
+        keywords: 'selfhosted 自托管 自部署 开源仓库'
+      }
+    ],
     '开发辅助': [
       {
         title: 'Tech-Tools 工具箱',

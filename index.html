@@ -1273,7 +1273,7 @@
 
       function createNavCard(c) {
         const o = document.createElement("div");
-        (o.className = "nav-card group flex space-x-4 py-6 px-2"),
+        (o.className = "nav-card group flex space-x-4 py-6 pr-6"),
           (o.dataset.name = c.title.toLowerCase()),
           (o.dataset.navId = c.title),
           (o.dataset.keywords = (c.keywords + " " + c.title).toLowerCase()),
@@ -1294,7 +1294,7 @@
         if (showLogo) {
           const t = document.createElement("div");
           t.className =
-            "self-center flex-shrink-0 pl-2 pointer-events-none nav-card-logo";
+            "self-center flex-shrink-0 pointer-events-none nav-card-logo";
 
           if (c.logoUrl) {
             t.innerHTML = `<img src="${c.logoUrl}" alt="${c.title} logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" /><i data-lucide="globe" class="w-10 h-10" style="display:none; color: var(--accent-color);"></i>`;
@@ -1308,7 +1308,7 @@
 
         const d = document.createElement("div");
         (d.className = "text-left self-start pointer-events-none"),
-          (d.innerHTML = `<h3 class="font-bold text-lg text-gray-100">${c.title}</h3><p class="text-sm text-gray-400 line-clamp-2 nav-card-desc">${c.desc}</p>`),
+          (d.innerHTML = `<h3 class="font-bold text-lg text-gray-100 line-clamp-1">${c.title}</h3><p class="text-sm text-gray-400 line-clamp-2 nav-card-desc">${c.desc}</p>`),
           o.appendChild(d);
 
         // 全局tooltip管理器
@@ -1421,7 +1421,7 @@
           
           globalTooltip = document.createElement('div');
           globalTooltip.className = 'global-tooltip';
-          globalTooltip.textContent = c.desc;
+          globalTooltip.innerHTML = `<h3 class="font-bold text-lg text-gray-100">${c.title}</h3><p class="text-sm text-gray-400">${c.desc}</p>`;
           globalTooltip.style.visibility = 'hidden';
           globalTooltipContainer.appendChild(globalTooltip);
 
