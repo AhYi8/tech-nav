@@ -32,6 +32,7 @@ const subCategoryIcons = {
     '通用搜索': 'search'
   },
   '开发工具': {
+    '开发工具': 'hammer',
     '开源仓库': 'github',
     '开发辅助': 'wrench'
   },
@@ -85,6 +86,15 @@ let navData = {
     ]
   },
   '开发工具': {
+    '开发工具': [
+      {
+        title: 'Reqable',
+        desc: '借助一款功能强大的工具，该工具集成了HTTP(s)调试代理和REST客户端，支持Windows、Mac、Linux、Android和iOS系统，可助您提升API开发效率。',
+        url: 'https://reqable.com',
+        logoUrl: 'https://reqable.com/en-US/img/favicon.ico',
+        keywords: 'api 调试 测试'
+      }
+    ],
     '开源仓库': [
       {
         title: 'awesome-selfhosted',
