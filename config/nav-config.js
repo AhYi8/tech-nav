@@ -187,7 +187,7 @@ let navData = {
         title: 'ChatGPT',
         desc: '基于OpenAI GPT模型的聊天机器人',
         url: 'https://chat.openai.com',
-        logoUrl: 'https://chat.openai.com/favicon.ico',
+        logoUrl: 'https://cdn.oaistatic.com/assets/favicon-l4nq08hd.svg',
         keywords: 'openai 人工智能 模型 服务'
       },
       {
