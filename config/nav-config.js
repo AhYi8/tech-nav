@@ -247,7 +247,7 @@ let navData = {
         title: 'OpenAI API',
         desc: 'OpenAI 提供的 API 接口，用于访问 GPT 模型等 AI 服务。',
         url: 'https://openai.com/api/',
-        logoUrl: 'https://openai.com/favicon.ico',
+        logoUrl: 'https://cdn.oaistatic.com/assets/favicon-l4nq08hd.svg',
         keywords: 'openai api 人工智能 模型 服务'
       },
       {
