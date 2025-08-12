@@ -35,7 +35,8 @@ const subCategoryIcons = {
   '开发工具': {
     '开发工具': 'hammer',
     '开源仓库': 'github',
-    '开发辅助': 'wrench'
+    '开发辅助': 'wrench',
+    '云服务器': 'server'
   },
   'AI集合': {
     '对话模型': 'message-circle',
@@ -54,7 +55,8 @@ const subCategoryIcons = {
   },
   '工具箱': {
     '文件传输': 'folder-sync',
-    '工具集合': 'square-scissors'
+    '工具集合': 'square-scissors',
+    '图床': 'image-up'
   }
 };
 
@@ -125,6 +127,15 @@ let navData = {
         logoUrl: 'https://tools.21zys.com/favicon.ico',
         keywords: '工具箱 tools 工具'
       }
+    ],
+    '云服务器': [
+      {
+        title: '雨云',
+        desc: '欢迎来到以用户体验为优先的雨云，我们提供稳定高速的云服务器、游戏云、物理服务器，强大的功能，高效率的客户支持，简洁易用的面板，值得您的信赖',
+        url: 'https://www.rainyun.com/21zys_?s=nav',
+        logoUrl: 'https://www.rainyun.com/favicon.ico',
+        keywords: '雨云 虚拟主机 云服务器 我的世界服务器 游戏服务器 BGP 游戏云 MC VPS 高主频 免费主机 宝塔 美国vps 免费空间 便宜vps kvm EP主机 美国云服务器 免费CDN 香港CDN 免费二级域名 免费SSL证书 裸金属服务器 游戏云 云应用'
+      }
     ]
   },
   '工具箱': {
@@ -144,6 +155,29 @@ let navData = {
         url: 'https://tools.21zys.com',
         logoUrl: 'https://tools.21zys.com/favicon.ico',
         keywords: '工具箱 tools 工具'
+      }
+    ],
+    '图床': [
+      {
+        title: 'SM.MS',
+        desc: 'Image Upload - SM.MS - Simple Free Image Hosting',
+        url: 'https://smms.app',
+        logoUrl: 'https://smms.app/favicon-32x32.png',
+        keywords: '图床 sm.ms smms.app 图片存储 图片外链 图片上传'
+      },
+      {
+        title: 'ImgURL免费图床',
+        desc: 'ImgURL免费图床上线于2017年12月，累积托管图片超过100万。ImgURL可以快速将图片转换为URL链接，为您提供简单、稳定、可信赖的图片上传于外链分享服务。',
+        url: 'https://www.imgurl.org',
+        logoUrl: 'https://www.imgurl.org/favicon.ico',
+        keywords: 'imgurl 图床 图片外链 sm.ms 图片上传'
+      },
+      {
+        title: '路过图床',
+        desc: '路过图床, 免费公共图床, 提供图片上传和图片外链服务, 原图保存, 全球CDN加速.',
+        url: 'https://imgse.com',
+        logoUrl: 'https://imgse.com/content/images/system/favicon_1587118523486_91617a.png',
+        keywords: '路过图床 图片外链 sm.ms 图片上传'
       }
     ]
   },
@@ -277,7 +311,14 @@ let navData = {
         desc: '最好的迅雷电影下载网，分享最新电影，高清电影、综艺、动漫、电视剧等下载！',
         url: 'https://dygod.org',
         logoUrl: 'https://dygod.org/favicon.ico',
-        keywords: '免费电影下载 电影下载 最新电影'
+        keywords: '免费电影下载 电影下载 最新电影 磁力影视'
+      },
+      {
+        title: 'BT之家',
+        desc: '分享快乐,如此简单 !  BT电影天堂-影视资源交流社区 , BT之家官网：1lOU.ME ，BT之家BTBTT，BT之家BTBBT，BTHome，BTHouse',
+        url: 'https://www.1lou.cc',
+        logoUrl: 'https://www.1lou.pro/view/img/favicon.ico',
+        keywords: '磁力影视 磁力链接 BT之家'
       }
     ],
     '影视APP': [
