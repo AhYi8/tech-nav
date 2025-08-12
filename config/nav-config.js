@@ -23,7 +23,8 @@ const categoryIcons = {
   '开发工具': 'code',
   'AI集合': 'bot',
   '代理机场': 'globe',
-  '影视资源': 'video'
+  '影视资源': 'video',
+  '工具箱': 'drill'
 };
 
 // 二级导航配置（嵌套结构，与navData结构保持一致）
@@ -48,7 +49,12 @@ const subCategoryIcons = {
   '影视资源': {
     '影视推荐': 'list-video',
     '在线影视': 'play',
+    '磁力影视': 'magnet',
     '影视APP': 'tv-minimal-play'
+  },
+  '工具箱': {
+    '文件传输': 'folder-sync',
+    '工具集合': 'square-scissors'
   }
 };
 
@@ -112,6 +118,26 @@ let navData = {
       }
     ],
     '开发辅助': [
+      {
+        title: 'Tech-Tools 工具箱',
+        desc: '暗黑科技风格在线工具箱',
+        url: 'https://tools.21zys.com',
+        logoUrl: 'https://tools.21zys.com/favicon.ico',
+        keywords: '工具箱 tools 工具'
+      }
+    ]
+  },
+  '工具箱': {
+    '文件传输': [
+      {
+        title: 'MuseTransfer',
+        desc: '无需登录即可完成文件传输，10GB文件上传下载不限速、免费用，MuseTransfer文件传输工具就是快！',
+        url: 'https://musetransfer.com',
+        logoUrl: 'https://static.tezign.com/d13c7f1e7c041a549cd88b08ea7c3bff.jpeg',
+        keywords: 'musetransfer 文件传输 文件上传 不限速 wetransfer 快传'
+      }
+    ],
+    '工具集合': [
       {
         title: 'Tech-Tools 工具箱',
         desc: '暗黑科技风格在线工具箱',
@@ -243,6 +269,15 @@ let navData = {
         url: 'https://www.libvio.com',
         logoUrl: 'https://www.libvio.link/statics/img/favicon.ico',
         keywords: 'LIBVIO,影视,电影,电视剧'
+      }
+    ],
+    '磁力影视': [
+      {
+        title: '电影天堂',
+        desc: '最好的迅雷电影下载网，分享最新电影，高清电影、综艺、动漫、电视剧等下载！',
+        url: 'https://dygod.org',
+        logoUrl: 'https://dygod.org/favicon.ico',
+        keywords: '免费电影下载 电影下载 最新电影'
       }
     ],
     '影视APP': [
