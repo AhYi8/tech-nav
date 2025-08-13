@@ -32,7 +32,7 @@ const subCategoryIcons = {
   '搜索引擎': {
     '通用搜索': 'search'
   },
-  '开发工具': {
+  '编程开发': {
     '开发工具': 'hammer',
     '开源仓库': 'github',
     '开发辅助': 'wrench',
@@ -118,6 +118,20 @@ let navData = {
         url: 'https://ruoyi.vip',
         logoUrl: 'https://ruoyi.vip/images/ruoyi.png',
         keywords: 'RuoYi-Cloud SpringBoot SpringCloud 后台管理系统'
+      },
+      {
+        title: 'AFFiNE',
+        desc: 'AFFiNE.Pro 是一个开源的一体化工作空间，将文档编辑、白板绘图和项目规划完美融合在无限画布上，支持富文本、数据库、幻灯片等多种模块自由组合，配备多模态AI助手进行智能内容创作和格式转换，采用本地优先存储策略同时支持实时协作，用户可自托管部署，是Notion和Miro的强大开源替代方案。',
+        url: 'https://github.com/toeverything/AFFiNE',
+        logoUrl: 'https://github.githubassets.com/favicons/favicon-dark.png',
+        keywords: 'AFFiNE 开源工作空间 一体化 无限画布 文档编辑 白板绘图 项目规划 多模态AI 本地优先 实时协作 自托管 Notion替代 Miro替代 知识管理 生产力工具 跨平台同步'
+      },
+      {
+        title: 'MediaCrawler - 自媒体平台爬虫',
+        desc: '多平台自媒体公开数据采集工具：支持小红书/抖音/快手/B站/微博/贴吧/知乎的笔记/帖子/视频及二级评论抓取，二维码登录保持登录态，关键词搜索、指定ID、创作者主页采集，支持SQLite/MySQL/CSV/JSON存储，代理池与词云分析，基于 Playwright，便于学习与研究使用。',
+        url: 'https://github.com/NanmiCoder/MediaCrawler',
+        logoUrl: 'https://github.githubassets.com/favicons/favicon-dark.png',
+        keywords: '自媒体爬虫 多平台爬虫 小红书 抖音 快手 B站 微博 贴吧 知乎 评论采集 二级评论 关键词搜索 Playwright 登录态保持 IP代理池 数据存储 SQLite MySQL CSV JSON 词云 数据采集 Python 学习研究'
       }
     ],
     '开发辅助': [
