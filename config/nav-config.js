@@ -56,7 +56,8 @@ const subCategoryIcons = {
   '工具箱': {
     '文件传输': 'folder-sync',
     '工具集合': 'square-scissors',
-    '图片工具': 'image-up'
+    '图片工具': 'image-up',
+    '其他工具': 'cog',
   }
 };
 
@@ -151,7 +152,7 @@ let navData = {
         title: 'Wormhole',
         desc: 'Wormhole 让你能以端到端加密和自动过期链接的方式分享文件。 所以你可以确保你分享的文件私密且不会一直留在互联网上。</br>对于5GB以内的文件，Wormhole将在服务器上存储24小时。</br>对于大于5GB的文件，Wormhole使用点对点传输，直接从你的浏览器向接收者发送文件。所以你需要保持页面打开直到接收者下载完毕。',
         url: 'https://wormhole.app',
-        logoUrl: 'https://wormhole.app/images/logo-80x80.png',
+        logoUrl: '../assert/ico/logo-80x80.png',
         keywords: 'Wormhole 文件传输 文件上传 不限速 快传 端到端 加密传输'
       }
     ],
@@ -192,6 +193,15 @@ let navData = {
         url: 'https://www.lanrentuyun.com',
         logoUrl: 'https://www.lanrentuyun.com/favicon.ico',
         keywords: '懒人图云 照片组合拼图 爱心照片拼图 照片马赛克拼接 照片墙制作'
+      }
+    ],
+    '其他工具': [
+      {
+        title: '风鸟-企业查询平台',
+        desc: '风鸟查询是一款信用查询监控平台，核心功能：查公司、查人员、查关系、企业查、查老赖，提供便捷的工商信用查询、企业信息报告下载、主体信用报告下载、风险预警监控、关联族谱查询、营业执照查询等服务。为您提供全国企业信息查询，包括企业工商信息查询，信用信息查询，经营状况查询等相关信息。',
+        url: 'https://riskbird.com',
+        logoUrl: 'https://riskbird.com/favicon.ico',
+        keywords: '风鸟查询平台 查公司 查法人 企业信用 查企业 查人员 查关系 查老赖 企业查询 企业工商信息查询'
       }
     ]
   },
