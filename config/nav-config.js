@@ -56,7 +56,7 @@ const subCategoryIcons = {
   '工具箱': {
     '文件传输': 'folder-sync',
     '工具集合': 'square-scissors',
-    '图床': 'image-up'
+    '图片工具': 'image-up'
   }
 };
 
@@ -146,6 +146,13 @@ let navData = {
         url: 'https://musetransfer.com',
         logoUrl: 'https://static.tezign.com/d13c7f1e7c041a549cd88b08ea7c3bff.jpeg',
         keywords: 'musetransfer 文件传输 文件上传 不限速 wetransfer 快传'
+      },
+      {
+        title: 'Wormhole',
+        desc: 'Wormhole 让你能以端到端加密和自动过期链接的方式分享文件。 所以你可以确保你分享的文件私密且不会一直留在互联网上。</br>对于5GB以内的文件，Wormhole将在服务器上存储24小时。</br>对于大于5GB的文件，Wormhole使用点对点传输，直接从你的浏览器向接收者发送文件。所以你需要保持页面打开直到接收者下载完毕。',
+        url: 'https://wormhole.app',
+        logoUrl: 'https://wormhole.app/images/logo-80x80.png',
+        keywords: 'Wormhole 文件传输 文件上传 不限速 快传 端到端 加密传输'
       }
     ],
     '工具集合': [
@@ -157,7 +164,7 @@ let navData = {
         keywords: '工具箱 tools 工具'
       }
     ],
-    '图床': [
+    '图片工具': [
       {
         title: 'SM.MS',
         desc: 'Image Upload - SM.MS - Simple Free Image Hosting',
@@ -178,6 +185,13 @@ let navData = {
         url: 'https://imgse.com',
         logoUrl: 'https://imgse.com/content/images/system/favicon_1587118523486_91617a.png',
         keywords: '路过图床 图片外链 sm.ms 图片上传'
+      },
+      {
+        title: '懒人图云',
+        desc: '懒人图云是首家专注于照片组合拼图制作在线工具，集成三款照片拼图生成器，一款工具搞定所有照片拼接创意可视化需求；懒人图云致力于让照片拼图、照片墙、图标云生成、照片马赛克拼接制作更简单。',
+        url: 'https://www.lanrentuyun.com',
+        logoUrl: 'https://www.lanrentuyun.com/favicon.ico',
+        keywords: '懒人图云 照片组合拼图 爱心照片拼图 照片马赛克拼接 照片墙制作'
       }
     ]
   },
