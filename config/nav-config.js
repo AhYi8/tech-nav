@@ -41,7 +41,8 @@ const subCategoryIcons = {
   'AI集合': {
     'AI提示词': 'book-text',
     'AI教程': 'calendar-days',
-    'AI平台': 'cpu',
+    '对话模型': 'message-circle',
+    '媒体生成': 'cassette-tape',
     'API平台': 'cpu'
   },
   '代理机场': {
@@ -228,10 +229,18 @@ let navData = {
         "url": "https://www.aishort.top",
         "logoUrl": "https://www.aishort.top/img/logo.svg",
         "keywords": "AiShort AI 智能体 提示词 平台 生产力 提示词管理 收藏 写作辅助 论文 文章 报告 IT 编程 文本处理 相似度 算法 学术 记者 评论 观点生成 标题生成 期刊匹配 SEO 教育 学术教师 学生 工具 终端 翻译 企业 医疗 金融 顾问 音乐 行业 社区精选 发散思维 心理 社交 哲学 知识库"
+      },
+      {
+        "title": "AI咖 - 专业的AI提示词管理平台",
+        "desc": "AI咖提供专业的AI提示词管理系统，帮助您高效管理、创建、编辑和分享ChatGPT、Claude等大模型提示词。提升AI对话效率，实现智能创作与提示词管理，同时提供配套的浏览器插件和MCP服务，极大提升提示词的应用效率。",
+        "url": "https://aiprompter.cc",
+        "logoUrl": "https://www.aiprompter.cc/images/icons/icon128.png",
+        "keywords": "AI提示词 提示词管理 Prompt管理 ChatGPT Claude AI对话 AI工具 人工智能 创作助手 提示词模板 提示词收藏 AI助手 智能创作 浏览器插件 MCP服务 提示词分享 AI咖"
+
       }
 
     ],
-    'AI平台': [
+    '对话模型': [
       {
         title: 'Gemini',
         desc: 'Google推出的基于AI的聊天模型',
@@ -259,6 +268,20 @@ let navData = {
         url: 'https://x.ai',
         logoUrl: 'https://x.ai/favicon.ico',
         keywords: 'grok xAi'
+      },
+      {
+        "title": "Claude AI",
+        "desc": "Claude 是由 Anthropic 打造的新一代 AI 助手，强调安全、准确与隐私保护，提供代码生成、数据可视化、文本与图像分析、内容创作、研究辅助及多平台聊天等能力，按需选择 Free、Pro（提升用量与集成功能）与 Max（更高配额与优先体验）方案。",
+        "url": "https://www.anthropic.com/claude",
+        "logoUrl": "https://claude.ai/favicon.ico",
+        "keywords": "Claude AI 助手 Anthropic 安全 准确 隐私 价格方案 Free Pro Max 代码生成 数据可视化 文本分析 图像分析 内容创作 研究 集成 Google Workspace 项目 管理 扩展思考 高用量 终端访问 优先访问"
+      },
+      {
+        "title": "NotebookLM | AI 研究工具与思考伙伴",
+        "desc": "NotebookLM 是基于 Gemini 2.0 多模态理解能力的个性化 AI 知识助手，支持上传 PDF、网站、YouTube 视频、音频、Google 文档与幻灯片等来源，自动总结并建立主题联系，提供可溯源引用与原文引句。特色功能包括音频概览、学习辅导（解释概念、举例加深理解）、演示文稿大纲生成、创意洞察（趋势发现、产品创意、机会挖掘），并强调隐私保护：不使用个人数据进行模型训练。",
+        "url": "https://notebooklm.google",
+        "logoUrl": "https://notebooklm.google/_/static/branding/v4/light_mode/favicon/favicon.svg",
+        "keywords": "NotebookLM AI Gemini2.0 多模态 总结 引用 溯源 隐私 个人数据 资料上传 PDF 网站 YouTube 音频 Google文档 幻灯片 学习 助学 概念解释 示例 演示大纲 创意 头脑风暴 趋势 分析 产品创意 机会挖掘 音频概览 知识管理"
       },
       {
         title: 'Qwen',
@@ -294,15 +317,16 @@ let navData = {
         "url": "https://www.tiangong.cn",
         "logoUrl": "../assert/ico/天工AI.ico",
         "keywords": "天工 Skywork 智能体 Agent AI 办公 Office 微软 Microsoft WPS Word Excel PPT 文档 幻灯片 演示文稿 网页 html 研究报告 deep research AI视频 AI音乐 AI写歌 AI绘本 MCP A2A"
-      },
-      {
-        title: '火山方舟',
-        desc: '火山方舟是火山引擎推出的一站式AI研发平台，提供了丰富的AI模型和工具，帮助开发者快速构建AI应用。',
-        url: 'https://console.volcengine.com',
-        logoUrl: 'https://res.volccdn.com/obj/volc-console-fe/images/favicon.52bcaa41.png',
-        keywords: '火山方舟 火山引擎 AI 模型 工具'
       }
-
+    ],
+    '媒体生成': [
+      {
+        title: '即梦AI - 一站式AI创作平台',
+        desc: '即梦AI是一个AI创作平台，可激发艺术创意、提升绘画和视频创作体验。您可以利用AI智能，将想象变为现实。即梦AI支持文字绘图、文字生成视频和图片生成视频，并提供创作灵感。让即梦AI开启您的AI生成艺术之旅，探索创造的无限可能！',
+        url: 'https://jimeng.jianying.com',
+        logoUrl: "data:image/png;base64,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",
+        keywords: '即梦AI 即梦 即梦官方 即梦官网 文生图 AI作画 AI绘画 AI创作图片 AIGC 一语成画 AI艺术和创意辅助平台 文生视频 AI生成 图生视频 智能创作 图文生视频'
+      }
     ],
     'API平台': [
       {
@@ -325,6 +349,13 @@ let navData = {
         url: 'https://gptgod.online/#/register?invite_code=5s7iq10ro9h3ex9augmeq3tnw',
         logoUrl: 'https://gptgod.online/favicon.ico',
         keywords: 'gpt-god api 人工智能 模型 服务'
+      },
+      {
+        title: '火山方舟',
+        desc: '火山方舟是火山引擎推出的一站式AI研发平台，提供了丰富的AI模型和工具，帮助开发者快速构建AI应用。',
+        url: 'https://console.volcengine.com',
+        logoUrl: 'https://res.volccdn.com/obj/volc-console-fe/images/favicon.52bcaa41.png',
+        keywords: '火山方舟 火山引擎 AI 模型 工具'
       }
     ]
   },
