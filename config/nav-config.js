@@ -39,7 +39,8 @@ const subCategoryIcons = {
     '云服务器': 'server'
   },
   'AI集合': {
-    '对话模型': 'message-circle',
+    'AI提示词': 'book-text',
+    'AI教程': 'calendar-days',
     'AI平台': 'cpu',
     'API平台': 'cpu'
   },
@@ -220,20 +221,37 @@ let navData = {
     ]
   },
   'AI集合': {
-    '对话模型': [
+    'AI提示词': [
       {
-        title: 'ChatGPT',
-        desc: '基于OpenAI GPT模型的聊天机器人',
-        url: 'https://chat.openai.com',
-        logoUrl: 'https://cdn.oaistatic.com/assets/favicon-l4nq08hd.svg',
-        keywords: 'openai 人工智能 模型 服务'
-      },
+        "title": "AiShort - 智能体与提示词平台",
+        "desc": "AiShort 是一个聚合多领域 AI 智能体与高质量提示词的生产力平台，支持提示词管理与收藏，覆盖写作辅助、论文与报告、IT/编程、AI 应用、生活提升、趣味知识、自助百科、心理社交、哲学宗教、发散思维、教育/学生、学术/教师、游戏、工具、终端/解释器、语言/翻译、辩论/演讲、点评评鉴、文本处理、企业职能、SEO、医疗咨询、金融顾问、音乐及行业顾问等分类，并提供新闻写作、学术论文生成、观点评论、文本相似度分析、稿件期刊匹配、根据摘要生成题目等智能模板及社区精选内容，帮助用户一键提升创作与研究效率。",
+        "url": "https://www.aishort.top",
+        "logoUrl": "https://www.aishort.top/img/logo.svg",
+        "keywords": "AiShort AI 智能体 提示词 平台 生产力 提示词管理 收藏 写作辅助 论文 文章 报告 IT 编程 文本处理 相似度 算法 学术 记者 评论 观点生成 标题生成 期刊匹配 SEO 教育 学术教师 学生 工具 终端 翻译 企业 医疗 金融 顾问 音乐 行业 社区精选 发散思维 心理 社交 哲学 知识库"
+      }
+
+    ],
+    'AI平台': [
       {
         title: 'Gemini',
         desc: 'Google推出的基于AI的聊天模型',
         url: 'https://gemini.google.com',
         logoUrl: 'https://www.gstatic.com/lamda/images/gemini_favicon_f069958c85030456e93de685481c559f160ea06b.png',
         keywords: 'google 人工智能 模型 服务'
+      },
+      {
+        title: 'Google AI Studio',
+        desc: 'Google推出的AI开发者平台',
+        url: 'https://aistudio.google.com',
+        logoUrl: 'https://www.gstatic.com/aistudio/ai_studio_favicon_32x32.png',
+        keywords: 'google ai studio 开发者 平台'
+      },
+      {
+        title: 'ChatGPT',
+        desc: '基于OpenAI GPT模型的聊天机器人',
+        url: 'https://chat.openai.com',
+        logoUrl: 'https://cdn.oaistatic.com/assets/favicon-l4nq08hd.svg',
+        keywords: 'openai 人工智能 模型 服务'
       },
       {
         title: 'Grok',
@@ -255,22 +273,27 @@ let navData = {
         url: 'https://www.tongyi.com',
         logoUrl: 'https://img.alicdn.com/imgextra/i4/O1CN01EfJVFQ1uZPd7W4W6i_!!6000000006051-2-tps-112-112.png',
         keywords: '通义千问 AI PPT AI搜索 AI写作'
-      }
-    ],
-    'AI平台': [
-      {
-        title: 'Google AI Studio',
-        desc: 'Google推出的AI开发者平台',
-        url: 'https://aistudio.google.com',
-        logoUrl: 'https://www.gstatic.com/aistudio/ai_studio_favicon_32x32.png',
-        keywords: 'google ai studio 开发者 平台'
       },
       {
-        title: '硅基流动',
-        desc: 'SiliconCloud 硅基流动云服务，高效、模型丰富、性价比高的大模型服务平台。',
-        url: 'https://cloud.siliconflow.cn',
-        logoUrl: 'https://cloud.siliconflow.cn/favicon.ico',
-        keywords: 'siliconflow 大模型 ai 工具'
+        "title": "知乎直答",
+        "desc": "知乎直答平台提供问题搜索、知识库管理、收藏与历史记录查看、个性化推荐等功能，支持快速输入提问及引用答主内容，并展示可订阅的专题知识库（如“地铁与轻轨”“TED中英双语演讲稿”），便于高效获取与整理结构化知识。",
+        "url": "https://zhida.zhihu.com/",
+        "logoUrl": "https://pica.zhimg.com/v2-793ea13f76a2bd45599c1849cad804b5.png",
+        "keywords": "知乎 直答 知识库 搜索 收藏 历史 问答 订阅 内容推荐"
+      },
+      {
+        "title": "Kimi - 更强大的 AI 助手",
+        "desc": "Kimi 是月之暗面推出的智能 AI 助手，依托全新 K2 模型（模型即 Agent），支持深度研究、PPT 制作、内容生成、趋势分析与编程示例等多场景应用，并开放招募与案例展示。",
+        "url": "https://www.kimi.com",
+        "logoUrl": "https://statics.moonshot.cn/kimi-web-seo/favicon.ico",
+        "keywords": "Kimi AI 助手 K2 模型 Agent 开源 深度研究 PPT 生成 外贸 人才 趋势 招聘 案例 游戏 开发 打砖块 内容生成 月之暗面"
+      },
+      {
+        "title": "天工AI",
+        "desc": "天工Skywork是一款具备超强DeepResearch能力的全新AI Office智能体，通过3个专家agent和1个通用agent，让AI深度研究，一键生成AI文档、AI PPT、AI表格，高效应对各类办公、学习场景；也支持网页html、图像、视频、有声书、绘本等多种形式的创意内容创作，激发无限灵感。天工Skywork融合先进的多模态理解与深度检索分析技术，一问即得科研级、专业级、咨询级的高质量结果，帮助你摆脱繁琐事务，显著提升效率。无论你是职场白领、科研人员、大学生、研究生，还是自媒体KOL，天工Skywork都将是你值得信赖的智能伙伴，助你专注思考、释放创造力。",
+        "url": "https://www.tiangong.cn",
+        "logoUrl": "../assert/ico/天工AI.ico",
+        "keywords": "天工 Skywork 智能体 Agent AI 办公 Office 微软 Microsoft WPS Word Excel PPT 文档 幻灯片 演示文稿 网页 html 研究报告 deep research AI视频 AI音乐 AI写歌 AI绘本 MCP A2A"
       },
       {
         title: '火山方舟',
@@ -279,8 +302,16 @@ let navData = {
         logoUrl: 'https://res.volccdn.com/obj/volc-console-fe/images/favicon.52bcaa41.png',
         keywords: '火山方舟 火山引擎 AI 模型 工具'
       }
+
     ],
     'API平台': [
+      {
+        title: '硅基流动',
+        desc: 'SiliconCloud 硅基流动云服务，高效、模型丰富、性价比高的大模型服务平台。',
+        url: 'https://cloud.siliconflow.cn',
+        logoUrl: 'https://cloud.siliconflow.cn/favicon.ico',
+        keywords: 'siliconflow 大模型 ai 工具'
+      },
       {
         title: 'OpenAI API',
         desc: 'OpenAI 提供的 API 接口，用于访问 GPT 模型等 AI 服务。',
