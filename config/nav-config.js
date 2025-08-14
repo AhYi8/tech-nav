@@ -171,7 +171,7 @@ let navData = {
       },
       {
         title: 'Wormhole',
-        desc: 'Wormhole 让你能以端到端加密和自动过期链接的方式分享文件。 所以你可以确保你分享的文件私密且不会一直留在互联网上。</br>对于5GB以内的文件，Wormhole将在服务器上存储24小时。</br>对于大于5GB的文件，Wormhole使用点对点传输，直接从你的浏览器向接收者发送文件。所以你需要保持页面打开直到接收者下载完毕。',
+        desc: 'Wormhole 让你能以端到端加密和自动过期链接的方式分享文件。 所以你可以确保你分享的文件私密且不会一直留在互联网上。</br></br>对于5GB以内的文件，Wormhole将在服务器上存储24小时。</br><br>对于大于5GB的文件，Wormhole使用点对点传输，直接从你的浏览器向接收者发送文件。所以你需要保持页面打开直到接收者下载完毕。',
         url: 'https://wormhole.app',
         logoUrl: '../assert/ico/logo-80x80.png',
         keywords: 'Wormhole 文件传输 文件上传 不限速 快传 端到端 加密传输'
