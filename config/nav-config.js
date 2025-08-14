@@ -20,11 +20,12 @@ const siteConfig = {
 // 类目图标配置（使用 Lucide 图标）
 const categoryIcons = {
   '搜索引擎': 'search',
-  '开发工具': 'code',
+  '编程开发': 'code',
   'AI集合': 'bot',
   '代理机场': 'globe',
   '影视资源': 'video',
-  '工具箱': 'drill'
+  '工具箱': 'drill',
+  '在线社区': 'send'
 };
 
 // 二级导航配置（嵌套结构，与navData结构保持一致）
@@ -60,6 +61,10 @@ const subCategoryIcons = {
     '工具集合': 'square-scissors',
     '图片工具': 'image-up',
     '其他工具': 'cog',
+    '转换工具': 'repeat'
+  },
+  '在线社区': {
+    'Discourse': "message-circle",
   }
 };
 
@@ -96,7 +101,7 @@ let navData = {
       }
     ]
   },
-  '开发工具': {
+  '编程开发': {
     '开发工具': [
       {
         title: 'Reqable',
@@ -218,6 +223,15 @@ let navData = {
         url: 'https://riskbird.com',
         logoUrl: 'https://riskbird.com/favicon.ico',
         keywords: '风鸟查询平台 查公司 查法人 企业信用 查企业 查人员 查关系 查老赖 企业查询 企业工商信息查询'
+      }
+    ],
+    '转换工具': [
+      {
+        title: 'Convertio',
+        desc: 'Convertio - 在线转换文件的简单工具。支持超过309种不同的文档、图像、电子表格、电子书、文档、演示文稿、音频和视频格式。',
+        url: 'https://convertio.co',
+        logoUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDY1NDg3RDc3N0JFODExODNENjlCOEE4NDIwQ0ZCMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBNzIyRUYxOUU2OEMxMUU5OENDMkRGRDY2MUEyMUNEMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBNzIyRUYxOEU2OEMxMUU5OENDMkRGRDY2MUEyMUNEMCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBBQzRBRDc4OEJFNkU5MTE5RDNFOEE4MDBCRkY0NDZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NjU0ODdENzc3QkU4MTE4M0Q2OUI4QTg0MjBDRkIzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+6G+jpQAAA/9JREFUeNq0V1lIlFEU/kZbjPYkEysospJGbBW1KAgX2qCHFIpepOVBBFHBpiQiIjIXFIveUiIhCcqXVoPqoZ0CM1qgtB5EsEItNR2TtHO8d3Lm/8//z6/pgY9h/nvvOd+992zXNbR+PRzKDMJOwlbCGsJSwmw99pPwhfCa8JBwi9DjRKnLAYFogoewjzDdIdlfhFpCMaHJbmKIzVgY4SzhHeHQKIxDzz2k1xZrXaMisIzwTO98CsYuvPaI1hVtT+DVKwVgHeGJvufxEtb1eFj3iB3hBDZsYJZ3CQsw/rJgWLeyITrhNH1Uq23VREQACQnA8uVAeDjw5w/Q0QG8eaN21tUVjAhNRCKhj/9M8hs4aWvc5QJSU4H0dMDtBqZONc/p7QWuXQOqqykILaMwTtvy+J8AO90HwmRnGYFSQloacOAAEBlpHm9tBXJzKTN8sdIwQFjFIerzgaOWxtlYUlLgN95dXR2QkQHU15vXLFwIXLigrkuWydrmsBPO1ElGmEbzSkuB8nIgPt483kfXePw4cOWK7CsVFUBoqBWJvWybCewQkwzf+YkTyrCPSEyMWc3QkDJ05455bOVK2to+u2S1gwkki8PZ2cD27YFXcf48sHixTKKoCPj2zTx2+DDtc6YVieQQ7ZWBwp6emWmePncucO6c+pUioLZW2CdtNCXFMiJCdASMCO/a47GOAD4BPvIwIb03NMhrOG9YpHwmMOvfX75vvne+fzuJjQXOnCEXNpSSzk55flSUlaZZnAf6xYJz+TJF6irzkt27VZz/S+ZEoqwM2LIleP4YoPDPyQFevvR9+c1bkHOnvxF/mTcv8P/gIFBYCLx9a2+c55065W+cpYsJNIsLHj2SFa1da/7m9QJ5eUBLizWBkhIpVJtDdHEwy4MHQHe3+fv+/cqzjcL3z8cr+cGlS6pGCIWJCdwXCfCuamrM37kCHjsmOyqfQFZWYCHiXXNaluU+E7itezizMIGPH83ft20D8vNlEk3UAhYUKIfj++Z750QlZA627auGFwkHRRKLFgFVVWrnRrl3Dzh9WiUho3ABa2yUx5RUcd/oI8BdynvLirhkCVBZqaqcUdraVP1nMj2OOnFfOaamAp9CT6ok0aH7/k3i9B8/gBs3VMyvWKGKk3+N2LxZFZ1EanT6Ka18/hyMAJVXXJVasudibTDmdk6tcXEqJzCp9nZ19y9eyAXJ3JIlaR/wI8D9nGoYnxLmY2LkO2Ej2WoiW0JXzAPk44SvE2D867BuZSPo04xP4nrQ63AufOx7pGea1cuIJ3INLdEeO1YZ0DoSrN6Idm9Dr26d3TpP9I7CcJ+Oc7fW4f2f17H/83yX4Xk+xxeohuf5TafP878CDADrJR+o7JYu7QAAAABJRU5ErkJggg==',
+        keywords: '文件转换 在线转换工具'
       }
     ]
   },
@@ -428,6 +442,17 @@ let navData = {
         url: 'https://www.jianpian.com',
         logoUrl: 'https://www.jianpian14.com/assets/logo-CRQmaTEU.png',
         keywords: '荐片影视,Netflix,美剧,韩剧,动漫'
+      }
+    ]
+  },
+  '在线社区': {
+    'Discourse': [
+      {
+        title: 'OneHack | 1Hackers',
+        desc: 'OneHack（又称 1Hackers）是一款基于 Discourse 的在线社区，专注于提供稀有教程、优质指南、独家泄漏资源及各种赠品与免费资源。用户可以通过注册登录参与讨论、资源下载与经验分享，领取免费视频下载工具、软件许可证等福利。平台涵盖赚钱方法、人工智能工具、编程技术、数据恢复和视频下载等主题，满足多元化需求。</br></br>OneHack提供包括"赚钱方法"、"AI工具"、"编程"、"数据恢复"、"视频下载"等分类，用户可在最新主题和教程中快速定位所需内容 。社区管理员定期发布限时赠品与免费软件许可证，覆盖从屏幕录像到视频编辑在内的多种工具，每条资源帖均附带下载链接或使用指南，支持快捷获取各种工具与脚本。用户可以通过回复互动或私信作者获取更多使用技巧，形成闭环式的知识分享体系。',
+        url: 'https://onehack.us',
+        logoUrl: '../assert/ico/OneHack.ico',
+        keywords: 'OneHack 1Hackers 在线社区 Discourse 稀有教程 优质指南 独家资源 免费资源 赠品 软件许可证 赚钱方法 人工智能工具 AI工具 编程技术 数据恢复 视频下载 屏幕录像 视频编辑 免费软件 技术分享 资源下载 教程指南 黑客社区 技术论坛'
       }
     ]
   }
