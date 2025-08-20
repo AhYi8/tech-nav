@@ -76,28 +76,36 @@ let navData = {
         desc: '全球最大的搜索引擎，提供网页、图片、视频等搜索服务',
         url: 'https://www.google.com',
         logoUrl: 'https://www.google.com/favicon.ico',
-        keywords: 'google search 搜索 谷歌'
+        keywords: 'google search 搜索 谷歌',
+        highlight: false,
+        recommended: false
       },
       {
         title: 'Bing',
         desc: '微软推出的搜索引擎，提供智能搜索和AI功能',
         url: 'https://www.bing.com',
         logoUrl: 'https://www.bing.com/favicon.ico',
-        keywords: 'bing microsoft 微软 搜索'
+        keywords: 'bing microsoft 微软 搜索',
+        highlight: false,
+        recommended: false
       },
       {
         title: '百度',
         desc: '中国最大的搜索引擎，提供中文搜索服务',
         url: 'https://www.baidu.com',
         logoUrl: 'https://www.baidu.com/favicon.ico',
-        keywords: 'baidu 百度 搜索 中文'
+        keywords: 'baidu 百度 搜索 中文',
+        highlight: false,
+        recommended: false
       },
       {
         title: 'DuckDuckGo',
         desc: '一家让你能够无缝掌控在线个人信息的互联网隐私公司，而无需做出任何取舍。',
         url: 'https://duckduckgo.com',
         logoUrl: 'https://duckduckgo.com/favicon.ico',
-        keywords: 'duck duckgo duckduckgo 隐私搜索'
+        keywords: 'duck duckgo duckduckgo 隐私搜索',
+        highlight: false,
+        recommended: false
       }
     ]
   },
@@ -108,7 +116,9 @@ let navData = {
         desc: '借助一款功能强大的工具，该工具集成了HTTP(s)调试代理和REST客户端，支持Windows、Mac、Linux、Android和iOS系统，可助您提升API开发效率。',
         url: 'https://reqable.com',
         logoUrl: 'https://reqable.com/en-US/img/favicon.ico',
-        keywords: 'api 调试 测试'
+        keywords: 'api 调试 测试',
+        highlight: false,
+        recommended: false
       }
     ],
     '开源仓库': [
@@ -117,14 +127,18 @@ let navData = {
         desc: '一系列可在您自己的服务器上托管的自由软件网络服务和网络应用程序。',
         url: 'https://awesome-selfhosted.net',
         logoUrl: 'https://awesome-selfhosted.net/_static/logo.svg',
-        keywords: 'selfhosted 自托管 自部署 开源仓库'
+        keywords: 'selfhosted 自托管 自部署 开源仓库',
+        highlight: false,
+        recommended: false
       },
       {
         title: 'RuoYi-Cloud',
         desc: '🎉 基于Spring Boot、Spring Cloud & Alibaba的分布式微服务架构权限管理系统，同时提供了 Vue3 的版本',
         url: 'https://ruoyi.vip',
         logoUrl: 'https://ruoyi.vip/images/ruoyi.png',
-        keywords: 'RuoYi-Cloud SpringBoot SpringCloud 后台管理系统'
+        keywords: 'RuoYi-Cloud SpringBoot SpringCloud 后台管理系统',
+        highlight: false,
+        recommended: false
       },
       {
         title: 'AFFiNE',
@@ -260,7 +274,9 @@ let navData = {
         desc: 'Google推出的基于AI的聊天模型',
         url: 'https://gemini.google.com',
         logoUrl: 'https://www.gstatic.com/lamda/images/gemini_favicon_f069958c85030456e93de685481c559f160ea06b.png',
-        keywords: 'google 人工智能 模型 服务'
+        keywords: 'google 人工智能 模型 服务',
+        highlight: true,
+        recommended: false
       },
       {
         title: 'Google AI Studio',
@@ -295,21 +311,27 @@ let navData = {
         "desc": "NotebookLM 是基于 Gemini 2.0 多模态理解能力的个性化 AI 知识助手，支持上传 PDF、网站、YouTube 视频、音频、Google 文档与幻灯片等来源，自动总结并建立主题联系，提供可溯源引用与原文引句。特色功能包括音频概览、学习辅导（解释概念、举例加深理解）、演示文稿大纲生成、创意洞察（趋势发现、产品创意、机会挖掘），并强调隐私保护：不使用个人数据进行模型训练。",
         "url": "https://notebooklm.google",
         "logoUrl": "https://notebooklm.google/_/static/branding/v4/light_mode/favicon/favicon.svg",
-        "keywords": "NotebookLM AI Gemini2.0 多模态 总结 引用 溯源 隐私 个人数据 资料上传 PDF 网站 YouTube 音频 Google文档 幻灯片 学习 助学 概念解释 示例 演示大纲 创意 头脑风暴 趋势 分析 产品创意 机会挖掘 音频概览 知识管理"
+        "keywords": "NotebookLM AI Gemini2.0 多模态 总结 引用 溯源 隐私 个人数据 资料上传 PDF 网站 YouTube 音频 Google文档 幻灯片 学习 助学 概念解释 示例 演示大纲 创意 头脑风暴 趋势 分析 产品创意 机会挖掘 音频概览 知识管理",
+        highlight: true,
+        recommended: false
       },
       {
         title: 'Qwen',
         desc: 'Qwen Chat 提供全面的功能，包括聊天机器人、图像和视频理解、图像生成、文档处理、网页搜索集成、工具使用以及工件处理。',
         url: 'https://chat.qwen.ai',
         logoUrl: 'https://assets.alicdn.com/g/qwenweb/qwen-webui-fe/0.0.168/static/favicon.png',
-        keywords: 'Qwen 通义千问 阿里'
+        keywords: 'Qwen 通义千问 阿里',
+        highlight: true,
+        recommended: false
       },
       {
         title: '通义',
         desc: '通义是一个通情、达义的国产AI模型，可以帮你解答问题、文档阅读、联网搜索并写作总结，最多支持1000万字的文档速读。通义_你的全能AI助手',
         url: 'https://www.tongyi.com',
         logoUrl: 'https://img.alicdn.com/imgextra/i4/O1CN01EfJVFQ1uZPd7W4W6i_!!6000000006051-2-tps-112-112.png',
-        keywords: '通义千问 AI PPT AI搜索 AI写作'
+        keywords: '通义千问 AI PPT AI搜索 AI写作',
+        highlight: true,
+        recommended: false
       },
       {
         "title": "知乎直答",
@@ -380,14 +402,18 @@ let navData = {
         desc: '优点：价格低、流量多，有不限时流量。缺点：部分节点不稳定。',
         url: 'https://xn--4gqx1hgtfdmt.com/#/register?code=IxqdhHOg',
         logoUrl: 'https://xn--4gqx1hgtfdmt.com/favicon.ico',
-        keywords: '机场 代理 节点 魔法'
+        keywords: '机场 代理 节点 魔法',
+        highlight: false,
+        recommended: true
       },
       {
         title: '性价比机场',
         desc: '优点：价格低、节点稳定。缺点：流量少，每月流量重置。',
         url: 'https://xn--6nq44r2uh9rhj7f.net/#/register?code=vPoik0NF',
         logoUrl: '../assert/ico/性价比机场.ico',
-        keywords: '机场 代理 节点 魔法'
+        keywords: '机场 代理 节点 魔法',
+        highlight: false,
+        recommended: true
       }
     ],
     '客户端': [
