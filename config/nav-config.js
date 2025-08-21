@@ -1,8 +1,8 @@
 // 首页配置
 const siteConfig = {
-  title: 'Tech-Nav - 导航网站',
-  description: '精选优质网站导航，为您提供便捷的网站收藏和访问服务',
-  keywords: '导航网站,网站收藏,工具导航,开发工具,设计资源,学习平台',
+  title: 'Tech-Nav - 全能技术与资源导航中心',
+  description: 'Tech-Nav - 您的终极技术与资源导航中心。本站致力于为开发者、学生及所有科技爱好者，提供一个全面、详细且持续更新的网站资源库。我们精心收录了【编程开发】领域的各类实用工具，涵盖API调试、公共API接口、精选Github开源项目（如微服务框架、自托管应用）、云服务器(VPS)与开发辅助工具；紧跟时代潮流，聚合了丰富的【AI集合】，包括ChatGPT、Gemini、Claude、Kimi等前沿对话模型、专业的AI提示词(Prompt)管理平台、AI绘画与视频生成工具，以及面向开发者的大模型API服务；此外，还提供强大的【在线工具箱】（文件传输、免费图床、格式转换、企业查询等）、海量的【影视与网盘资源】（在线观看、磁力BT下载、多网盘资源搜索）、优质的【学习教育】平台和活跃的【在线技术社区】。无论您是寻找开发灵感、探索AI应用，还是需要日常实用工具，Tech-Nav都将是您最高效的一站式资源入口和上网主页。',
+  keywords: '网站导航,技术导航,网址大全,资源导航,程序员导航,开发者主页,编程开发,开发工具,开发者工具,API,API接口,API调试,公共API,开源项目,开源仓库,Github,自托管,Self-Hosted,微服务,Spring Boot,后台管理,爬虫,数据采集,云服务器,VPS,学习教育,在线课程,AI,AI工具,AIGC,人工智能,AI集合,大语言模型,LLM,ChatGPT,OpenAI,Gemini,Claude,Kimi,通义千问,天工AI,AI提示词,Prompt,AI绘画,AI视频,AI写作,代理,网络工具,Clash,网盘资源,资源搜索,夸克网盘,阿里云盘,百度网盘,影视资源,在线影视,电影下载,美剧,韩剧,动漫,BT下载,磁力链接,工具箱,在线工具,文件传输,图床,格式转换,下载工具,YouTube下载,在线社区,技术论坛,Discourse,Reddit,Tech-Nav',
   sidebarHeader: {
     title: 'Tech-Nav',
     description: '精选网站导航'
