@@ -214,7 +214,7 @@ let navData = {
         "title": "国家高等教育智慧教育平台",
         "desc": "全国性、综合性在线开放课程平台，由教育部委托、高等教育出版社建设和运行维护，北京理工大学提供技术支持，于2022年3月上线，为高校师生和社会学习者提供高效便捷的教与学服务。",
         "url": "https://www.chinaooc.com.cn",
-        "logoUrl": "https://chinaooc.com.cn/favicon.png",
+        "logoUrl": "../assert/ico/国家高等教育智慧教育平台.png",
         "keywords": "高等教育 在线课程 教育资源 国家级平台 智慧教育 教学服务 高校师生 社会学习者 教育部 高教社 北京理工"
       }
     ]
