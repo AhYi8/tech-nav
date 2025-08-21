@@ -21,8 +21,10 @@ const siteConfig = {
 const categoryIcons = {
   '搜索引擎': 'search',
   '编程开发': 'code',
+  '学习教育': 'graduation-cap',
   'AI集合': 'bot',
   '代理机场': 'globe',
+  '网盘资源': 'cloud',
   '影视资源': 'video',
   '工具箱': 'drill',
   '在线社区': 'send'
@@ -31,13 +33,17 @@ const categoryIcons = {
 // 二级导航配置（嵌套结构，与navData结构保持一致）
 const subCategoryIcons = {
   '搜索引擎': {
-    '通用搜索': 'search'
+    '通用搜索': 'search',
+    '网盘搜索': 'cloud'
   },
   '编程开发': {
     '开发工具': 'hammer',
     '开源仓库': 'github',
     '开发辅助': 'wrench',
     '云服务器': 'server'
+  },
+  '学习教育': {
+    '学习平台': 'school'
   },
   'AI集合': {
     'AI提示词': 'book-text',
@@ -50,6 +56,9 @@ const subCategoryIcons = {
     '机场推荐': 'plane',
     '客户端': 'download'
   },
+  '网盘资源': {
+    '资源搜索': 'search'
+  },
   '影视资源': {
     '影视推荐': 'list-video',
     '在线影视': 'play',
@@ -61,10 +70,12 @@ const subCategoryIcons = {
     '工具集合': 'square-scissors',
     '图片工具': 'image-up',
     '其他工具': 'cog',
-    '转换工具': 'repeat'
+    '转换工具': 'repeat',
+    '下载工具': 'download'
   },
   '在线社区': {
     'Discourse': "message-circle",
+    'Reddit': 'cat'
   }
 };
 
@@ -107,6 +118,15 @@ let navData = {
         highlight: false,
         recommended: false
       }
+    ],
+    '网盘搜索': [
+      {
+      "title": "伏羲盘 - 夸克、百度、阿里网盘",
+      "desc": "伏羲盘是一个汇总国内多种网盘（夸克、阿里云盘、百度网盘等）第三方资源搜索引擎的网站导航页，集中展示各搜索站的特点与优劣，包括资源丰富度、新旧程度、失效率、是否需注册或扫码、是否有广告/VIP限制、搜索速度与体验等，方便用户快速挑选合适的网盘资源搜索入口。",
+      "url": "https://fuxipan.com",
+      "logoUrl": "https://fuxipan.com/favicon.ico",
+      "keywords": "伏羲盘 网盘 搜索引擎 夸克网盘 阿里云盘 百度网盘 资源 聚合 导航 失效链接 注册限制 VIP 广告"
+      }
     ]
   },
   '编程开发': {
@@ -119,6 +139,13 @@ let navData = {
         keywords: 'api 调试 测试',
         highlight: false,
         recommended: false
+      },
+      {
+        "title": "Public APIs | 免费和公共 API 的目录",
+        "desc": "收录 15k+ 免费与公共 API，按开发、新闻、游戏、地理编码、金融、加密货币、政府开放数据、图像与视频处理、机器学习、社交、体育、云存储等多类别分类，支持多语言与多场景集成，方便开发者快速检索与接入。",
+        "url": "https://publicapis.io/",
+        "logoUrl": "https://c1.tablecdn.com/pa/publicapis-logo.png",
+        "keywords": "免费 公共 API 目录 开发 数据 新闻 游戏 地理编码 金融 加密货币 开放数据 图像 视频 机器学习 社交 体育 云存储 工具 集成"
       }
     ],
     '开源仓库': [
@@ -153,6 +180,13 @@ let navData = {
         url: 'https://github.com/NanmiCoder/MediaCrawler',
         logoUrl: 'https://github.githubassets.com/favicons/favicon-dark.png',
         keywords: '自媒体爬虫 多平台爬虫 小红书 抖音 快手 B站 微博 贴吧 知乎 评论采集 二级评论 关键词搜索 Playwright 登录态保持 IP代理池 数据存储 SQLite MySQL CSV JSON 词云 数据采集 Python 学习研究'
+      },
+      {
+        "title": "res-downloader | 爱享素材下载器",
+        "desc": "基于 Go + Wails 的跨平台网络资源嗅探与下载工具，支持视频/音频/图片/m3u8/直播流等多平台资源（微信视频号、小程序、抖音、快手、小红书、酷狗音乐、QQ音乐等），提供代理抓包与资源筛选展示。",
+        "url": "https://github.com/putyy/res-downloader",
+        "logoUrl": "https://github.com/putyy/res-downloader/raw/master/build/appicon.png",
+        "keywords": "Go Wails 资源下载 嗅探 抓包 代理 跨平台 Windows macOS Linux 视频 音频 图片 m3u8 直播 流媒体 微信视频号 小程序 抖音 快手 小红书 酷狗 QQ音乐 i18n 下载器"
       }
     ],
     '开发辅助': [
@@ -171,6 +205,17 @@ let navData = {
         url: 'https://www.rainyun.com/21zys_?s=nav',
         logoUrl: 'https://www.rainyun.com/favicon.ico',
         keywords: '雨云 虚拟主机 云服务器 我的世界服务器 游戏服务器 BGP 游戏云 MC VPS 高主频 免费主机 宝塔 美国vps 免费空间 便宜vps kvm EP主机 美国云服务器 免费CDN 香港CDN 免费二级域名 免费SSL证书 裸金属服务器 游戏云 云应用'
+      }
+    ]
+  },
+  '学习教育': {
+    '学习平台': [
+      {
+        "title": "国家高等教育智慧教育平台",
+        "desc": "全国性、综合性在线开放课程平台，由教育部委托、高等教育出版社建设和运行维护，北京理工大学提供技术支持，于2022年3月上线，为高校师生和社会学习者提供高效便捷的教与学服务。",
+        "url": "https://www.chinaooc.com.cn",
+        "logoUrl": "https://chinaooc.com.cn/favicon.png",
+        "keywords": "高等教育 在线课程 教育资源 国家级平台 智慧教育 教学服务 高校师生 社会学习者 教育部 高教社 北京理工"
       }
     ]
   },
@@ -246,6 +291,15 @@ let navData = {
         url: 'https://convertio.co',
         logoUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDY1NDg3RDc3N0JFODExODNENjlCOEE4NDIwQ0ZCMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBNzIyRUYxOUU2OEMxMUU5OENDMkRGRDY2MUEyMUNEMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBNzIyRUYxOEU2OEMxMUU5OENDMkRGRDY2MUEyMUNEMCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBBQzRBRDc4OEJFNkU5MTE5RDNFOEE4MDBCRkY0NDZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NjU0ODdENzc3QkU4MTE4M0Q2OUI4QTg0MjBDRkIzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+6G+jpQAAA/9JREFUeNq0V1lIlFEU/kZbjPYkEysospJGbBW1KAgX2qCHFIpepOVBBFHBpiQiIjIXFIveUiIhCcqXVoPqoZ0CM1qgtB5EsEItNR2TtHO8d3Lm/8//z6/pgY9h/nvvOd+992zXNbR+PRzKDMJOwlbCGsJSwmw99pPwhfCa8JBwi9DjRKnLAYFogoewjzDdIdlfhFpCMaHJbmKIzVgY4SzhHeHQKIxDzz2k1xZrXaMisIzwTO98CsYuvPaI1hVtT+DVKwVgHeGJvufxEtb1eFj3iB3hBDZsYJZ3CQsw/rJgWLeyITrhNH1Uq23VREQACQnA8uVAeDjw5w/Q0QG8eaN21tUVjAhNRCKhj/9M8hs4aWvc5QJSU4H0dMDtBqZONc/p7QWuXQOqqykILaMwTtvy+J8AO90HwmRnGYFSQloacOAAEBlpHm9tBXJzKTN8sdIwQFjFIerzgaOWxtlYUlLgN95dXR2QkQHU15vXLFwIXLigrkuWydrmsBPO1ElGmEbzSkuB8nIgPt483kfXePw4cOWK7CsVFUBoqBWJvWybCewQkwzf+YkTyrCPSEyMWc3QkDJ05455bOVK2to+u2S1gwkki8PZ2cD27YFXcf48sHixTKKoCPj2zTx2+DDtc6YVieQQ7ZWBwp6emWmePncucO6c+pUioLZW2CdtNCXFMiJCdASMCO/a47GOAD4BPvIwIb03NMhrOG9YpHwmMOvfX75vvne+fzuJjQXOnCEXNpSSzk55flSUlaZZnAf6xYJz+TJF6irzkt27VZz/S+ZEoqwM2LIleP4YoPDPyQFevvR9+c1bkHOnvxF/mTcv8P/gIFBYCLx9a2+c55065W+cpYsJNIsLHj2SFa1da/7m9QJ5eUBLizWBkhIpVJtDdHEwy4MHQHe3+fv+/cqzjcL3z8cr+cGlS6pGCIWJCdwXCfCuamrM37kCHjsmOyqfQFZWYCHiXXNaluU+E7itezizMIGPH83ft20D8vNlEk3UAhYUKIfj++Z750QlZA627auGFwkHRRKLFgFVVWrnRrl3Dzh9WiUho3ABa2yUx5RUcd/oI8BdynvLirhkCVBZqaqcUdraVP1nMj2OOnFfOaamAp9CT6ok0aH7/k3i9B8/gBs3VMyvWKGKk3+N2LxZFZ1EanT6Ka18/hyMAJVXXJVasudibTDmdk6tcXEqJzCp9nZ19y9eyAXJ3JIlaR/wI8D9nGoYnxLmY2LkO2Ej2WoiW0JXzAPk44SvE2D867BuZSPo04xP4nrQ63AufOx7pGea1cuIJ3INLdEeO1YZ0DoSrN6Idm9Dr26d3TpP9I7CcJ+Oc7fW4f2f17H/83yX4Xk+xxeohuf5TafP878CDADrJR+o7JYu7QAAAABJRU5ErkJggg==',
         keywords: '文件转换 在线转换工具'
+      }
+    ],
+    '下载工具': [
+      {
+        title: 'Yt1d | YouTube视频分析、下载',
+        desc: '在线YouTube视频分析与下载工具，支持最高8K分辨率视频技术参数查看，多格式（视频/音频/图片）解析，快速获取编码、格式等信息，面向教育与学习场景。',
+        url: 'https://yt1d.top',
+        logoUrl: 'https://yt1d.top/favicon.ico',
+        keywords: 'YouTube 视频 下载 分析 8K 技术参数 多格式 MP4 WebM AVI MKV MOV FLV MP3 AAC WAV FLAC OGG M4A JPG PNG WebP BMP 在线 工具'
       }
     ]
   },
@@ -426,6 +480,17 @@ let navData = {
       }
     ]
   },
+  '网盘资源': {
+    '资源搜索': [
+      {
+      "title": "伏羲盘 - 夸克、百度、阿里网盘",
+      "desc": "伏羲盘是一个汇总国内多种网盘（夸克、阿里云盘、百度网盘等）第三方资源搜索引擎的网站导航页，集中展示各搜索站的特点与优劣，包括资源丰富度、新旧程度、失效率、是否需注册或扫码、是否有广告/VIP限制、搜索速度与体验等，方便用户快速挑选合适的网盘资源搜索入口。",
+      "url": "https://fuxipan.com",
+      "logoUrl": "https://fuxipan.com/favicon.ico",
+      "keywords": "伏羲盘 网盘 搜索引擎 夸克网盘 阿里云盘 百度网盘 资源 聚合 导航 失效链接 注册限制 VIP 广告"
+      }
+    ]
+  },
   '影视资源': {
     '影视推荐': [
       {
@@ -459,6 +524,13 @@ let navData = {
         url: 'https://www.1lou.cc',
         logoUrl: 'https://www.1lou.pro/view/img/favicon.ico',
         keywords: '磁力影视 磁力链接 BT之家'
+      },
+      {
+        "title": "SeedHub | 影视&动漫分享",
+        "desc": "一个提供最新电影、剧集、动漫资源的网站，包含豆瓣评分、上映时间等信息。",
+        "url": "https://www.seedhub.cc",
+        "logoUrl": "https://www.seedhub.cc/favicon.ico",
+        "keywords": "电影 电视剧 动漫 美剧 韩剧 日剧 最新电影 高清电影 在线观看 BT下载 种子 磁力"
       }
     ],
     '影视APP': [
@@ -479,6 +551,15 @@ let navData = {
         url: 'https://onehack.us',
         logoUrl: '../assert/ico/OneHack.ico',
         keywords: 'OneHack 1Hackers 在线社区 Discourse 稀有教程 优质指南 独家资源 免费资源 赠品 软件许可证 赚钱方法 人工智能工具 AI工具 编程技术 数据恢复 视频下载 屏幕录像 视频编辑 免费软件 技术分享 资源下载 教程指南 黑客社区 技术论坛'
+      }
+    ],
+    'Reddit': [
+      {
+        "title": "Reddit 榜单 - 热门 Subreddit 聚合",
+        "desc": "Reddit 榜单（topsub.cc）聚合多个主题社区（SaaS、营销、增长黑客、SEO、副业、独立开发、游戏开发、技术等）的最新热门帖子，展示各子版块的更新时间、热度（赞数/评论数）与帖标题，帮助快速浏览当前趋势；支持新域名与自定义 Subreddit 功能。",
+        "url": "https://topsub.cc/",
+        "logoUrl": "https://topsub.cc/favicon.ico",
+        "keywords": "Reddit 榜单 热门 Subreddit 聚合 SaaS 营销 增长黑客 GrowthHacking SEO 副业 sideproject 独立开发 indiehackers 游戏开发 IndieDev 技术 technology 趋势 热帖 汇总 实时 更新"
       }
     ]
   }
