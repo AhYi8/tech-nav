@@ -333,6 +333,15 @@ let navData = {
         recommended: false
       },
       {
+        title: '豆包',
+        desc: '国内最强模型。豆包是你的 AI 聊天智能对话问答助手，写作文案翻译编程全能工具。豆包为你答疑解惑，提供灵感，辅助创作，也可以和你畅聊任何你感兴趣的话题。',
+        url: 'https://www.doubao.com',
+        logoUrl: 'https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/logo-icon.png',
+        keywords: '豆包 AI对话 AI聊天 AI写作 AIGC AI AI图片生成',
+        highlight: true,
+        recommended: false
+      },
+      {
         title: 'Google AI Studio',
         desc: 'Google推出的AI开发者平台',
         url: 'https://aistudio.google.com',
