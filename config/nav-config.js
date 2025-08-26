@@ -40,7 +40,7 @@ const subCategoryIcons = {
     '开发工具': 'hammer',
     '开源仓库': 'github',
     '开发辅助': 'wrench',
-    '云服务器': 'server'
+    '云服务': 'server'
   },
   '学习教育': {
     '学习平台': 'school'
@@ -146,27 +146,6 @@ let navData = {
         "url": "https://publicapis.io/",
         "logoUrl": "https://c1.tablecdn.com/pa/publicapis-logo.png",
         "keywords": "免费 公共 API 目录 开发 数据 新闻 游戏 地理编码 金融 加密货币 开放数据 图像 视频 机器学习 社交 体育 云存储 工具 集成"
-      },
-      {
-        "title": "SQLPub | 免费 MySQL 云数据库",
-        "desc": "提供最新MySQL服务器测试服务的平台，支持免费注册和在线管理，邮箱注册，一个邮箱只能有创建一个 MySQL 数据库。免费额度：最大36000次/小时的请求、同时30个连接和500M存储空间；",
-        "url": "https://sqlpub.com",
-        "logoUrl": "https://sqlpub.com/favicon.ico",
-        "keywords": "MySQL 云数据库 免费"
-      },
-      {
-        "title": "官方免费 Redis 云数据库",
-        "desc": "Redis 官方免费云数据库，免费空间 30 MB。",
-        "url": "https://redis.io",
-        "logoUrl": "https://redis.io/favicon.ico",
-        "keywords": "Redis 云数据库 免费"
-      },
-      {
-        "title": "官方免费 MongoDB 云数据库",
-        "desc": "MongoDB 官方免费云数据库，免费空间 500 MB。",
-        "url": "https://www.mongodb.com",
-        "logoUrl": "https://www.mongodb.com/favicon.ico",
-        "keywords": "MongoDB 云数据库 免费"
       }
     ],
     '开源仓库': [
@@ -219,13 +198,34 @@ let navData = {
         keywords: '工具箱 tools 工具'
       }
     ],
-    '云服务器': [
+    '云服务': [
       {
         title: '雨云',
         desc: '欢迎来到以用户体验为优先的雨云，我们提供稳定高速的云服务器、游戏云、物理服务器，强大的功能，高效率的客户支持，简洁易用的面板，值得您的信赖',
         url: 'https://www.rainyun.com/21zys_?s=nav',
         logoUrl: 'https://www.rainyun.com/favicon.ico',
         keywords: '雨云 虚拟主机 云服务器 我的世界服务器 游戏服务器 BGP 游戏云 MC VPS 高主频 免费主机 宝塔 美国vps 免费空间 便宜vps kvm EP主机 美国云服务器 免费CDN 香港CDN 免费二级域名 免费SSL证书 裸金属服务器 游戏云 云应用'
+      },
+      {
+        "title": "SQLPub | 免费 MySQL 云数据库",
+        "desc": "提供最新MySQL服务器测试服务的平台，支持免费注册和在线管理，邮箱注册，一个邮箱只能有创建一个 MySQL 数据库。免费额度：最大36000次/小时的请求、同时30个连接和500M存储空间；",
+        "url": "https://sqlpub.com",
+        "logoUrl": "https://sqlpub.com/favicon.ico",
+        "keywords": "MySQL 云数据库 免费"
+      },
+      {
+        "title": "官方免费 Redis 云数据库",
+        "desc": "Redis 官方免费云数据库，免费空间 30 MB。",
+        "url": "https://redis.io",
+        "logoUrl": "https://redis.io/favicon.ico",
+        "keywords": "Redis 云数据库 免费"
+      },
+      {
+        "title": "官方免费 MongoDB 云数据库",
+        "desc": "MongoDB 官方免费云数据库，免费空间 500 MB。",
+        "url": "https://www.mongodb.com",
+        "logoUrl": "https://www.mongodb.com/favicon.ico",
+        "keywords": "MongoDB 云数据库 免费"
       }
     ]
   },
