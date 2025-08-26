@@ -146,6 +146,13 @@ let navData = {
         "url": "https://publicapis.io/",
         "logoUrl": "https://c1.tablecdn.com/pa/publicapis-logo.png",
         "keywords": "免费 公共 API 目录 开发 数据 新闻 游戏 地理编码 金融 加密货币 开放数据 图像 视频 机器学习 社交 体育 云存储 工具 集成"
+      },
+      {
+        "title": "SQLPub | 免费云数据库",
+        "desc": "提供最新MySQL服务器测试服务的平台，支持免费注册和在线管理",
+        "url": "https://sqlpub.com",
+        "logoUrl": "https://sqlpub.com/favicon.ico",
+        "keywords": "MySQL测试 免费注册 开发者版本 在线管理 数据库升级 资源监控 服务条款"
       }
     ],
     '开源仓库': [
