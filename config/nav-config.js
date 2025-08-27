@@ -187,6 +187,20 @@ let navData = {
         "url": "https://github.com/putyy/res-downloader",
         "logoUrl": "https://github.com/putyy/res-downloader/raw/master/build/appicon.png",
         "keywords": "Go Wails 资源下载 嗅探 抓包 代理 跨平台 Windows macOS Linux 视频 音频 图片 m3u8 直播 流媒体 微信视频号 小程序 抖音 快手 小红书 酷狗 QQ音乐 i18n 下载器"
+      },
+      {
+        "title": "MediaCrawler - 自媒体平台爬虫",
+        "desc": "基于 Playwright 的多平台自媒体数据采集工具，支持小红书、抖音、快手、B站、微博、贴吧、知乎等主流平台的公开信息抓取，无需JS逆向，支持关键词搜索、指定帖子爬取、评论获取、创作者主页等功能。</br>🎯 核心功能升级</br>✅ 断点续爬功能（重点特性）</br>✅ 多账号 + IP代理池支持（重点特性）</br>✅ 去除 Playwright 依赖，使用更简单</br>✅ 完整 Linux 环境支持</br>🏗️ 架构设计优化</br>✅ 代码重构优化，更易读易维护（解耦 JS 签名逻辑）</br>✅ 企业级代码质量，适合构建大型爬虫项目</br>✅ 完美架构设计，高扩展性，源码学习价值更大</br>🎁 额外功能</br>✅ 自媒体视频下载器桌面端（适合学习全栈开发）</br>✅ 多平台首页信息流推荐（HomeFeed）</br>基于自媒体平台的AI Agent正在开发中 🚀🚀",
+        "url": "https://github.com/NanmiCoder/MediaCrawler",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "爬虫 自媒体 小红书 抖音 快手 B站 微博 贴吧 知乎 Playwright 数据采集 评论爬取 Python"
+      },
+      {
+        "title": "AFFiNE - 集写作、绘图、规划于一体",
+        "desc": "注重隐私、本地优先的开源替代方案，可替代Notion和Miro。为富有创造力的思维提供超融合平台，结合文档、画布和表格，配备多模态AI助手、实时协作和自托管功能。",
+        "url": "https://github.com/toeverything/AFFiNE",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "notion替代品 miro替代品 知识库 白板 画布 文档 协作 本地优先 隐私保护 开源 自托管 多模态AI 实时同步 跨平台 生产力 工作空间 编辑器 块编辑 typescript react electron"
       }
     ],
     '开发辅助': [
