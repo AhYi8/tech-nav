@@ -476,6 +476,13 @@ let navData = {
         url: 'https://console.volcengine.com',
         logoUrl: 'https://res.volccdn.com/obj/volc-console-fe/images/favicon.52bcaa41.png',
         keywords: '火山方舟 火山引擎 AI 模型 工具'
+      },
+      {
+        "title": "Wisdom Gate",
+        "desc": "注册即送 $10 额度，可以多注册几个。可使用模型：</br>wisdom-ai-gpt5 (via Gpt5)</br>wisdom-ai-gpt5-mini (via Gpt5 Mini)</br>wisdom-ai-gpt5-nano (via Gpt5 Nano)</br>wisdom-ai-dsv3 (via DeepseekV3)</br>wisdom-ai-dsr1 (via DeepseekR1)</br>wisdom-ai-oss (via GptOSS-120b)</br>wisdom-ai-claude-sonnet-4 (via Claude Sonnet 4)</br>wisdom-ai-gemini-2.5-flash (via Gemini 2.5 Flash)",
+        "url": "https://wisdom-gate.juheapi.com?i=AMRy",
+        "logoUrl": "https://wisdom-gate.juheapi.com/logo/logo.png",
+        "keywords": "OpenAPI GPT5 Deepseek Claude Gemini"
       }
     ]
   },
