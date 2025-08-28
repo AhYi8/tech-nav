@@ -497,6 +497,20 @@ let navData = {
         "url": "https://wisdom-gate.juheapi.com?i=AMRy",
         "logoUrl": "https://wisdom-gate.juheapi.com/logo/logo.png",
         "keywords": "OpenAPI GPT5 Deepseek Claude Gemini"
+      },
+      {
+        "title": "cerebras",
+        "desc": "每日免费 100w token。可以用模型列表：</br>gpt-oss-120b</br>llama-3.3-70b</br>llama-4-maverick-17b-128e-instruct</br>llama-4-scout-17b-16e-instruct</br>llama3.1-8b</br>qwen-3-235b-a22b-instruct-2507</br>qwen-3-235b-a22b-thinking-2507</br>qwen-3-32b</br>qwen-3-coder-480b</br>gpt-oss-120b</br>llama-3.3-70b</br>llama-4-maverick-17b-128e-instruct</br>llama-4-scout-17b-16e-instruct</br>llama3.1-8b</br>qwen-3-235b-a22b-instruct-2507</br>qwen-3-235b-a22b-thinking-2507</br>qwen-3-32b</br>qwen-3-coder-480b",
+        "url": "https://cloud.cerebras.ai?referral_code=pxrkk2cx",
+        "logoUrl": "https://cloud.cerebras.ai/images/logo/cb-fav-32.png",
+        "keywords": "免费 API 模型 服务"
+      },
+      {
+        "title": "AnyRouter",
+        "desc": "每日签到赠送 $25 额度。提供Claude API服务的在线平台，支持充值、邀请奖励等功能的AI服务路由器",
+        "url": "https://anyrouter.top/register?aff=FHvl",
+        "logoUrl": "../assert/ico/AnyRouter.png",
+        "keywords": "AnyRouter API Claude"
       }
     ]
   },
