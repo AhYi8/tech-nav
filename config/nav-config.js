@@ -564,6 +564,13 @@ let navData = {
         url: 'https://github.com/clash-verge-rev/clash-verge-rev.git',
         logoUrl: '../assert/ico/clash-verge-rev.png',
         keywords: 'clash verge 代理 节点 魔法'
+      },
+      {
+        "title": "mihomo-party | MAC 用户",
+        "desc": "Another Mihomo GUI - 基于 Electron 的 Mihomo 图形用户界面",
+        "url": "https://github.com/mihomo-party-org/mihomo-party",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "mihomo electron gui proxy clash vpn network tool"
       }
     ]
   },
