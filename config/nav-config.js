@@ -201,6 +201,28 @@ let navData = {
         "url": "https://github.com/toeverything/AFFiNE",
         "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
         "keywords": "notion替代品 miro替代品 知识库 白板 画布 文档 协作 本地优先 隐私保护 开源 自托管 多模态AI 实时同步 跨平台 生产力 工作空间 编辑器 块编辑 typescript react electron"
+      },
+      {
+        "title": "BillionMail",
+        "desc": "未来的开源邮件服务器和电子邮件营销平台，提供完全控制的邮件营销解决方案，支持高级分析、客户管理、无限发送和自托管部署</br>主要特性：</br>✅无需依赖 SMTP 中继，开箱即用，告别繁琐配置</br>✅强大可视化管理界面，任务调度、数据追踪、内容编辑一站式搞定，远超 “简单功能”</br>✅抗封号智能策略，避开 SaaS 常见的封号雷区</br>✅多任务并发处理，同时管理多个邮件 campaign 互不干扰</br>✅高度可定制化，发件频率、内容模板、目标筛选独立配置",
+        "url": "https://github.com/aaPanel/BillionMail",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "开源 邮件服务器 电子邮件营销 营销平台 自托管 Docker RoundCube 邮件分析 AGPLv3 aaPanel"
+      },
+      {
+        "title": "Prompt Optimizer - AI提示词优化器",
+        "desc": "一款强大的AI提示词优化工具，支持多轮迭代改进、多模型集成、实时对比测试。提供Web应用、桌面应用、Chrome插件和Docker部署四种使用方式，帮助用户编写更高质量的AI提示词，提升AI输出效果。",
+        "url": "https://github.com/linshenkx/prompt-optimizer",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "AI 提示词 优化器 prompt OpenAI Gemini DeepSeek 智谱AI SiliconFlow MCP 角色扮演 知识图谱 Docker Chrome插件 桌面应用 Web应用",
+        "recommended": true
+      },
+      {
+        "title": "LiYing - 自动化证件照处理程序",
+        "desc": "LiYing 是一套适用于自动化完成一般照相馆后期证件照处理流程的照片自动处理程序。支持人体、人脸自动识别，角度自动纠正，自动更换任意背景色，任意尺寸证件照自动裁切，并自动排版。完全离线运行，所有图像处理操作都在本地执行。",
+        "url": "https://github.com/aoguai/LiYing",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "证件照 自动化 图像处理 人脸识别 背景替换 照片裁切 离线处理 Python ONNX WebUI 照相馆 后期处理"
       }
     ],
     '开发辅助': [
