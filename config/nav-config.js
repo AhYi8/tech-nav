@@ -223,7 +223,15 @@ let navData = {
         "url": "https://github.com/aoguai/LiYing",
         "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
         "keywords": "证件照 自动化 图像处理 人脸识别 背景替换 照片裁切 离线处理 Python ONNX WebUI 照相馆 后期处理"
+      },
+      {
+        "title": "Gemini API 负载均衡器 (gemini-balance-do)",
+        "desc": "部署在 Cloudflare Workers 上的 Gemini API 负载均衡器和代理服务，使用 Durable Objects 存储管理 API 密钥，提供 OpenAI API 兼容接口，支持多密钥轮询负载均衡和流式响应",
+        "url": "https://github.com/zaunist/gemini-balance-do",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "Gemini API 负载均衡 Cloudflare Workers 代理服务 OpenAI兼容 API密钥管理 流式响应 Durable Objects SQLite"
       }
+
     ],
     '开发辅助': [
       {
