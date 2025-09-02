@@ -25,6 +25,7 @@ const categoryIcons = {
   'AI集合': 'bot',
   '代理机场': 'globe',
   '网盘资源': 'cloud',
+  '图片资源': 'image',
   '影视资源': 'video',
   '工具箱': 'drill',
   '在线社区': 'send'
@@ -58,6 +59,9 @@ const subCategoryIcons = {
   },
   '网盘资源': {
     '资源搜索': 'search'
+  },
+  '图片资源': {
+    '素材资源': 'image-down',
   },
   '影视资源': {
     '影视推荐': 'list-video',
@@ -590,6 +594,17 @@ let navData = {
       "url": "https://fuxipan.com",
       "logoUrl": "https://fuxipan.com/favicon.ico",
       "keywords": "伏羲盘 网盘 搜索引擎 夸克网盘 阿里云盘 百度网盘 资源 聚合 导航 失效链接 注册限制 VIP 广告"
+      }
+    ]
+  },
+  '图片资源': {
+    '素材资源': [
+      {
+        "title": "Pinterest",
+        "desc": "Pinterest是一个视觉发现平台，用户可以通过图片和视频来发现创意、保存想法并规划项目。提供丰富的视觉内容搜索和收藏功能。",
+        "url": "https://www.pinterest.com",
+        "logoUrl": "https://s.pinimg.com/webapp/favicon_48x48-7470a30d.png",
+        "keywords": "图片分享 创意发现 视觉搜索 收藏 灵感 设计 DIY 美食 时尚 家居装饰"
       }
     ]
   },
