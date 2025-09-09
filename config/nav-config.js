@@ -35,7 +35,8 @@ const categoryIcons = {
 const subCategoryIcons = {
   '搜索引擎': {
     '通用搜索': 'search',
-    '网盘搜索': 'cloud'
+    '网盘搜索': 'cloud',
+    '通用导航': 'compass'
   },
   '编程开发': {
     '开发工具': 'hammer',
@@ -131,6 +132,15 @@ let navData = {
       "logoUrl": "https://fuxipan.com/favicon.ico",
       "keywords": "伏羲盘 网盘 搜索引擎 夸克网盘 阿里云盘 百度网盘 资源 聚合 导航 失效链接 注册限制 VIP 广告"
       }
+    ],
+    '通用导航': [
+      {
+        "title": "币圈导航 - 区块链导航 - WEB3导航",
+        "desc": "聚合币圈交易所、行情工具、空投资讯、DeFi入口及行业动态的一站式区块链资源门户网站，提供区块链、加密货币、投资理财等相关书籍和资源",
+        "url": "https://www.0xnav.com",
+        "logoUrl": "https://www.0xnav.com/wp-content/uploads/2025/05/1746240622-0xnav_logo_favicon.png",
+        "keywords": "区块链 币圈 WEB3 导航 交易所 行情工具 空投 DeFi 加密货币 比特币 投资 金融 巴菲特 黑天鹅 反脆弱 魔鬼经济学"
+      }
     ]
   },
   '编程开发': {
@@ -154,36 +164,36 @@ let navData = {
     ],
     '开源仓库': [
       {
-        title: 'awesome-selfhosted',
-        desc: '一系列可在您自己的服务器上托管的自由软件网络服务和网络应用程序。',
-        url: 'https://awesome-selfhosted.net',
-        logoUrl: 'https://awesome-selfhosted.net/_static/logo.svg',
-        keywords: 'selfhosted 自托管 自部署 开源仓库',
-        highlight: false,
-        recommended: false
+        "title": 'awesome-selfhosted',
+        "desc": '一系列可在您自己的服务器上托管的自由软件网络服务和网络应用程序。',
+        "url": 'https://awesome-selfhosted.net',
+        "logoUrl": 'https://awesome-selfhosted.net/_static/logo.svg',
+        "keywords": 'selfhosted 自托管 自部署 开源仓库',
+        "highlight": false,
+        "recommended": false
       },
       {
-        title: 'RuoYi-Cloud',
-        desc: '🎉 基于Spring Boot、Spring Cloud & Alibaba的分布式微服务架构权限管理系统，同时提供了 Vue3 的版本',
-        url: 'https://ruoyi.vip',
-        logoUrl: 'https://ruoyi.vip/images/ruoyi.png',
-        keywords: 'RuoYi-Cloud SpringBoot SpringCloud 后台管理系统',
-        highlight: false,
-        recommended: false
+        "title": 'RuoYi-Cloud',
+        "desc": '🎉 基于Spring Boot、Spring Cloud & Alibaba的分布式微服务架构权限管理系统，同时提供了 Vue3 的版本',
+        "url": 'https://ruoyi.vip',
+        "logoUrl": 'https://ruoyi.vip/images/ruoyi.png',
+        "keywords": 'RuoYi-Cloud SpringBoot SpringCloud 后台管理系统',
+        "highlight": false,
+        "recommended": false
       },
       {
-        title: 'AFFiNE',
-        desc: 'AFFiNE.Pro 是一个开源的一体化工作空间，将文档编辑、白板绘图和项目规划完美融合在无限画布上，支持富文本、数据库、幻灯片等多种模块自由组合，配备多模态AI助手进行智能内容创作和格式转换，采用本地优先存储策略同时支持实时协作，用户可自托管部署，是Notion和Miro的强大开源替代方案。',
-        url: 'https://github.com/toeverything/AFFiNE',
-        logoUrl: 'https://github.githubassets.com/favicons/favicon-dark.png',
-        keywords: 'AFFiNE 开源工作空间 一体化 无限画布 文档编辑 白板绘图 项目规划 多模态AI 本地优先 实时协作 自托管 Notion替代 Miro替代 知识管理 生产力工具 跨平台同步'
+        "title": 'AFFiNE',
+        "desc": 'AFFiNE.Pro 是一个开源的一体化工作空间，将文档编辑、白板绘图和项目规划完美融合在无限画布上，支持富文本、数据库、幻灯片等多种模块自由组合，配备多模态AI助手进行智能内容创作和格式转换，采用本地优先存储策略同时支持实时协作，用户可自托管部署，是Notion和Miro的强大开源替代方案。',
+        "url": 'https://github.com/toeverything/AFFiNE',
+        "logoUrl": 'https://github.githubassets.com/favicons/favicon-dark.png',
+        "keywords": 'AFFiNE 开源工作空间 一体化 无限画布 文档编辑 白板绘图 项目规划 多模态AI 本地优先 实时协作 自托管 Notion替代 Miro替代 知识管理 生产力工具 跨平台同步'
       },
       {
-        title: 'MediaCrawler - 自媒体平台爬虫',
-        desc: '多平台自媒体公开数据采集工具：支持小红书/抖音/快手/B站/微博/贴吧/知乎的笔记/帖子/视频及二级评论抓取，二维码登录保持登录态，关键词搜索、指定ID、创作者主页采集，支持SQLite/MySQL/CSV/JSON存储，代理池与词云分析，基于 Playwright，便于学习与研究使用。',
-        url: 'https://github.com/NanmiCoder/MediaCrawler',
-        logoUrl: 'https://github.githubassets.com/favicons/favicon-dark.png',
-        keywords: '自媒体爬虫 多平台爬虫 小红书 抖音 快手 B站 微博 贴吧 知乎 评论采集 二级评论 关键词搜索 Playwright 登录态保持 IP代理池 数据存储 SQLite MySQL CSV JSON 词云 数据采集 Python 学习研究'
+        "title": 'MediaCrawler - 自媒体平台爬虫',
+        "desc": '多平台自媒体公开数据采集工具：支持小红书/抖音/快手/B站/微博/贴吧/知乎的笔记/帖子/视频及二级评论抓取，二维码登录保持登录态，关键词搜索、指定ID、创作者主页采集，支持SQLite/MySQL/CSV/JSON存储，代理池与词云分析，基于 Playwright，便于学习与研究使用。',
+        "url": 'https://github.com/NanmiCoder/MediaCrawler',
+        "logoUrl": 'https://github.githubassets.com/favicons/favicon-dark.png',
+        "keywords": '自媒体爬虫 多平台爬虫 小红书 抖音 快手 B站 微博 贴吧 知乎 评论采集 二级评论 关键词搜索 Playwright 登录态保持 IP代理池 数据存储 SQLite MySQL CSV JSON 词云 数据采集 Python 学习研究'
       },
       {
         "title": "res-downloader | 爱享素材下载器",
@@ -234,8 +244,15 @@ let navData = {
         "url": "https://github.com/zaunist/gemini-balance-do",
         "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
         "keywords": "Gemini API 负载均衡 Cloudflare Workers 代理服务 OpenAI兼容 API密钥管理 流式响应 Durable Objects SQLite"
+      },
+      {
+        "title": "enhanced-FaaS-in-China",
+        "desc": "通过修改CNAME记录提升部署在Cloudflare、Vercel或Netlify的网页在中国的访问速度和稳定性，支持三网优化和智能路线解析",
+        "url": "https://github.com/xingpingcn/enhanced-FaaS-in-China",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "cloudflare vercel netlify 加速 优选IP 中国 国内 境内 大陆 CDN DNS CNAME 网站加速 FaaS",
+        "recommended": true
       }
-
     ],
     '开发辅助': [
       {
@@ -346,11 +363,18 @@ let navData = {
     ],
     '其他工具': [
       {
-        title: '风鸟-企业查询平台',
-        desc: '风鸟查询是一款信用查询监控平台，核心功能：查公司、查人员、查关系、企业查、查老赖，提供便捷的工商信用查询、企业信息报告下载、主体信用报告下载、风险预警监控、关联族谱查询、营业执照查询等服务。为您提供全国企业信息查询，包括企业工商信息查询，信用信息查询，经营状况查询等相关信息。',
-        url: 'https://riskbird.com',
-        logoUrl: 'https://riskbird.com/favicon.ico',
-        keywords: '风鸟查询平台 查公司 查法人 企业信用 查企业 查人员 查关系 查老赖 企业查询 企业工商信息查询'
+        "title": '风鸟-企业查询平台',
+        "desc": '风鸟查询是一款信用查询监控平台，核心功能：查公司、查人员、查关系、企业查、查老赖，提供便捷的工商信用查询、企业信息报告下载、主体信用报告下载、风险预警监控、关联族谱查询、营业执照查询等服务。为您提供全国企业信息查询，包括企业工商信息查询，信用信息查询，经营状况查询等相关信息。',
+        "url": 'https://riskbird.com',
+        "logoUrl": 'https://riskbird.com/favicon.ico',
+        "keywords": '风鸟查询平台 查公司 查法人 企业信用 查企业 查人员 查关系 查老赖 企业查询 企业工商信息查询'
+      },
+      {
+        "title": "Superthread - 项目管理协作平台",
+        "desc": "一个功能丰富的项目管理和团队协作平台，提供看板管理、任务跟踪、页面创建、会议转录、键盘快捷键等功能，支持从 Trello、Jira、Shortcut 导入任务，适合团队协作和项目管理。",
+        "url": "https://app.superthread.com",
+        "logoUrl": "https://app.superthread.com/img/icons/favicon-32x32.png",
+        "keywords": "项目管理 团队协作 看板 任务管理 笔记 工作区 路线图 会议转录 导入任务 键盘快捷键 Trello Jira Shortcut 工作流"
       }
     ],
     '转换工具': [
