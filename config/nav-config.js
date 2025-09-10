@@ -569,6 +569,13 @@ let navData = {
         "url": "https://anyrouter.top/register?aff=FHvl",
         "logoUrl": "../assert/ico/AnyRouter.png",
         "keywords": "AnyRouter API Claude"
+      },
+      {
+        "title": "包子铺",
+        "desc": "免费AI模型服务平台，为无额度用户提供公益性AI服务，支持多渠道模型切换，纯公益运营永不收费",
+        "url": "https://api.5202030.xyz",
+        "logoUrl": "https://api.5202030.xyz/favicon.ico",
+        "keywords": "AI模型 免费服务 公益平台 人工智能 模型切换 用爱发电 永不收费"
       }
     ]
   },
