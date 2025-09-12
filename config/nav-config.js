@@ -522,32 +522,32 @@ let navData = {
     ],
     'API平台': [
       {
-        title: '硅基流动',
-        desc: 'SiliconCloud 硅基流动云服务，高效、模型丰富、性价比高的大模型服务平台。',
-        url: 'https://cloud.siliconflow.cn',
-        logoUrl: 'https://cloud.siliconflow.cn/favicon.ico',
-        keywords: 'siliconflow 大模型 ai 工具'
+        "title": '硅基流动',
+        "desc": 'SiliconCloud 硅基流动云服务，高效、模型丰富、性价比高的大模型服务平台。',
+        "url": 'https://cloud.siliconflow.cn',
+        "logoUrl": 'https://cloud.siliconflow.cn/favicon.ico',
+        "keywords": 'siliconflow 大模型 ai 工具'
       },
       {
-        title: 'OpenAI API',
-        desc: 'OpenAI 提供的 API 接口，用于访问 GPT 模型等 AI 服务。',
-        url: 'https://openai.com/api/',
-        logoUrl: 'https://cdn.oaistatic.com/assets/favicon-l4nq08hd.svg',
-        keywords: 'openai api 人工智能 模型 服务'
+        "title": 'OpenAI API',
+        "desc": 'OpenAI 提供的 API 接口，用于访问 GPT 模型等 AI 服务。',
+        "url": 'https://openai.com/api/',
+        "logoUrl": 'https://cdn.oaistatic.com/assets/favicon-l4nq08hd.svg',
+        "keywords": 'openai api 人工智能 模型 服务'
       },
       {
-        title: 'GPT-GOD',
-        desc: '一个综合API平台，提供了丰富的AI模型和工具，帮助开发者快速构建AI应用。每日签到奖励积分',
-        url: 'https://gptgod.online/#/register?invite_code=5s7iq10ro9h3ex9augmeq3tnw',
-        logoUrl: 'https://gptgod.online/favicon.ico',
-        keywords: 'gpt-god api 人工智能 模型 服务'
+        "title": 'GPT-GOD',
+        "desc": '一个综合API平台，提供了丰富的AI模型和工具，帮助开发者快速构建AI应用。每日签到奖励积分',
+        "url": 'https://gptgod.online/#/register?invite_code=5s7iq10ro9h3ex9augmeq3tnw',
+        "logoUrl": 'https://gptgod.online/favicon.ico',
+        "keywords": 'gpt-god api 人工智能 模型 服务'
       },
       {
-        title: '火山方舟',
-        desc: '火山方舟是火山引擎推出的一站式AI研发平台，提供了丰富的AI模型和工具，帮助开发者快速构建AI应用。',
-        url: 'https://console.volcengine.com',
-        logoUrl: 'https://res.volccdn.com/obj/volc-console-fe/images/favicon.52bcaa41.png',
-        keywords: '火山方舟 火山引擎 AI 模型 工具'
+        "title": '火山方舟',
+        "desc": '火山方舟是火山引擎推出的一站式AI研发平台，提供了丰富的AI模型和工具，帮助开发者快速构建AI应用。',
+        "url": 'https://console.volcengine.com',
+        "logoUrl": 'https://res.volccdn.com/obj/volc-console-fe/images/favicon.52bcaa41.png',
+        "keywords": '火山方舟 火山引擎 AI 模型 工具'
       },
       {
         "title": "Wisdom Gate",
@@ -602,11 +602,11 @@ let navData = {
     ],
     '客户端': [
       {
-        title: 'Clash Verge',
-        desc: 'Clash Verge 是一个基于 Clash 内核的 GUI 客户端，提供了丰富的功能和优化的性能。',
-        url: 'https://github.com/clash-verge-rev/clash-verge-rev.git',
-        logoUrl: '../assert/ico/clash-verge-rev.png',
-        keywords: 'clash verge 代理 节点 魔法'
+        "title": 'Clash Verge',
+        "desc": 'Clash Verge 是一个基于 Clash 内核的 GUI 客户端，提供了丰富的功能和优化的性能。',
+        "url": 'https://github.com/clash-verge-rev/clash-verge-rev.git',
+        "logoUrl": '../assert/ico/clash-verge-rev.png',
+        "keywords": 'clash verge 代理 节点 魔法'
       },
       {
         "title": "mihomo-party | MAC 用户",
@@ -614,6 +614,13 @@ let navData = {
         "url": "https://github.com/mihomo-party-org/mihomo-party",
         "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
         "keywords": "mihomo electron gui proxy clash vpn network tool"
+      },
+      {
+        "title": 'V2rayN',
+        "desc": '小白勿入 | V2rayN 是一个 Windows 平台上的 V2Ray 客户端，提供了图形用户界面，方便用户配置和管理 V2Ray 代理服务。',
+        "url": 'https://github.com/2dust/v2rayN/releases',
+        "logoUrl": '../assert/ico/v2rayN.png',
+        "keywords": 'V2rayN 代理 节点 魔法'
       }
     ]
   },
