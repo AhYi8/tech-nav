@@ -319,6 +319,13 @@ let navData = {
         "logoUrl": "https://www.aiprompter.cc/images/icons/icon128.png",
         "keywords": "AI提示词 提示词管理 Prompt管理 ChatGPT Claude AI对话 AI工具 人工智能 创作助手 提示词模板 提示词收藏 AI助手 智能创作 浏览器插件 MCP服务 提示词分享 AI咖"
 
+      },
+      {
+        "title": "学习方法论 – 方法论大全，系统学习方法论",
+        "desc": "方法论大全，收录各类方法论、思维模型与实用技巧，帮助你更清晰地思考、更高效地学习、并高质量地解决问题。",
+        "url": "https://thinking.jimbray.xyz/zh",
+        "logoUrl": "https://thinking.jimbray.xyz/favicon.ico",
+        "keywords": "问题解决, 战略规划, MECE 原则, 7S 框架, STAR 面试法, 整合思维, 杠杆思维"
       }
 
     ],
