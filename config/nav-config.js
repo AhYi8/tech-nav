@@ -25,6 +25,7 @@ const categoryIcons = {
   'AI集合': 'bot',
   '代理机场': 'globe',
   '网盘资源': 'cloud',
+  '图片资源': 'image',
   '影视资源': 'video',
   '工具箱': 'drill',
   '在线社区': 'send'
@@ -34,13 +35,14 @@ const categoryIcons = {
 const subCategoryIcons = {
   '搜索引擎': {
     '通用搜索': 'search',
-    '网盘搜索': 'cloud'
+    '网盘搜索': 'cloud',
+    '通用导航': 'compass'
   },
   '编程开发': {
     '开发工具': 'hammer',
     '开源仓库': 'github',
     '开发辅助': 'wrench',
-    '云服务器': 'server'
+    '云服务': 'server'
   },
   '学习教育': {
     '学习平台': 'school'
@@ -58,6 +60,9 @@ const subCategoryIcons = {
   },
   '网盘资源': {
     '资源搜索': 'search'
+  },
+  '图片资源': {
+    '素材资源': 'image-down',
   },
   '影视资源': {
     '影视推荐': 'list-video',
@@ -127,6 +132,15 @@ let navData = {
       "logoUrl": "https://fuxipan.com/favicon.ico",
       "keywords": "伏羲盘 网盘 搜索引擎 夸克网盘 阿里云盘 百度网盘 资源 聚合 导航 失效链接 注册限制 VIP 广告"
       }
+    ],
+    '通用导航': [
+      {
+        "title": "币圈导航 - 区块链导航 - WEB3导航",
+        "desc": "聚合币圈交易所、行情工具、空投资讯、DeFi入口及行业动态的一站式区块链资源门户网站，提供区块链、加密货币、投资理财等相关书籍和资源",
+        "url": "https://www.0xnav.com",
+        "logoUrl": "https://www.0xnav.com/wp-content/uploads/2025/05/1746240622-0xnav_logo_favicon.png",
+        "keywords": "区块链 币圈 WEB3 导航 交易所 行情工具 空投 DeFi 加密货币 比特币 投资 金融 巴菲特 黑天鹅 反脆弱 魔鬼经济学"
+      }
     ]
   },
   '编程开发': {
@@ -150,36 +164,36 @@ let navData = {
     ],
     '开源仓库': [
       {
-        title: 'awesome-selfhosted',
-        desc: '一系列可在您自己的服务器上托管的自由软件网络服务和网络应用程序。',
-        url: 'https://awesome-selfhosted.net',
-        logoUrl: 'https://awesome-selfhosted.net/_static/logo.svg',
-        keywords: 'selfhosted 自托管 自部署 开源仓库',
-        highlight: false,
-        recommended: false
+        "title": 'awesome-selfhosted',
+        "desc": '一系列可在您自己的服务器上托管的自由软件网络服务和网络应用程序。',
+        "url": 'https://awesome-selfhosted.net',
+        "logoUrl": 'https://awesome-selfhosted.net/_static/logo.svg',
+        "keywords": 'selfhosted 自托管 自部署 开源仓库',
+        "highlight": false,
+        "recommended": false
       },
       {
-        title: 'RuoYi-Cloud',
-        desc: '🎉 基于Spring Boot、Spring Cloud & Alibaba的分布式微服务架构权限管理系统，同时提供了 Vue3 的版本',
-        url: 'https://ruoyi.vip',
-        logoUrl: 'https://ruoyi.vip/images/ruoyi.png',
-        keywords: 'RuoYi-Cloud SpringBoot SpringCloud 后台管理系统',
-        highlight: false,
-        recommended: false
+        "title": 'RuoYi-Cloud',
+        "desc": '🎉 基于Spring Boot、Spring Cloud & Alibaba的分布式微服务架构权限管理系统，同时提供了 Vue3 的版本',
+        "url": 'https://ruoyi.vip',
+        "logoUrl": 'https://ruoyi.vip/images/ruoyi.png',
+        "keywords": 'RuoYi-Cloud SpringBoot SpringCloud 后台管理系统',
+        "highlight": false,
+        "recommended": false
       },
       {
-        title: 'AFFiNE',
-        desc: 'AFFiNE.Pro 是一个开源的一体化工作空间，将文档编辑、白板绘图和项目规划完美融合在无限画布上，支持富文本、数据库、幻灯片等多种模块自由组合，配备多模态AI助手进行智能内容创作和格式转换，采用本地优先存储策略同时支持实时协作，用户可自托管部署，是Notion和Miro的强大开源替代方案。',
-        url: 'https://github.com/toeverything/AFFiNE',
-        logoUrl: 'https://github.githubassets.com/favicons/favicon-dark.png',
-        keywords: 'AFFiNE 开源工作空间 一体化 无限画布 文档编辑 白板绘图 项目规划 多模态AI 本地优先 实时协作 自托管 Notion替代 Miro替代 知识管理 生产力工具 跨平台同步'
+        "title": 'AFFiNE',
+        "desc": 'AFFiNE.Pro 是一个开源的一体化工作空间，将文档编辑、白板绘图和项目规划完美融合在无限画布上，支持富文本、数据库、幻灯片等多种模块自由组合，配备多模态AI助手进行智能内容创作和格式转换，采用本地优先存储策略同时支持实时协作，用户可自托管部署，是Notion和Miro的强大开源替代方案。',
+        "url": 'https://github.com/toeverything/AFFiNE',
+        "logoUrl": 'https://github.githubassets.com/favicons/favicon-dark.png',
+        "keywords": 'AFFiNE 开源工作空间 一体化 无限画布 文档编辑 白板绘图 项目规划 多模态AI 本地优先 实时协作 自托管 Notion替代 Miro替代 知识管理 生产力工具 跨平台同步'
       },
       {
-        title: 'MediaCrawler - 自媒体平台爬虫',
-        desc: '多平台自媒体公开数据采集工具：支持小红书/抖音/快手/B站/微博/贴吧/知乎的笔记/帖子/视频及二级评论抓取，二维码登录保持登录态，关键词搜索、指定ID、创作者主页采集，支持SQLite/MySQL/CSV/JSON存储，代理池与词云分析，基于 Playwright，便于学习与研究使用。',
-        url: 'https://github.com/NanmiCoder/MediaCrawler',
-        logoUrl: 'https://github.githubassets.com/favicons/favicon-dark.png',
-        keywords: '自媒体爬虫 多平台爬虫 小红书 抖音 快手 B站 微博 贴吧 知乎 评论采集 二级评论 关键词搜索 Playwright 登录态保持 IP代理池 数据存储 SQLite MySQL CSV JSON 词云 数据采集 Python 学习研究'
+        "title": 'MediaCrawler - 自媒体平台爬虫',
+        "desc": '多平台自媒体公开数据采集工具：支持小红书/抖音/快手/B站/微博/贴吧/知乎的笔记/帖子/视频及二级评论抓取，二维码登录保持登录态，关键词搜索、指定ID、创作者主页采集，支持SQLite/MySQL/CSV/JSON存储，代理池与词云分析，基于 Playwright，便于学习与研究使用。',
+        "url": 'https://github.com/NanmiCoder/MediaCrawler',
+        "logoUrl": 'https://github.githubassets.com/favicons/favicon-dark.png',
+        "keywords": '自媒体爬虫 多平台爬虫 小红书 抖音 快手 B站 微博 贴吧 知乎 评论采集 二级评论 关键词搜索 Playwright 登录态保持 IP代理池 数据存储 SQLite MySQL CSV JSON 词云 数据采集 Python 学习研究'
       },
       {
         "title": "res-downloader | 爱享素材下载器",
@@ -187,6 +201,57 @@ let navData = {
         "url": "https://github.com/putyy/res-downloader",
         "logoUrl": "https://github.com/putyy/res-downloader/raw/master/build/appicon.png",
         "keywords": "Go Wails 资源下载 嗅探 抓包 代理 跨平台 Windows macOS Linux 视频 音频 图片 m3u8 直播 流媒体 微信视频号 小程序 抖音 快手 小红书 酷狗 QQ音乐 i18n 下载器"
+      },
+      {
+        "title": "MediaCrawler - 自媒体平台爬虫",
+        "desc": "基于 Playwright 的多平台自媒体数据采集工具，支持小红书、抖音、快手、B站、微博、贴吧、知乎等主流平台的公开信息抓取，无需JS逆向，支持关键词搜索、指定帖子爬取、评论获取、创作者主页等功能。</br>🎯 核心功能升级</br>✅ 断点续爬功能（重点特性）</br>✅ 多账号 + IP代理池支持（重点特性）</br>✅ 去除 Playwright 依赖，使用更简单</br>✅ 完整 Linux 环境支持</br>🏗️ 架构设计优化</br>✅ 代码重构优化，更易读易维护（解耦 JS 签名逻辑）</br>✅ 企业级代码质量，适合构建大型爬虫项目</br>✅ 完美架构设计，高扩展性，源码学习价值更大</br>🎁 额外功能</br>✅ 自媒体视频下载器桌面端（适合学习全栈开发）</br>✅ 多平台首页信息流推荐（HomeFeed）</br>基于自媒体平台的AI Agent正在开发中 🚀🚀",
+        "url": "https://github.com/NanmiCoder/MediaCrawler",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "爬虫 自媒体 小红书 抖音 快手 B站 微博 贴吧 知乎 Playwright 数据采集 评论爬取 Python"
+      },
+      {
+        "title": "AFFiNE - 集写作、绘图、规划于一体",
+        "desc": "注重隐私、本地优先的开源替代方案，可替代Notion和Miro。为富有创造力的思维提供超融合平台，结合文档、画布和表格，配备多模态AI助手、实时协作和自托管功能。",
+        "url": "https://github.com/toeverything/AFFiNE",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "notion替代品 miro替代品 知识库 白板 画布 文档 协作 本地优先 隐私保护 开源 自托管 多模态AI 实时同步 跨平台 生产力 工作空间 编辑器 块编辑 typescript react electron"
+      },
+      {
+        "title": "BillionMail",
+        "desc": "未来的开源邮件服务器和电子邮件营销平台，提供完全控制的邮件营销解决方案，支持高级分析、客户管理、无限发送和自托管部署</br>主要特性：</br>✅无需依赖 SMTP 中继，开箱即用，告别繁琐配置</br>✅强大可视化管理界面，任务调度、数据追踪、内容编辑一站式搞定，远超 “简单功能”</br>✅抗封号智能策略，避开 SaaS 常见的封号雷区</br>✅多任务并发处理，同时管理多个邮件 campaign 互不干扰</br>✅高度可定制化，发件频率、内容模板、目标筛选独立配置",
+        "url": "https://github.com/aaPanel/BillionMail",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "开源 邮件服务器 电子邮件营销 营销平台 自托管 Docker RoundCube 邮件分析 AGPLv3 aaPanel"
+      },
+      {
+        "title": "Prompt Optimizer - AI提示词优化器",
+        "desc": "一款强大的AI提示词优化工具，支持多轮迭代改进、多模型集成、实时对比测试。提供Web应用、桌面应用、Chrome插件和Docker部署四种使用方式，帮助用户编写更高质量的AI提示词，提升AI输出效果。",
+        "url": "https://github.com/linshenkx/prompt-optimizer",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "AI 提示词 优化器 prompt OpenAI Gemini DeepSeek 智谱AI SiliconFlow MCP 角色扮演 知识图谱 Docker Chrome插件 桌面应用 Web应用",
+        "recommended": true
+      },
+      {
+        "title": "LiYing - 自动化证件照处理程序",
+        "desc": "LiYing 是一套适用于自动化完成一般照相馆后期证件照处理流程的照片自动处理程序。支持人体、人脸自动识别，角度自动纠正，自动更换任意背景色，任意尺寸证件照自动裁切，并自动排版。完全离线运行，所有图像处理操作都在本地执行。",
+        "url": "https://github.com/aoguai/LiYing",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "证件照 自动化 图像处理 人脸识别 背景替换 照片裁切 离线处理 Python ONNX WebUI 照相馆 后期处理"
+      },
+      {
+        "title": "Gemini API 负载均衡器 (gemini-balance-do)",
+        "desc": "部署在 Cloudflare Workers 上的 Gemini API 负载均衡器和代理服务，使用 Durable Objects 存储管理 API 密钥，提供 OpenAI API 兼容接口，支持多密钥轮询负载均衡和流式响应",
+        "url": "https://github.com/zaunist/gemini-balance-do",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "Gemini API 负载均衡 Cloudflare Workers 代理服务 OpenAI兼容 API密钥管理 流式响应 Durable Objects SQLite"
+      },
+      {
+        "title": "enhanced-FaaS-in-China",
+        "desc": "通过修改CNAME记录提升部署在Cloudflare、Vercel或Netlify的网页在中国的访问速度和稳定性，支持三网优化和智能路线解析",
+        "url": "https://github.com/xingpingcn/enhanced-FaaS-in-China",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "cloudflare vercel netlify 加速 优选IP 中国 国内 境内 大陆 CDN DNS CNAME 网站加速 FaaS",
+        "recommended": true
       }
     ],
     '开发辅助': [
@@ -198,13 +263,34 @@ let navData = {
         keywords: '工具箱 tools 工具'
       }
     ],
-    '云服务器': [
+    '云服务': [
       {
         title: '雨云',
         desc: '欢迎来到以用户体验为优先的雨云，我们提供稳定高速的云服务器、游戏云、物理服务器，强大的功能，高效率的客户支持，简洁易用的面板，值得您的信赖',
         url: 'https://www.rainyun.com/21zys_?s=nav',
         logoUrl: 'https://www.rainyun.com/favicon.ico',
         keywords: '雨云 虚拟主机 云服务器 我的世界服务器 游戏服务器 BGP 游戏云 MC VPS 高主频 免费主机 宝塔 美国vps 免费空间 便宜vps kvm EP主机 美国云服务器 免费CDN 香港CDN 免费二级域名 免费SSL证书 裸金属服务器 游戏云 云应用'
+      },
+      {
+        "title": "SQLPub | 免费 MySQL 云数据库",
+        "desc": "提供最新MySQL服务器测试服务的平台，支持免费注册和在线管理，邮箱注册，一个邮箱只能有创建一个 MySQL 数据库。免费额度：最大36000次/小时的请求、同时30个连接和500M存储空间；",
+        "url": "https://sqlpub.com",
+        "logoUrl": "https://sqlpub.com/favicon.ico",
+        "keywords": "MySQL 云数据库 免费"
+      },
+      {
+        "title": "官方免费 Redis 云数据库",
+        "desc": "Redis 官方免费云数据库，免费空间 30 MB。",
+        "url": "https://redis.io",
+        "logoUrl": "https://redis.io/favicon.ico",
+        "keywords": "Redis 云数据库 免费"
+      },
+      {
+        "title": "官方免费 MongoDB 云数据库",
+        "desc": "MongoDB 官方免费云数据库，免费空间 500 MB。",
+        "url": "https://www.mongodb.com",
+        "logoUrl": "https://www.mongodb.com/favicon.ico",
+        "keywords": "MongoDB 云数据库 免费"
       }
     ]
   },
@@ -277,11 +363,18 @@ let navData = {
     ],
     '其他工具': [
       {
-        title: '风鸟-企业查询平台',
-        desc: '风鸟查询是一款信用查询监控平台，核心功能：查公司、查人员、查关系、企业查、查老赖，提供便捷的工商信用查询、企业信息报告下载、主体信用报告下载、风险预警监控、关联族谱查询、营业执照查询等服务。为您提供全国企业信息查询，包括企业工商信息查询，信用信息查询，经营状况查询等相关信息。',
-        url: 'https://riskbird.com',
-        logoUrl: 'https://riskbird.com/favicon.ico',
-        keywords: '风鸟查询平台 查公司 查法人 企业信用 查企业 查人员 查关系 查老赖 企业查询 企业工商信息查询'
+        "title": '风鸟-企业查询平台',
+        "desc": '风鸟查询是一款信用查询监控平台，核心功能：查公司、查人员、查关系、企业查、查老赖，提供便捷的工商信用查询、企业信息报告下载、主体信用报告下载、风险预警监控、关联族谱查询、营业执照查询等服务。为您提供全国企业信息查询，包括企业工商信息查询，信用信息查询，经营状况查询等相关信息。',
+        "url": 'https://riskbird.com',
+        "logoUrl": 'https://riskbird.com/favicon.ico',
+        "keywords": '风鸟查询平台 查公司 查法人 企业信用 查企业 查人员 查关系 查老赖 企业查询 企业工商信息查询'
+      },
+      {
+        "title": "Superthread - 项目管理协作平台",
+        "desc": "一个功能丰富的项目管理和团队协作平台，提供看板管理、任务跟踪、页面创建、会议转录、键盘快捷键等功能，支持从 Trello、Jira、Shortcut 导入任务，适合团队协作和项目管理。",
+        "url": "https://app.superthread.com",
+        "logoUrl": "https://app.superthread.com/img/icons/favicon-32x32.png",
+        "keywords": "项目管理 团队协作 看板 任务管理 笔记 工作区 路线图 会议转录 导入任务 键盘快捷键 Trello Jira Shortcut 工作流"
       }
     ],
     '转换工具': [
@@ -436,32 +529,60 @@ let navData = {
     ],
     'API平台': [
       {
-        title: '硅基流动',
-        desc: 'SiliconCloud 硅基流动云服务，高效、模型丰富、性价比高的大模型服务平台。',
-        url: 'https://cloud.siliconflow.cn',
-        logoUrl: 'https://cloud.siliconflow.cn/favicon.ico',
-        keywords: 'siliconflow 大模型 ai 工具'
+        "title": '硅基流动',
+        "desc": 'SiliconCloud 硅基流动云服务，高效、模型丰富、性价比高的大模型服务平台。',
+        "url": 'https://cloud.siliconflow.cn',
+        "logoUrl": 'https://cloud.siliconflow.cn/favicon.ico',
+        "keywords": 'siliconflow 大模型 ai 工具'
       },
       {
-        title: 'OpenAI API',
-        desc: 'OpenAI 提供的 API 接口，用于访问 GPT 模型等 AI 服务。',
-        url: 'https://openai.com/api/',
-        logoUrl: 'https://cdn.oaistatic.com/assets/favicon-l4nq08hd.svg',
-        keywords: 'openai api 人工智能 模型 服务'
+        "title": 'OpenAI API',
+        "desc": 'OpenAI 提供的 API 接口，用于访问 GPT 模型等 AI 服务。',
+        "url": 'https://openai.com/api/',
+        "logoUrl": 'https://cdn.oaistatic.com/assets/favicon-l4nq08hd.svg',
+        "keywords": 'openai api 人工智能 模型 服务'
       },
       {
-        title: 'GPT-GOD',
-        desc: '一个综合API平台，提供了丰富的AI模型和工具，帮助开发者快速构建AI应用。每日签到奖励积分',
-        url: 'https://gptgod.online/#/register?invite_code=5s7iq10ro9h3ex9augmeq3tnw',
-        logoUrl: 'https://gptgod.online/favicon.ico',
-        keywords: 'gpt-god api 人工智能 模型 服务'
+        "title": 'GPT-GOD',
+        "desc": '一个综合API平台，提供了丰富的AI模型和工具，帮助开发者快速构建AI应用。每日签到奖励积分',
+        "url": 'https://gptgod.online/#/register?invite_code=5s7iq10ro9h3ex9augmeq3tnw',
+        "logoUrl": 'https://gptgod.online/favicon.ico',
+        "keywords": 'gpt-god api 人工智能 模型 服务'
       },
       {
-        title: '火山方舟',
-        desc: '火山方舟是火山引擎推出的一站式AI研发平台，提供了丰富的AI模型和工具，帮助开发者快速构建AI应用。',
-        url: 'https://console.volcengine.com',
-        logoUrl: 'https://res.volccdn.com/obj/volc-console-fe/images/favicon.52bcaa41.png',
-        keywords: '火山方舟 火山引擎 AI 模型 工具'
+        "title": '火山方舟',
+        "desc": '火山方舟是火山引擎推出的一站式AI研发平台，提供了丰富的AI模型和工具，帮助开发者快速构建AI应用。',
+        "url": 'https://console.volcengine.com',
+        "logoUrl": 'https://res.volccdn.com/obj/volc-console-fe/images/favicon.52bcaa41.png',
+        "keywords": '火山方舟 火山引擎 AI 模型 工具'
+      },
+      {
+        "title": "Wisdom Gate",
+        "desc": "注册即送 $10 额度，可以多注册几个。可使用模型：</br>wisdom-ai-gpt5 (via Gpt5)</br>wisdom-ai-gpt5-mini (via Gpt5 Mini)</br>wisdom-ai-gpt5-nano (via Gpt5 Nano)</br>wisdom-ai-dsv3 (via DeepseekV3)</br>wisdom-ai-dsr1 (via DeepseekR1)</br>wisdom-ai-oss (via GptOSS-120b)</br>wisdom-ai-claude-sonnet-4 (via Claude Sonnet 4)</br>wisdom-ai-gemini-2.5-flash (via Gemini 2.5 Flash)",
+        "url": "https://wisdom-gate.juheapi.com?i=AMRy",
+        "logoUrl": "https://wisdom-gate.juheapi.com/logo/logo.png",
+        "keywords": "OpenAPI GPT5 Deepseek Claude Gemini"
+      },
+      {
+        "title": "cerebras",
+        "desc": "每日免费 100w token。可以用模型列表：</br>gpt-oss-120b</br>llama-3.3-70b</br>llama-4-maverick-17b-128e-instruct</br>llama-4-scout-17b-16e-instruct</br>llama3.1-8b</br>qwen-3-235b-a22b-instruct-2507</br>qwen-3-235b-a22b-thinking-2507</br>qwen-3-32b</br>qwen-3-coder-480b</br>gpt-oss-120b</br>llama-3.3-70b</br>llama-4-maverick-17b-128e-instruct</br>llama-4-scout-17b-16e-instruct</br>llama3.1-8b</br>qwen-3-235b-a22b-instruct-2507</br>qwen-3-235b-a22b-thinking-2507</br>qwen-3-32b</br>qwen-3-coder-480b",
+        "url": "https://cloud.cerebras.ai?referral_code=pxrkk2cx",
+        "logoUrl": "https://cloud.cerebras.ai/images/logo/cb-fav-32.png",
+        "keywords": "免费 API 模型 服务"
+      },
+      {
+        "title": "AnyRouter",
+        "desc": "每日签到赠送 $25 额度。提供Claude API服务的在线平台，支持充值、邀请奖励等功能的AI服务路由器",
+        "url": "https://anyrouter.top/register?aff=FHvl",
+        "logoUrl": "../assert/ico/AnyRouter.png",
+        "keywords": "AnyRouter API Claude"
+      },
+      {
+        "title": "包子铺",
+        "desc": "免费AI模型服务平台，为无额度用户提供公益性AI服务，支持多渠道模型切换，纯公益运营永不收费",
+        "url": "https://api.5202030.xyz",
+        "logoUrl": "https://api.5202030.xyz/favicon.ico",
+        "keywords": "AI模型 免费服务 公益平台 人工智能 模型切换 用爱发电 永不收费"
       }
     ]
   },
@@ -488,11 +609,25 @@ let navData = {
     ],
     '客户端': [
       {
-        title: 'Clash Verge',
-        desc: 'Clash Verge 是一个基于 Clash 内核的 GUI 客户端，提供了丰富的功能和优化的性能。',
-        url: 'https://github.com/clash-verge-rev/clash-verge-rev.git',
-        logoUrl: '../assert/ico/clash-verge-rev.png',
-        keywords: 'clash verge 代理 节点 魔法'
+        "title": 'Clash Verge',
+        "desc": 'Clash Verge 是一个基于 Clash 内核的 GUI 客户端，提供了丰富的功能和优化的性能。',
+        "url": 'https://github.com/clash-verge-rev/clash-verge-rev.git',
+        "logoUrl": '../assert/ico/clash-verge-rev.png',
+        "keywords": 'clash verge 代理 节点 魔法'
+      },
+      {
+        "title": "mihomo-party | MAC 用户",
+        "desc": "Another Mihomo GUI - 基于 Electron 的 Mihomo 图形用户界面",
+        "url": "https://github.com/mihomo-party-org/mihomo-party",
+        "logoUrl": "https://github.githubassets.com/favicons/favicon-dark.png",
+        "keywords": "mihomo electron gui proxy clash vpn network tool"
+      },
+      {
+        "title": 'V2rayN',
+        "desc": '小白勿入 | V2rayN 是一个 Windows 平台上的 V2Ray 客户端，提供了图形用户界面，方便用户配置和管理 V2Ray 代理服务。',
+        "url": 'https://github.com/2dust/v2rayN/releases',
+        "logoUrl": '../assert/ico/v2rayN.png',
+        "keywords": 'V2rayN 代理 节点 魔法'
       }
     ]
   },
@@ -504,6 +639,17 @@ let navData = {
       "url": "https://fuxipan.com",
       "logoUrl": "https://fuxipan.com/favicon.ico",
       "keywords": "伏羲盘 网盘 搜索引擎 夸克网盘 阿里云盘 百度网盘 资源 聚合 导航 失效链接 注册限制 VIP 广告"
+      }
+    ]
+  },
+  '图片资源': {
+    '素材资源': [
+      {
+        "title": "Pinterest",
+        "desc": "Pinterest是一个视觉发现平台，用户可以通过图片和视频来发现创意、保存想法并规划项目。提供丰富的视觉内容搜索和收藏功能。",
+        "url": "https://www.pinterest.com",
+        "logoUrl": "https://s.pinimg.com/webapp/favicon_48x48-7470a30d.png",
+        "keywords": "图片分享 创意发现 视觉搜索 收藏 灵感 设计 DIY 美食 时尚 家居装饰"
       }
     ]
   },
