@@ -293,6 +293,15 @@ let navData = {
         "keywords": "MongoDB 云数据库 免费"
       },
       {
+        "title": "UCloud优刻得",
+        "desc": "<strong>2H4G30M 云主机 140元/年</strong></br>UCloud(优刻得)是中国知名的中立云计算服务商，科创板上市(股票代码：688158)，中国云计算第一股，专注于提供可靠的企业级云服务，包括云服务器、云主机、云数据库、混合云、CDN、人工智能等服务",
+        "url": "https://passport.ucloud.cn?cps_code=BTpCaaSSjDlCI7Tp5dZzZ8",
+        "logoUrl": "	https://www.ucloud.cn/favicon.ico",
+        "keywords": "云主机、云数据库、混合云、CDN、云计算、UCloud、优刻得、云服务器、互联网+解决方案、人工智能、全球服解决方案",
+        "highlight": true,
+        "recommended": true
+      },
+      {
         "title": "ClawCloud Run",
         "desc": "提供首次注册$5积分奖励和每月$5积分福利的云服务平台，支持Github和Gmail用户注册",
         "url": "https://ap-southeast-1.run.claw.cloud/signin",
