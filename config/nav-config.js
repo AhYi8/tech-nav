@@ -265,11 +265,11 @@ let navData = {
     ],
     '云服务': [
       {
-        title: '雨云',
-        desc: '欢迎来到以用户体验为优先的雨云，我们提供稳定高速的云服务器、游戏云、物理服务器，强大的功能，高效率的客户支持，简洁易用的面板，值得您的信赖',
-        url: 'https://www.rainyun.com/21zys_?s=nav',
-        logoUrl: 'https://www.rainyun.com/favicon.ico',
-        keywords: '雨云 虚拟主机 云服务器 我的世界服务器 游戏服务器 BGP 游戏云 MC VPS 高主频 免费主机 宝塔 美国vps 免费空间 便宜vps kvm EP主机 美国云服务器 免费CDN 香港CDN 免费二级域名 免费SSL证书 裸金属服务器 游戏云 云应用'
+        "title": '雨云',
+        "desc": '欢迎来到以用户体验为优先的雨云，我们提供稳定高速的云服务器、游戏云、物理服务器，强大的功能，高效率的客户支持，简洁易用的面板，值得您的信赖',
+        "url": 'https://www.rainyun.com/21zys_?s=nav',
+        "logoUrl": 'https://www.rainyun.com/favicon.ico',
+        "keywords": '雨云 虚拟主机 云服务器 我的世界服务器 游戏服务器 BGP 游戏云 MC VPS 高主频 免费主机 宝塔 美国vps 免费空间 便宜vps kvm EP主机 美国云服务器 免费CDN 香港CDN 免费二级域名 免费SSL证书 裸金属服务器 游戏云 云应用'
       },
       {
         "title": "SQLPub | 免费 MySQL 云数据库",
@@ -291,6 +291,13 @@ let navData = {
         "url": "https://www.mongodb.com",
         "logoUrl": "https://www.mongodb.com/favicon.ico",
         "keywords": "MongoDB 云数据库 免费"
+      },
+      {
+        "title": "ClawCloud Run",
+        "desc": "提供首次注册$5积分奖励和每月$5积分福利的云服务平台，支持Github和Gmail用户注册",
+        "url": "https://ap-southeast-1.run.claw.cloud/signin",
+        "logoUrl": "https://ap-southeast-1.run.claw.cloud/icons/favicon-32x32.png",
+        "keywords": "ClawCloud 云服务 免费 应用部署"
       }
     ]
   },
