@@ -265,6 +265,15 @@ let navData = {
     ],
     '云服务': [
       {
+        "title": "UCloud优刻得",
+        "desc": "<strong>2H4G30M 云主机 140元/年</strong></br>UCloud(优刻得)是中国知名的中立云计算服务商，科创板上市(股票代码：688158)，中国云计算第一股，专注于提供可靠的企业级云服务，包括云服务器、云主机、云数据库、混合云、CDN、人工智能等服务",
+        "url": "https://passport.ucloud.cn?cps_code=BTpCaaSSjDlCI7Tp5dZzZ8",
+        "logoUrl": "	https://www.ucloud.cn/favicon.ico",
+        "keywords": "云主机、云数据库、混合云、CDN、云计算、UCloud、优刻得、云服务器、互联网+解决方案、人工智能、全球服解决方案",
+        "highlight": true,
+        "recommended": true
+      },
+      {
         "title": '雨云',
         "desc": '欢迎来到以用户体验为优先的雨云，我们提供稳定高速的云服务器、游戏云、物理服务器，强大的功能，高效率的客户支持，简洁易用的面板，值得您的信赖',
         "url": 'https://www.rainyun.com/21zys_?s=nav',
@@ -291,15 +300,6 @@ let navData = {
         "url": "https://www.mongodb.com",
         "logoUrl": "https://www.mongodb.com/favicon.ico",
         "keywords": "MongoDB 云数据库 免费"
-      },
-      {
-        "title": "UCloud优刻得",
-        "desc": "<strong>2H4G30M 云主机 140元/年</strong></br>UCloud(优刻得)是中国知名的中立云计算服务商，科创板上市(股票代码：688158)，中国云计算第一股，专注于提供可靠的企业级云服务，包括云服务器、云主机、云数据库、混合云、CDN、人工智能等服务",
-        "url": "https://passport.ucloud.cn?cps_code=BTpCaaSSjDlCI7Tp5dZzZ8",
-        "logoUrl": "	https://www.ucloud.cn/favicon.ico",
-        "keywords": "云主机、云数据库、混合云、CDN、云计算、UCloud、优刻得、云服务器、互联网+解决方案、人工智能、全球服解决方案",
-        "highlight": true,
-        "recommended": true
       },
       {
         "title": "ClawCloud Run",
