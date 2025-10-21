@@ -606,7 +606,7 @@ let navData = {
     '机场推荐': [
       {
         "title": "良心云 | 节点质量不错",
-        "desc": "良心云，稳定高速，注册即送3GB流量，支持月付、季付、年付，多种套餐可选，适合不同需求用户。",
+        "desc": "良心云，稳定高速，支持月付、季付、年付、不限时定量，多种套餐可选，适合不同需求用户。",
         "url": "https://xn--9kqz23b19z.com/#/register?code=39Na8zPy",
         "logoUrl": "https://xn--9kqz23b19z.com/images/logo.png",
         "keywords": "良心云 机场 代理 节点 魔法",
