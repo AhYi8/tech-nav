@@ -618,18 +618,14 @@ let navData = {
         "desc": '优点：价格低、流量多，有不限时流量。缺点：部分节点不稳定。',
         "url": 'https://xn--4gqx1hgtfdmt.com/#/register?code=IxqdhHOg',
         "logoUrl": 'https://xn--4gqx1hgtfdmt.com/favicon.ico',
-        "keywords": '机场 代理 节点 魔法',
-        "highlight": false,
-        "recommended": true
+        "keywords": '机场 代理 节点 魔法'
       },
       {
         "title": '性价比机场',
         "desc": '优点：价格低、节点稳定。缺点：流量少，每月流量重置。',
         "url": 'https://xn--6nq44r2uh9rhj7f.net/#/register?code=vPoik0NF',
         "logoUrl": '../assert/ico/性价比机场.ico',
-        "keywords": '机场 代理 节点 魔法',
-        "highlight": false,
-        "recommended": true
+        "keywords": '机场 代理 节点 魔法'
       }
     ],
     '客户端': [
