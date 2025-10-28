@@ -677,36 +677,43 @@ let navData = {
   '影视资源': {
     '影视推荐': [
       {
-        title: '小范AI影单',
-        desc: '小范AI影单，从此告别片荒',
-        url: 'https://ai.yinfans.me',
-        logoUrl: 'https://ai.yinfans.me/wp-content/uploads/2025/05/cropped-image-32x32.jpg',
-        keywords: '小范AI 影单 影视推荐 电影'
+        "title": '小范AI影单',
+        "desc": '小范AI影单，从此告别片荒',
+        "url": 'https://ai.yinfans.me',
+        "logoUrl": 'https://ai.yinfans.me/wp-content/uploads/2025/05/cropped-image-32x32.jpg',
+        "keywords": '小范AI 影单 影视推荐 电影'
+      },
+      {
+        "title": 'Moovie | 聚合搜索引擎',
+        "desc": '用户无需在不同平台间来回切换，只需一次搜索，即可查看多个影视资源网站的结果。无论是电影、电视剧还是综艺节目，Moovie都能帮助你快速找到想看的内容。网站首页实时同步豆瓣热门影视榜单，让观众轻松掌握最新流行趋势，无需注册即可直接使用。',
+        "url": 'https://moovie.c2v2.com',
+        "logoUrl": 'https://moovie.c2v2.com/public/static/img/moovie-app.png',
+        "keywords": 'Moovie 影视搜索'
       }
     ],
     '在线影视': [
       {
-        title: 'LIBVIO',
-        desc: 'LIBVIO提供免费观看最新电影热播电视剧，综艺，动漫，高清无广告蓝光1080P画质在线播放，流畅秒播不卡顿！',
-        url: 'https://www.libvio.com',
-        logoUrl: 'https://www.libvio.link/statics/img/favicon.ico',
-        keywords: 'LIBVIO,影视,电影,电视剧'
+        "title": 'LIBVIO',
+        "desc": 'LIBVIO提供免费观看最新电影热播电视剧，综艺，动漫，高清无广告蓝光1080P画质在线播放，流畅秒播不卡顿！',
+        "url": 'https://www.libvio.com',
+        "logoUrl": 'https://www.libvio.link/statics/img/favicon.ico',
+        "keywords": 'LIBVIO,影视,电影,电视剧'
       }
     ],
     '磁力影视': [
       {
-        title: '电影天堂',
-        desc: '最好的迅雷电影下载网，分享最新电影，高清电影、综艺、动漫、电视剧等下载！',
-        url: 'https://dygod.org',
-        logoUrl: 'https://dygod.org/favicon.ico',
-        keywords: '免费电影下载 电影下载 最新电影 磁力影视'
+        "title": '电影天堂',
+        "desc": '最好的迅雷电影下载网，分享最新电影，高清电影、综艺、动漫、电视剧等下载！',
+        "url": 'https://dygod.org',
+        "logoUrl": 'https://dygod.org/favicon.ico',
+        "keywords": '免费电影下载 电影下载 最新电影 磁力影视'
       },
       {
-        title: 'BT之家',
-        desc: '分享快乐,如此简单 !  BT电影天堂-影视资源交流社区 , BT之家官网：1lOU.ME ，BT之家BTBTT，BT之家BTBBT，BTHome，BTHouse',
-        url: 'https://www.1lou.cc',
-        logoUrl: 'https://www.1lou.pro/view/img/favicon.ico',
-        keywords: '磁力影视 磁力链接 BT之家'
+        "title": 'BT之家',
+        "desc": '分享快乐,如此简单 !  BT电影天堂-影视资源交流社区 , BT之家官网：1lOU.ME ，BT之家BTBTT，BT之家BTBBT，BTHome，BTHouse',
+        "url": 'https://www.1lou.cc',
+        "logoUrl": 'https://www.1lou.pro/view/img/favicon.ico',
+        "keywords": '磁力影视 磁力链接 BT之家'
       },
       {
         "title": "SeedHub | 影视&动漫分享",
