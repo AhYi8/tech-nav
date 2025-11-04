@@ -750,6 +750,13 @@ let navData = {
         "url": "https://topsub.cc/",
         "logoUrl": "https://topsub.cc/favicon.ico",
         "keywords": "Reddit 榜单 热门 Subreddit 聚合 SaaS 营销 增长黑客 GrowthHacking SEO 副业 sideproject 独立开发 indiehackers 游戏开发 IndieDev 技术 technology 趋势 热帖 汇总 实时 更新"
+      },
+      {
+        "title": "最强 Reddit 搜索",
+        "desc": "Reddit 一直被称作“互联网金矿”，它拥有全球数亿级别的活跃用户在北美、欧洲及全球英语国家尤为活跃，是一个基于兴趣和社区的内容聚合与讨论平台分享一个最强Reddit搜索工具 ",
+        "url": "https://go.gummysearch.com/audiences",
+        "logoUrl": "https://go.gummysearch.com/images/branding-logo-head-gray.png",
+        "keywords": "Reddit 搜索"
       }
     ]
   }
