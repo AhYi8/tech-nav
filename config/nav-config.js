@@ -345,6 +345,13 @@ let navData = {
         url: 'https://tools.21zys.com',
         logoUrl: 'https://tools.21zys.com/favicon.ico',
         keywords: '工具箱 tools 工具'
+      },
+      {
+        title: '站长工具',
+        desc: '站长工具是站长的必备工具。经常上站长工具可以了解SEO数据变化。还可以检测网站死链接、蜘蛛访问、HTML格式检测、网站速度测试、友情链接检查、网站域名IP查询、PR、权重查询、alexa、whois查询等等。',
+        url: 'https://tool.chinaz.com',
+        logoUrl: 'https://csstools.chinaz.com/favicon.ico',
+        keywords: '站长工具 SEO工具 权重查询 收录查询 PR查询 ICP备案查询 whois查询 友情链接查询 反向链接查询 网站测试 IP查询 Alexa查询'
       }
     ],
     '图片工具': [
