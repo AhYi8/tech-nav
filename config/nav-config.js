@@ -580,32 +580,11 @@ let navData = {
         "keywords": '火山方舟 火山引擎 AI 模型 工具'
       },
       {
-        "title": "Wisdom Gate",
-        "desc": "注册即送 $10 额度，可以多注册几个。可使用模型：</br>wisdom-ai-gpt5 (via Gpt5)</br>wisdom-ai-gpt5-mini (via Gpt5 Mini)</br>wisdom-ai-gpt5-nano (via Gpt5 Nano)</br>wisdom-ai-dsv3 (via DeepseekV3)</br>wisdom-ai-dsr1 (via DeepseekR1)</br>wisdom-ai-oss (via GptOSS-120b)</br>wisdom-ai-claude-sonnet-4 (via Claude Sonnet 4)</br>wisdom-ai-gemini-2.5-flash (via Gemini 2.5 Flash)",
-        "url": "https://wisdom-gate.juheapi.com?i=AMRy",
-        "logoUrl": "https://wisdom-gate.juheapi.com/logo/logo.png",
-        "keywords": "OpenAPI GPT5 Deepseek Claude Gemini"
-      },
-      {
-        "title": "cerebras",
-        "desc": "每日免费 100w token。可以用模型列表：</br>gpt-oss-120b</br>llama-3.3-70b</br>llama-4-maverick-17b-128e-instruct</br>llama-4-scout-17b-16e-instruct</br>llama3.1-8b</br>qwen-3-235b-a22b-instruct-2507</br>qwen-3-235b-a22b-thinking-2507</br>qwen-3-32b</br>qwen-3-coder-480b</br>gpt-oss-120b</br>llama-3.3-70b</br>llama-4-maverick-17b-128e-instruct</br>llama-4-scout-17b-16e-instruct</br>llama3.1-8b</br>qwen-3-235b-a22b-instruct-2507</br>qwen-3-235b-a22b-thinking-2507</br>qwen-3-32b</br>qwen-3-coder-480b",
-        "url": "https://cloud.cerebras.ai?referral_code=pxrkk2cx",
-        "logoUrl": "https://cloud.cerebras.ai/images/logo/cb-fav-32.png",
-        "keywords": "免费 API 模型 服务"
-      },
-      {
-        "title": "AnyRouter",
-        "desc": "每日签到赠送 $25 额度。提供Claude API服务的在线平台，支持充值、邀请奖励等功能的AI服务路由器",
-        "url": "https://anyrouter.top/register?aff=FHvl",
-        "logoUrl": "../assert/ico/AnyRouter.png",
-        "keywords": "AnyRouter API Claude"
-      },
-      {
-        "title": "包子铺",
-        "desc": "免费AI模型服务平台，为无额度用户提供公益性AI服务，支持多渠道模型切换，纯公益运营永不收费",
-        "url": "https://api.5202030.xyz",
-        "logoUrl": "https://api.5202030.xyz/favicon.ico",
-        "keywords": "AI模型 免费服务 公益平台 人工智能 模型切换 用爱发电 永不收费"
+        "title": 'FoxClaude | 4分钱/刀',
+        "desc": '真实的Claude 代理站，4分钱/刀',
+        "url": 'https://foxcode.rjj.cc/auth/register?aff=YZTNR',
+        "logoUrl": 'https://claude.ai/favicon.ico',
+        "keywords": 'Claude FoxClaude'
       }
     ]
   },
