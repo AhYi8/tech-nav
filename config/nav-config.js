@@ -416,6 +416,13 @@ let navData = {
         url: 'https://yt1d.top',
         logoUrl: 'https://yt1d.top/favicon.ico',
         keywords: 'YouTube 视频 下载 分析 8K 技术参数 多格式 MP4 WebM AVI MKV MOV FLV MP3 AAC WAV FLAC OGG M4A JPG PNG WebP BMP 在线 工具'
+      },
+      {
+        title: 'BestVideo | 自媒体视频下载',
+        desc: '在线自媒体视频下载工具，支持YouTube、Bilibili、抖音、快手、小红书等多平台视频下载，提供多格式选择，满足不同设备和场景需求。',
+        url: 'https://www.bestvideow.com',
+        logoUrl: 'https://www.bestvideow.com/image/logomin.png',
+        keywords: '自媒体 视频 下载 YouTube Bilibili 抖音 快手 小红书 多格式 在线 工具'
       }
     ]
   },
