@@ -45,7 +45,8 @@ const subCategoryIcons = {
     '云服务': 'server'
   },
   '学习教育': {
-    '学习平台': 'school'
+    '学习平台': 'school',
+    '优质订阅': 'book-open'
   },
   'AI集合': {
     'AI提示词': 'book-text',
@@ -318,6 +319,15 @@ let navData = {
         "url": "https://www.chinaooc.com.cn",
         "logoUrl": "../assert/ico/国家高等教育智慧教育平台.png",
         "keywords": "高等教育 在线课程 教育资源 国家级平台 智慧教育 教学服务 高校师生 社会学习者 教育部 高教社 北京理工"
+      }
+    ],
+    '优质订阅': [
+      {
+        "title": "Best Blogs - 顶级编程与技术文章聚合平台",
+        "desc": "bestblogs.dev - 汇集顶级编程、人工智能、产品、科技文章，大语言模型摘要评分辅助阅读，探索编程和技术未来，为您提供独特的编程、人工智能、产品设计、商业科技和个人成长领域的价值导向内容，汇集自顶级技术公司和社区。我们利用先进语言模型，为您摘要、评分和翻译这些文章，节省您的阅读时间。我们了解数据筛选的痛点，致力于为您呈现精选内容。立即订阅，探索未来技术的无限可能！",
+        "url": "https://www.bestblogs.dev",
+        "logoUrl": "https://www.bestblogs.dev/favicon.ico",
+        "keywords": "bestblogs 编程 软件 开发 技术 阅读 技术博客 技术社区 人工智能 产品管理 网页设计 商业 科技 个人成长 优质文章 大语言模型 AI 阅读"
       }
     ]
   },
