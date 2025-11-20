@@ -408,6 +408,13 @@ let navData = {
         "url": "https://app.superthread.com",
         "logoUrl": "https://app.superthread.com/img/icons/favicon-32x32.png",
         "keywords": "项目管理 团队协作 看板 任务管理 笔记 工作区 路线图 会议转录 导入任务 键盘快捷键 Trello Jira Shortcut 工作流"
+      },
+      {
+        "title": "5sim.net - 在线接码平台",
+        "desc": "5sim.net - 在线接码平台。购买或者租用虚拟号码接收短信验证码并在不同网站和应用上创建大量账号。价格从1网站币起！",
+        "url": "https://5sim.net/zh",
+        "logoUrl": "https://5sim.net/favicon-32x32.png",
+        "keywords": "接码 虚拟号码 短信接收 SMS验证码 在线接码 虚拟手机号 号码激活 号码租用 号码购买 接码平台 API接码 180国家号码 验证码服务 号码批量采购"
       }
     ],
     '转换工具': [
