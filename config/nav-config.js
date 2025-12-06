@@ -329,6 +329,13 @@ let navData = {
         url: 'https://tools.21zys.com',
         logoUrl: 'https://tools.21zys.com/favicon.ico',
         keywords: '工具箱 tools 工具'
+      },
+      {
+        title: 'iLovePDF | 为PDF爱好者提供的PDF文件在线处理工具',
+        desc: 'iLovePDF网站提供PDF文件在线转换服务。它完全免费，而且使用方便。无论是合并PDF文件、拆分PDF文件、压缩PDF文件、Office文件转换为PDF文件，还是PDF转换为JPG图片等，iLovePDF都能满足您的需求！',
+        url: 'https://www.ilovepdf.com/zh-cn',
+        logoUrl: 'https://www.ilovepdf.com/img/favicons-pdf/favicon-32x32.png',
+        keywords: '合并PDF文件 拆分PDF文件 合并PDF文件 提取PDF文件 压缩PDF文件 转换PDF文件 Word转换为PDF文件 Excel转换为PDF文件 Powerpoint转换为PDF文件 PDF转换为JPG图片 JPG转换为PDF文件'
       }
     ],
     '图片工具': [
