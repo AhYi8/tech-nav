@@ -45,7 +45,8 @@ const subCategoryIcons = {
     '云服务': 'server'
   },
   '学习教育': {
-    '学习平台': 'school'
+    '学习平台': 'school',
+    '优质订阅': 'book-open'
   },
   'AI集合': {
     'AI提示词': 'book-text',
@@ -265,11 +266,20 @@ let navData = {
     ],
     '云服务': [
       {
-        title: '雨云',
-        desc: '欢迎来到以用户体验为优先的雨云，我们提供稳定高速的云服务器、游戏云、物理服务器，强大的功能，高效率的客户支持，简洁易用的面板，值得您的信赖',
-        url: 'https://www.rainyun.com/21zys_?s=nav',
-        logoUrl: 'https://www.rainyun.com/favicon.ico',
-        keywords: '雨云 虚拟主机 云服务器 我的世界服务器 游戏服务器 BGP 游戏云 MC VPS 高主频 免费主机 宝塔 美国vps 免费空间 便宜vps kvm EP主机 美国云服务器 免费CDN 香港CDN 免费二级域名 免费SSL证书 裸金属服务器 游戏云 云应用'
+        "title": "UCloud优刻得",
+        "desc": "<strong>香港云主机低至 51元/年 | 2H4G30M 云主机 140元/年</strong></br>UCloud(优刻得)是中国知名的中立云计算服务商，科创板上市(股票代码：688158)，中国云计算第一股，专注于提供可靠的企业级云服务，包括云服务器、云主机、云数据库、混合云、CDN、人工智能等服务",
+        "url": "https://passport.ucloud.cn?cps_code=BTpCaaSSjDlCI7Tp5dZzZ8",
+        "logoUrl": "	https://www.ucloud.cn/favicon.ico",
+        "keywords": "云主机、云数据库、混合云、CDN、云计算、UCloud、优刻得、云服务器、互联网+解决方案、人工智能、全球服解决方案",
+        "highlight": true,
+        "recommended": true
+      },
+      {
+        "title": '雨云',
+        "desc": '欢迎来到以用户体验为优先的雨云，我们提供稳定高速的云服务器、游戏云、物理服务器，强大的功能，高效率的客户支持，简洁易用的面板，值得您的信赖',
+        "url": 'https://www.rainyun.com/21zys_?s=nav',
+        "logoUrl": 'https://www.rainyun.com/favicon.ico',
+        "keywords": '雨云 虚拟主机 云服务器 我的世界服务器 游戏服务器 BGP 游戏云 MC VPS 高主频 免费主机 宝塔 美国vps 免费空间 便宜vps kvm EP主机 美国云服务器 免费CDN 香港CDN 免费二级域名 免费SSL证书 裸金属服务器 游戏云 云应用'
       },
       {
         "title": "SQLPub | 免费 MySQL 云数据库",
@@ -291,6 +301,13 @@ let navData = {
         "url": "https://www.mongodb.com",
         "logoUrl": "https://www.mongodb.com/favicon.ico",
         "keywords": "MongoDB 云数据库 免费"
+      },
+      {
+        "title": "ClawCloud Run",
+        "desc": "提供首次注册$5积分奖励和每月$5积分福利的云服务平台，支持Github和Gmail用户注册",
+        "url": "https://ap-southeast-1.run.claw.cloud/signin",
+        "logoUrl": "https://ap-southeast-1.run.claw.cloud/icons/favicon-32x32.png",
+        "keywords": "ClawCloud 云服务 免费 应用部署"
       }
     ]
   },
@@ -302,6 +319,15 @@ let navData = {
         "url": "https://www.chinaooc.com.cn",
         "logoUrl": "../assert/ico/国家高等教育智慧教育平台.png",
         "keywords": "高等教育 在线课程 教育资源 国家级平台 智慧教育 教学服务 高校师生 社会学习者 教育部 高教社 北京理工"
+      }
+    ],
+    '优质订阅': [
+      {
+        "title": "Best Blogs - 顶级编程与技术文章聚合平台",
+        "desc": "bestblogs.dev - 汇集顶级编程、人工智能、产品、科技文章，大语言模型摘要评分辅助阅读，探索编程和技术未来，为您提供独特的编程、人工智能、产品设计、商业科技和个人成长领域的价值导向内容，汇集自顶级技术公司和社区。我们利用先进语言模型，为您摘要、评分和翻译这些文章，节省您的阅读时间。我们了解数据筛选的痛点，致力于为您呈现精选内容。立即订阅，探索未来技术的无限可能！",
+        "url": "https://www.bestblogs.dev",
+        "logoUrl": "https://www.bestblogs.dev/favicon.ico",
+        "keywords": "bestblogs 编程 软件 开发 技术 阅读 技术博客 技术社区 人工智能 产品管理 网页设计 商业 科技 个人成长 优质文章 大语言模型 AI 阅读"
       }
     ]
   },
@@ -336,6 +362,13 @@ let navData = {
         url: 'https://www.ilovepdf.com/zh-cn',
         logoUrl: 'https://www.ilovepdf.com/img/favicons-pdf/favicon-32x32.png',
         keywords: '合并PDF文件 拆分PDF文件 合并PDF文件 提取PDF文件 压缩PDF文件 转换PDF文件 Word转换为PDF文件 Excel转换为PDF文件 Powerpoint转换为PDF文件 PDF转换为JPG图片 JPG转换为PDF文件'
+      },
+      {
+        title: '站长工具',
+        desc: '站长工具是站长的必备工具。经常上站长工具可以了解SEO数据变化。还可以检测网站死链接、蜘蛛访问、HTML格式检测、网站速度测试、友情链接检查、网站域名IP查询、PR、权重查询、alexa、whois查询等等。',
+        url: 'https://tool.chinaz.com',
+        logoUrl: 'https://csstools.chinaz.com/favicon.ico',
+        keywords: '站长工具 SEO工具 权重查询 收录查询 PR查询 ICP备案查询 whois查询 友情链接查询 反向链接查询 网站测试 IP查询 Alexa查询'
       }
     ],
     '图片工具': [
@@ -382,6 +415,13 @@ let navData = {
         "url": "https://app.superthread.com",
         "logoUrl": "https://app.superthread.com/img/icons/favicon-32x32.png",
         "keywords": "项目管理 团队协作 看板 任务管理 笔记 工作区 路线图 会议转录 导入任务 键盘快捷键 Trello Jira Shortcut 工作流"
+      },
+      {
+        "title": "5sim.net - 在线接码平台",
+        "desc": "5sim.net - 在线接码平台。购买或者租用虚拟号码接收短信验证码并在不同网站和应用上创建大量账号。价格从1网站币起！",
+        "url": "https://5sim.net/zh",
+        "logoUrl": "https://5sim.net/favicon-32x32.png",
+        "keywords": "接码 虚拟号码 短信接收 SMS验证码 在线接码 虚拟手机号 号码激活 号码租用 号码购买 接码平台 API接码 180国家号码 验证码服务 号码批量采购"
       }
     ],
     '转换工具': [
@@ -400,6 +440,13 @@ let navData = {
         url: 'https://yt1d.top',
         logoUrl: 'https://yt1d.top/favicon.ico',
         keywords: 'YouTube 视频 下载 分析 8K 技术参数 多格式 MP4 WebM AVI MKV MOV FLV MP3 AAC WAV FLAC OGG M4A JPG PNG WebP BMP 在线 工具'
+      },
+      {
+        title: 'BestVideo | 自媒体视频下载',
+        desc: '在线自媒体视频下载工具，支持YouTube、Bilibili、抖音、快手、小红书等多平台视频下载，提供多格式选择，满足不同设备和场景需求。',
+        url: 'https://www.bestvideow.com',
+        logoUrl: 'https://www.bestvideow.com/image/logomin.png',
+        keywords: '自媒体 视频 下载 YouTube Bilibili 抖音 快手 小红书 多格式 在线 工具'
       }
     ]
   },
@@ -564,54 +611,38 @@ let navData = {
         "keywords": '火山方舟 火山引擎 AI 模型 工具'
       },
       {
-        "title": "Wisdom Gate",
-        "desc": "注册即送 $10 额度，可以多注册几个。可使用模型：</br>wisdom-ai-gpt5 (via Gpt5)</br>wisdom-ai-gpt5-mini (via Gpt5 Mini)</br>wisdom-ai-gpt5-nano (via Gpt5 Nano)</br>wisdom-ai-dsv3 (via DeepseekV3)</br>wisdom-ai-dsr1 (via DeepseekR1)</br>wisdom-ai-oss (via GptOSS-120b)</br>wisdom-ai-claude-sonnet-4 (via Claude Sonnet 4)</br>wisdom-ai-gemini-2.5-flash (via Gemini 2.5 Flash)",
-        "url": "https://wisdom-gate.juheapi.com?i=AMRy",
-        "logoUrl": "https://wisdom-gate.juheapi.com/logo/logo.png",
-        "keywords": "OpenAPI GPT5 Deepseek Claude Gemini"
-      },
-      {
-        "title": "cerebras",
-        "desc": "每日免费 100w token。可以用模型列表：</br>gpt-oss-120b</br>llama-3.3-70b</br>llama-4-maverick-17b-128e-instruct</br>llama-4-scout-17b-16e-instruct</br>llama3.1-8b</br>qwen-3-235b-a22b-instruct-2507</br>qwen-3-235b-a22b-thinking-2507</br>qwen-3-32b</br>qwen-3-coder-480b</br>gpt-oss-120b</br>llama-3.3-70b</br>llama-4-maverick-17b-128e-instruct</br>llama-4-scout-17b-16e-instruct</br>llama3.1-8b</br>qwen-3-235b-a22b-instruct-2507</br>qwen-3-235b-a22b-thinking-2507</br>qwen-3-32b</br>qwen-3-coder-480b",
-        "url": "https://cloud.cerebras.ai?referral_code=pxrkk2cx",
-        "logoUrl": "https://cloud.cerebras.ai/images/logo/cb-fav-32.png",
-        "keywords": "免费 API 模型 服务"
-      },
-      {
-        "title": "AnyRouter",
-        "desc": "每日签到赠送 $25 额度。提供Claude API服务的在线平台，支持充值、邀请奖励等功能的AI服务路由器",
-        "url": "https://anyrouter.top/register?aff=FHvl",
-        "logoUrl": "../assert/ico/AnyRouter.png",
-        "keywords": "AnyRouter API Claude"
-      },
-      {
-        "title": "包子铺",
-        "desc": "免费AI模型服务平台，为无额度用户提供公益性AI服务，支持多渠道模型切换，纯公益运营永不收费",
-        "url": "https://api.5202030.xyz",
-        "logoUrl": "https://api.5202030.xyz/favicon.ico",
-        "keywords": "AI模型 免费服务 公益平台 人工智能 模型切换 用爱发电 永不收费"
+        "title": 'FoxClaude | 4分钱/刀',
+        "desc": '真实的Claude 代理站，4分钱/刀',
+        "url": 'https://foxcode.rjj.cc/auth/register?aff=YZTNR',
+        "logoUrl": 'https://claude.ai/favicon.ico',
+        "keywords": 'Claude FoxClaude'
       }
     ]
   },
   '代理机场': {
     '机场推荐': [
       {
-        title: '一分机场',
-        desc: '优点：价格低、流量多，有不限时流量。缺点：部分节点不稳定。',
-        url: 'https://xn--4gqx1hgtfdmt.com/#/register?code=IxqdhHOg',
-        logoUrl: 'https://xn--4gqx1hgtfdmt.com/favicon.ico',
-        keywords: '机场 代理 节点 魔法',
-        highlight: false,
-        recommended: true
+        "title": "良心云 | 节点质量不错",
+        "desc": "良心云，稳定高速，支持月付、季付、年付、不限时定量，多种套餐可选，适合不同需求用户。",
+        "url": "https://xn--9kqz23b19z.com/#/register?code=39Na8zPy",
+        "logoUrl": "https://xn--9kqz23b19z.com/images/logo.png",
+        "keywords": "良心云 机场 代理 节点 魔法",
+        "highlight": true,
+        "recommended": true
       },
       {
-        title: '性价比机场',
-        desc: '优点：价格低、节点稳定。缺点：流量少，每月流量重置。',
-        url: 'https://xn--6nq44r2uh9rhj7f.net/#/register?code=vPoik0NF',
-        logoUrl: '../assert/ico/性价比机场.ico',
-        keywords: '机场 代理 节点 魔法',
-        highlight: false,
-        recommended: true
+        "title": '一分机场',
+        "desc": '优点：价格低、流量多，有不限时流量。缺点：部分节点不稳定。',
+        "url": 'https://xn--4gqx1hgtfdmt.com/#/register?code=IxqdhHOg',
+        "logoUrl": 'https://xn--4gqx1hgtfdmt.com/favicon.ico',
+        "keywords": '机场 代理 节点 魔法'
+      },
+      {
+        "title": '性价比机场',
+        "desc": '优点：价格低、节点稳定。缺点：流量少，每月流量重置。',
+        "url": 'https://xn--6nq44r2uh9rhj7f.net/#/register?code=vPoik0NF',
+        "logoUrl": '../assert/ico/性价比机场.ico',
+        "keywords": '机场 代理 节点 魔法'
       }
     ],
     '客户端': [
@@ -663,36 +694,43 @@ let navData = {
   '影视资源': {
     '影视推荐': [
       {
-        title: '小范AI影单',
-        desc: '小范AI影单，从此告别片荒',
-        url: 'https://ai.yinfans.me',
-        logoUrl: 'https://ai.yinfans.me/wp-content/uploads/2025/05/cropped-image-32x32.jpg',
-        keywords: '小范AI 影单 影视推荐 电影'
+        "title": '小范AI影单',
+        "desc": '小范AI影单，从此告别片荒',
+        "url": 'https://ai.yinfans.me',
+        "logoUrl": 'https://ai.yinfans.me/wp-content/uploads/2025/05/cropped-image-32x32.jpg',
+        "keywords": '小范AI 影单 影视推荐 电影'
+      },
+      {
+        "title": 'Moovie | 聚合搜索引擎',
+        "desc": '用户无需在不同平台间来回切换，只需一次搜索，即可查看多个影视资源网站的结果。无论是电影、电视剧还是综艺节目，Moovie都能帮助你快速找到想看的内容。网站首页实时同步豆瓣热门影视榜单，让观众轻松掌握最新流行趋势，无需注册即可直接使用。',
+        "url": 'https://moovie.c2v2.com',
+        "logoUrl": 'https://moovie.c2v2.com/public/static/img/moovie-app.png',
+        "keywords": 'Moovie 影视搜索'
       }
     ],
     '在线影视': [
       {
-        title: 'LIBVIO',
-        desc: 'LIBVIO提供免费观看最新电影热播电视剧，综艺，动漫，高清无广告蓝光1080P画质在线播放，流畅秒播不卡顿！',
-        url: 'https://www.libvio.com',
-        logoUrl: 'https://www.libvio.link/statics/img/favicon.ico',
-        keywords: 'LIBVIO,影视,电影,电视剧'
+        "title": 'LIBVIO',
+        "desc": 'LIBVIO提供免费观看最新电影热播电视剧，综艺，动漫，高清无广告蓝光1080P画质在线播放，流畅秒播不卡顿！',
+        "url": 'https://www.libvio.com',
+        "logoUrl": 'https://www.libvio.link/statics/img/favicon.ico',
+        "keywords": 'LIBVIO,影视,电影,电视剧'
       }
     ],
     '磁力影视': [
       {
-        title: '电影天堂',
-        desc: '最好的迅雷电影下载网，分享最新电影，高清电影、综艺、动漫、电视剧等下载！',
-        url: 'https://dygod.org',
-        logoUrl: 'https://dygod.org/favicon.ico',
-        keywords: '免费电影下载 电影下载 最新电影 磁力影视'
+        "title": '电影天堂',
+        "desc": '最好的迅雷电影下载网，分享最新电影，高清电影、综艺、动漫、电视剧等下载！',
+        "url": 'https://dygod.org',
+        "logoUrl": 'https://dygod.org/favicon.ico',
+        "keywords": '免费电影下载 电影下载 最新电影 磁力影视'
       },
       {
-        title: 'BT之家',
-        desc: '分享快乐,如此简单 !  BT电影天堂-影视资源交流社区 , BT之家官网：1lOU.ME ，BT之家BTBTT，BT之家BTBBT，BTHome，BTHouse',
-        url: 'https://www.1lou.cc',
-        logoUrl: 'https://www.1lou.pro/view/img/favicon.ico',
-        keywords: '磁力影视 磁力链接 BT之家'
+        "title": 'BT之家',
+        "desc": '分享快乐,如此简单 !  BT电影天堂-影视资源交流社区 , BT之家官网：1lOU.ME ，BT之家BTBTT，BT之家BTBBT，BTHome，BTHouse',
+        "url": 'https://www.1lou.cc',
+        "logoUrl": 'https://www.1lou.pro/view/img/favicon.ico',
+        "keywords": '磁力影视 磁力链接 BT之家'
       },
       {
         "title": "SeedHub | 影视&动漫分享",
@@ -729,6 +767,13 @@ let navData = {
         "url": "https://topsub.cc/",
         "logoUrl": "https://topsub.cc/favicon.ico",
         "keywords": "Reddit 榜单 热门 Subreddit 聚合 SaaS 营销 增长黑客 GrowthHacking SEO 副业 sideproject 独立开发 indiehackers 游戏开发 IndieDev 技术 technology 趋势 热帖 汇总 实时 更新"
+      },
+      {
+        "title": "最强 Reddit 搜索",
+        "desc": "Reddit 一直被称作“互联网金矿”，它拥有全球数亿级别的活跃用户在北美、欧洲及全球英语国家尤为活跃，是一个基于兴趣和社区的内容聚合与讨论平台分享一个最强Reddit搜索工具 ",
+        "url": "https://go.gummysearch.com/audiences",
+        "logoUrl": "https://go.gummysearch.com/images/branding-logo-head-gray.png",
+        "keywords": "Reddit 搜索"
       }
     ]
   }
