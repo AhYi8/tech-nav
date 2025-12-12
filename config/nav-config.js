@@ -329,6 +329,15 @@ let navData = {
         "logoUrl": "https://www.bestblogs.dev/favicon.ico",
         "keywords": "bestblogs 编程 软件 开发 技术 阅读 技术博客 技术社区 人工智能 产品管理 网页设计 商业 科技 个人成长 优质文章 大语言模型 AI 阅读"
       }
+    ],
+    '学习文档': [
+      {
+        "title": "Open WebUI 中文文档",
+        "desc": "Open WebUI 是一个可扩展、功能丰富且用户友好的自托管 AI 平台，设计为完全离线运行。 它支持各种 LLM 运行器，如 Ollama 和 OpenAI 兼容 API，具有用于 RAG 的内置推理引擎，使其成为强大的 AI 部署解决方案。",
+        "url": "https://openwebui-doc-zh.pages.dev",
+        "logoUrl": "https://openwebui-doc-zh.pages.dev/images/logo.png",
+        "keywords": "Open WebUI 自托管 AI 平台 LLM 运行器 Ollama OpenAI 兼容 API RAG 推理引擎"
+      }
     ]
   },
   '工具箱': {
