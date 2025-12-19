@@ -46,7 +46,8 @@ const subCategoryIcons = {
   },
   '学习教育': {
     '学习平台': 'school',
-    '优质订阅': 'book-open'
+    '优质订阅': 'book-open',
+    '学习文档': 'book'
   },
   'AI集合': {
     'AI提示词': 'book-text',
@@ -256,6 +257,20 @@ let navData = {
       }
     ],
     '开发辅助': [
+      {
+        title: 'UI 设计风格提示词库',
+        desc: '探索 70+ 种现代 UI 设计风格，获取专业 AI 生成提示词。包含玻璃态、新拟物、扁平化、赛博朋克等流行设计系统，帮助您的 AI 生成独特 UI。',
+        url: 'https://www.uiprompt.site',
+        logoUrl: 'https://www.uiprompt.site/assets/icon-B24oh6uw.png',
+        keywords: 'UI设计 AI提示词 设计风格 玻璃态 新拟物 扁平化 CSS 前端设计 UI模板'
+      },
+      {
+        title: '撷芳集 | AI 优秀作品展示平台',
+        desc: '撷芳拾翠，集珍纳华 - 发现并珍藏通过 Gemini 3.0 创作的优秀 AI 作品',
+        url: 'https://xiefang.our-ai.me',
+        logoUrl: 'https://xiefang.our-ai.me/favicon.ico',
+        keywords: 'UI设计 AI提示词 设计风格 玻璃态 新拟物 扁平化 CSS 前端设计 UI模板'
+      },
       {
         title: 'Tech-Tools 工具箱',
         desc: '暗黑科技风格在线工具箱',
