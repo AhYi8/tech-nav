@@ -497,6 +497,13 @@ let navData = {
         "url": "https://thinking.jimbray.xyz/zh",
         "logoUrl": "https://thinking.jimbray.xyz/favicon.ico",
         "keywords": "问题解决, 战略规划, MECE 原则, 7S 框架, STAR 面试法, 整合思维, 杠杆思维"
+      },
+      {
+        "title": "Agent Skills 市场 - Claude、Codex 和 ChatGPT Skills | SkillsMP",
+        "desc": "浏览 25,000+ agent skills，兼容 Claude Code、Codex CLI 和 ChatGPT。AI 编程助手的开放标准 SKILL.md 格式。",
+        "url": "https://skillsmp.com/zh",
+        "logoUrl": "https://skillsmp.com/favicon.ico",
+        "keywords": "agent skills claude skills codex skills SKILL.md claude 技能 claude code skills 技能市场 anthropic skills AI 编程助手"
       }
 
     ],
